@@ -13,7 +13,8 @@ function wait_in(time){
 }
 function cutscene_trigger(_cutscene){
     with(oCutscene){
-    oCutscene.cutscene = G.cutscenes[_cutscene]
+    oCutscene.cutscene = global.cutscenes[_cutscene]
+	show_debug_message("OI")
     }
 }
 function end_act(){
@@ -113,22 +114,15 @@ function new_dialogue(text){
 }
 Cutscene1=[
     function(){start_act()},
-    function(){change_face(oManu,1,true)},
-    function(){move_to(oManu,730,oManu.y,1)},
-    function(){change_face(oManu,0,true)},
-    function(){move_to(oManu,oManu.x,350,1)},
-    function(){change_face(oManu,1,true,-1)},
-    function(){move_to(oManu,860,oManu.y,1)},
-    function(){change_face(oManu,0,true)},
-    function(){move_add(oManu,0,200,1)}, 
-    function(){player_change(POV.Lucas)},
-    function(){new_dialogue([
-        Texto("Lucas ", "uh, oque é isso?..."),
-        Texto("","Ao colocar as mãos no bolso você sente duas embalagens de doces..."),
-        Texto(" ","vazias..."),
-        Texto("Lucas","ah, porhherhrhwaergar"),
-        Texto("Lucas","ghrhtrhsth",-1)
-    ])},
+    function(){move_add(OTeste2,300,0,2,boing)},
+	function(){new_dialogue([
+	Texto("Miguel","Oxente Painho!!!"),
+	Texto("Marcelo o Rato","Cuscuz"),
+	Escolhas("Miguel", "Marcelo...", [
+	Opcao("Te odeio marcelo",function(){ return -1 } ,-1),	
+	Opcao("Te amo marcelo",function(){ return -1 } ,-1)
+	])	
+	])},
     function(){end_cutscene()}
 ]
 global.cutscenes = [Cutscene1]
