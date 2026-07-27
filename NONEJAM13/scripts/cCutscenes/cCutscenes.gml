@@ -114,7 +114,7 @@ function new_dialogue(text){
 }
 Cutscene1=[
     function(){start_act()},
-    function(){move_add(OTeste2,300,0,2,boing)},
+    function(){move_add(OTeste2,100,0,2,boing)},
 	function(){new_dialogue([
 	Texto("Miguel","Oxente Painho!!!"),
 	Texto("Marcelo o Rato","Cuscuz"),

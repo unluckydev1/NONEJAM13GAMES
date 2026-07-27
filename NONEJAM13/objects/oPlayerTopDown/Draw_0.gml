@@ -1,0 +1,1 @@
+draw_sprite(sprite_player[index][face], spr_ind, x,y)

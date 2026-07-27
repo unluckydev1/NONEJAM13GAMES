@@ -9,8 +9,8 @@
   "name":"OTeste2",
   "overriddenProperties":[],
   "parent":{
-    "name":"Players",
-    "path":"folders/objetos/Players.yy",
+    "name":"Testes",
+    "path":"folders/objetos/Testes.yy",
   },
   "parentObjectId":null,
   "persistent":false,
