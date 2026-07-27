@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"cCutscenes",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"cCutscenes",
+  "parent":{
+    "name":"scripts",
+    "path":"folders/scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
