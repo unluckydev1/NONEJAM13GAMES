@@ -1,3 +1,4 @@
+if(global.pause == true)exit;
 var _left, _right, _up, _down;
 
 _left   = keyboard_check(ord("A"));
@@ -8,7 +9,7 @@ _up     = keyboard_check(vk_space);
 velh = (_right - _left) * velmax
 
 
-
+func_toma_dano()
 switch(estado){
     case "parado":
         sprite_index = spr_player
@@ -40,6 +41,12 @@ switch(estado){
         if(place_meeting(x, y + 1, oCollision)){
             estado = "parado"
         }
+    break;
+    
+    case "morto":
+        velh = 0 
+        velv = 0 
+        image_alpha = 0
     break;
 }
 
