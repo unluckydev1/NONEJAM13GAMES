@@ -3,5 +3,3 @@
 #macro DELTA 1000000
 global.reading = false
 global.cutscene = false
-
-global.pause = false

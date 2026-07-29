@@ -1,4 +1,3 @@
-if(global.pause == true)exit;
 var _left, _right, _up, _down;
 
 _left   = keyboard_check(ord("A"));
@@ -27,22 +26,14 @@ switch(estado){
         velh = 0 
         velv = 0
         if(_left || _right || _up || _down){
-            estado = "movimentando";
+            estado = "movimentando"
         }
     break;
     
     case "movimentando":
         index = 1
         if(velh == 0 && velv == 0){
-            estado = "parado";
-        }
-    break;
-    case "dialogo":
-        velh = 0; 
-        velv = 0;
-        if(!instance_exists(oDialogo)){
-            estado = "parado";
+            estado = "parado"
         }
     break;
 }
-if(instance_exists(oDialogo)) estado = "dialogo";
