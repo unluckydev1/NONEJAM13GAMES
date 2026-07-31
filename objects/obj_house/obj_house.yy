@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"oCollision",
+  "%Name":"obj_house",
   "eventList":[],
   "managed":true,
-  "name":"oCollision",
+  "name":"obj_house",
   "overriddenProperties":[],
   "parent":{
-    "name":"Players",
-    "path":"folders/objetos/Players.yy",
+    "name":"Example",
+    "path":"folders/objetos/Efeitos/Luz/Example.yy",
   },
   "parentObjectId":{
     "name":"obj_uls_collider",
@@ -17,7 +17,7 @@
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,
-  "physicsGroup":1,
+  "physicsGroup":0,
   "physicsKinematic":false,
   "physicsLinearDamping":0.1,
   "physicsObject":false,
@@ -29,11 +29,8 @@
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":false,
-  "spriteId":{
-    "name":"spr_red",
-    "path":"sprites/spr_red/spr_red.yy",
-  },
+  "solid":true,
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

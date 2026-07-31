@@ -18,6 +18,7 @@ switch(estado){
             estado = "andando"
         }
         func_pular()
+        func_checa_chao()
         
     break;
     
@@ -28,6 +29,7 @@ switch(estado){
             estado = "parado"
         }
         func_pular()
+        func_checa_chao()
     break; 
 
     case "pulando":
