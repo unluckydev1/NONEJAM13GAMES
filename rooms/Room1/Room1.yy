@@ -24,7 +24,6 @@
     {"name":"inst_171730D3","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_5BBC1429","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_11C2D3AD","path":"rooms/Room1/Room1.yy",},
-    {"name":"inst_4134CE51","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_242D24FA","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_47716970","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_74A297BE","path":"rooms/Room1/Room1.yy",},
@@ -43,16 +42,17 @@
     {"name":"inst_751C35FD","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_51F64557","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_225C98AA","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_6A317AA9","path":"rooms/Room1/Room1.yy",},
   ],
   "isDnd":false,
   "layers":[
     {"$GMRInstanceLayer":"","%Name":"Efeitos","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"v4","%Name":"inst_4134CE51","colour":3103784959,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4134CE51","objectId":{"name":"obj_uls_light","path":"objects/obj_uls_light/obj_uls_light.yy",},"previewSprite":{"name":"CARALHO_GAMES","path":"sprites/CARALHO_GAMES/CARALHO_GAMES.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":1.0,"scaleX":1.0,"scaleY":1.0,"x":64.0,"y":32.0,},
         {"$GMRInstance":"v4","%Name":"inst_242D24FA","colour":16777215,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_242D24FA","objectId":{"name":"obj_uls_controller","path":"objects/obj_uls_controller/obj_uls_controller.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_uls_controller","path":"objects/obj_uls_controller/obj_uls_controller.yy",},"propertyId":{"name":"light_depth","path":"objects/obj_uls_controller/obj_uls_controller.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"-200",},
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_uls_controller","path":"objects/obj_uls_controller/obj_uls_controller.yy",},"propertyId":{"name":"shadow_depth","path":"objects/obj_uls_controller/obj_uls_controller.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"-200",},
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_uls_controller","path":"objects/obj_uls_controller/obj_uls_controller.yy",},"propertyId":{"name":"blur_effect_intensity","path":"objects/obj_uls_controller/obj_uls_controller.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":0.0,},
+        {"$GMRInstance":"v4","%Name":"inst_6A317AA9","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6A317AA9","objectId":{"name":"OTeste2","path":"objects/OTeste2/OTeste2.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":128.0,"y":64.0,},
       ],"layers":[],"name":"Efeitos","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Instances","depth":100,"effectEnabled":true,"effectType":null,"gridX":8,"gridY":8,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_CFFF2CC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_CFFF2CC","objectId":{"name":"oTeste","path":"objects/oTeste/oTeste.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":608.0,"y":352.0,},
@@ -131,8 +131,8 @@
   ],
   "name":"Room1",
   "parent":{
-    "name":"NONEJAM13",
-    "path":"NONEJAM13.yyp",
+    "name":"rooms",
+    "path":"folders/rooms.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

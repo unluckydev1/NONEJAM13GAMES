@@ -26,7 +26,6 @@ function end_act(){
     starty = 0
     distx = 0
     disty = 0
-    
     act_scene ++;
     }
 }
@@ -72,7 +71,18 @@ function move_add(obj,_x,_y,time,curve_type = linearmove){
     }
     }    
 }
-
+function switch_npc(obj1,obj2){
+	with(oCutscene){
+		if instance_exists(obj1){
+			var _x = obj1.x
+			var _y = obj1.y
+			var _layer = obj1.layer
+			instance_destroy(obj1)
+			instance_create_layer(_x,_y,_layer,obj2)
+			end_act()
+		}
+	}
+}
 function move_to(obj,_x,_y,time,curve_type = linearmove){
     
     with(oCutscene){
@@ -114,15 +124,22 @@ function new_dialogue(text){
 }
 Cutscene1=[
     function(){start_act()},
-    function(){move_add(OTeste2,100,0,2,boing)},
-	function(){new_dialogue([
-	Texto("Miguel","Oxente Painho!!!"),
-	Texto("Marcelo o Rato","Cuscuz"),
-	Escolhas("Miguel", "Marcelo...", [
-	Opcao("Te odeio marcelo",function(){ return -1 } ,-1),	
-	Opcao("Te amo marcelo",function(){ return -1 } ,-1)
-	])	
-	])},
+    function(){move_add(oNpcBardo,100,0,2,boing)},
+	function(){new_dialogue(global.dialogues[0])},
     function(){end_cutscene()}
 ]
-global.cutscenes = [Cutscene1]
+Cutscene2=[
+    function(){start_act()},
+	function(){switch_npc(oNpcBardo,oNpcRei)},
+	function(){new_dialogue(global.dialogues[1])},
+    function(){move_add(oNpcRei,00,-50,2,boing)},
+    function(){end_cutscene()}
+]
+Cutscene3=[
+    function(){start_act()},
+	function(){new_dialogue(global.dialogues[2])},
+    function(){move_add(oNpcBardo,00,50,2,boing)},
+    function(){end_cutscene()}
+]
+
+global.cutscenes = [Cutscene1,Cutscene2,Cutscene3]

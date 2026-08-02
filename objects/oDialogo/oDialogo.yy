@@ -9,8 +9,8 @@
   "name":"oDialogo",
   "overriddenProperties":[],
   "parent":{
-    "name":"controladores",
-    "path":"folders/objetos/controladores.yy",
+    "name":"Narração",
+    "path":"folders/objetos/Narração.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -3,3 +3,5 @@
 #macro DELTA 1000000
 global.reading = false
 global.cutscene = false
+global.font_narrar = fnt_1 
+global.cutscene_query = noone

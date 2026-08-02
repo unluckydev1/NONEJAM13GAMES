@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"DialogueUI",
-    "path":"folders/Sprites/DialogueUI.yy",
+    "path":"folders/Sprites/narração/DialogueUI.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

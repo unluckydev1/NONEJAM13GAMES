@@ -1,14 +1,14 @@
 global.reading = true
-text_width = (guiw - 128)/1.25
+text_width = (guiw - 128)
 text_height = guih/4
-
+contains = false
 //sfx_dialogo =
 pitch_range = .75
 borderx = 32
 bordery = 28
 line_sep = 24
 line_width = text_width - borderx*2
-
+str_encaixe = 0
 choices = false
 select = 0
 
@@ -29,7 +29,7 @@ assigned_portrait = noone
 portrait = false
 setup = false
 
-father = oDialogo
+can_pass = true
 
 choosing = false
 /*choose_dialogue = function(pos){
