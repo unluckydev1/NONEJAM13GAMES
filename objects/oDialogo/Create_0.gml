@@ -12,7 +12,11 @@ str_encaixe = 0
 choices = false
 select = 0
 
+///Create
+typist = scribble_typist();
+typist.in(1, 0);
 
+text_to_draw = 0
 page = 0
 page_number = 0
 text[10] = {}

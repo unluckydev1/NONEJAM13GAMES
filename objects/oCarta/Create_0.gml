@@ -1,2 +1,10 @@
 pursue = false
 card = get_card(CARD.REI)
+subindo = 100
+basex = guiw/2
+x = basex 
+yhover = 0
+organized = false
+dep_init = depth
+
+angle = 0

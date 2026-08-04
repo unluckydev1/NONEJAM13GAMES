@@ -4,7 +4,7 @@ if instance_exists(oCarta){
 		if _carta.pursue = false{
 			card = _carta.card
 			instance_destroy(_carta)
-			
+			global.card_in_mouse = -1
 		}
 	}
 }

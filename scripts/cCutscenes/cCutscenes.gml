@@ -1,3 +1,5 @@
+
+
 function start_act(){ 
     with(oCutscene){
         global.cutscene = true;
@@ -141,5 +143,11 @@ Cutscene3=[
     function(){move_add(oNpcBardo,00,50,2,boing)},
     function(){end_cutscene()}
 ]
-
-global.cutscenes = [Cutscene1,Cutscene2,Cutscene3]
+Cutscene4=[
+    function(){start_act()},
+	function(){switch_npc(oNpcBardo,oNpcSapo)},
+	function(){new_dialogue(global.dialogues[3])},
+    function(){move_add(oNpcSapo,-100,0,2,boing)},
+    function(){end_cutscene()}
+]
+global.cutscenes = [Cutscene1,Cutscene2,Cutscene3,Cutscene4]
