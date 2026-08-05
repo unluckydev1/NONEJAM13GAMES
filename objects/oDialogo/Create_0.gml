@@ -1,3 +1,5 @@
+largura_encaixe = 0 
+alp = 0
 global.reading = true
 text_width = (guiw - 128)
 text_height = guih/4
@@ -14,7 +16,9 @@ select = 0
 
 ///Create
 typist = scribble_typist();
-typist.in(1, 0);
+typist.ease(SCRIBBLE_EASE.EXPO, 0, -12, 0, 0, 360, .5)
+typist.in(0.5, 2);
+
 
 text_to_draw = 0
 page = 0
@@ -24,12 +28,12 @@ text_length[0] = string_length(text[0])
 draw_char = 0
 text_spd = .5
 
-txtb_spr = spr_dialogo_box
+txtb_spr = spr_text_box
 txtb_img = 0
 txtb_img_spd = 6/60
 
 selected = 0
-assigned_portrait = noone
+assigned_portrait = true
 portrait = false
 setup = false
 

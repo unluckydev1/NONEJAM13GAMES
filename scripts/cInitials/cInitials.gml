@@ -1,5 +1,6 @@
-#macro guiw display_get_gui_width()
-#macro guih display_get_gui_height()
+#macro guiw 1280
+#macro guih 720
+display_set_gui_size(1280, 720);
 #macro DELTA 1000000
 global.reading = false
 global.cutscene = false
