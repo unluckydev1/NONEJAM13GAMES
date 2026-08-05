@@ -124,30 +124,165 @@ function new_dialogue(text){
     }
     }
 }
-Cutscene1=[
+
+// ===============================
+// CAPÍTULO 1 - A PRINCESA
+// ===============================
+
+
+// CAP1_FLORESTA_INICIO
+Cutscene_Floresta_Inicio = [
     function(){start_act()},
-    function(){move_add(oNpcBardo,100,0,2,boing)},
-	function(){new_dialogue(global.dialogues[0])},
+    function(){new_dialogue(Dialogo_Floresta)},
     function(){end_cutscene()}
-]
-Cutscene2=[
+];
+
+
+// CAP1_CAMINHO_TORRE
+Cutscene_Caminho_Torre = [
     function(){start_act()},
-	function(){switch_npc(oNpcBardo,oNpcRei)},
-	function(){new_dialogue(global.dialogues[1])},
-    function(){move_add(oNpcRei,00,-50,2,boing)},
+    function(){new_dialogue(Dialogo_Torre)},
     function(){end_cutscene()}
-]
-Cutscene3=[
+];
+
+
+// CAP1_CAMINHO_ESCURIDAO
+Cutscene_Caminho_Escuridao = [
     function(){start_act()},
-	function(){new_dialogue(global.dialogues[2])},
-    function(){move_add(oNpcBardo,00,50,2,boing)},
+    function(){new_dialogue(Dialogo_Escuridao)},
     function(){end_cutscene()}
-]
-Cutscene4=[
+];
+
+
+// CAP1_TORRE_PORTA
+Cutscene_Torre_Porta = [
     function(){start_act()},
-	function(){switch_npc(oNpcBardo,oNpcSapo)},
-	function(){new_dialogue(global.dialogues[3])},
-    function(){move_add(oNpcSapo,-100,0,2,boing)},
+    function(){new_dialogue(Dialogo_Porta)},
     function(){end_cutscene()}
-]
-global.cutscenes = [Cutscene1,Cutscene2,Cutscene3,Cutscene4]
+];
+
+
+// CAP1_TORRE_JANELA
+Cutscene_Torre_Janela = [
+    function(){start_act()},
+    function(){new_dialogue(Dialogo_Janela)},
+    function(){end_cutscene()}
+];
+
+
+// CAP1_MAGO_MAL
+Cutscene_Mago_Mal = [
+    function(){start_act()},
+    function(){new_dialogue(dialogo_Porta_MgMal)},
+    function(){end_cutscene()}
+];
+
+
+// CAP1_MAGO_BOM
+Cutscene_Mago_Bom = [
+    function(){start_act()},
+    function(){new_dialogue(dialogo_Porta_MgBom)},
+    function(){end_cutscene()}
+];
+
+Cutscene_Mago_Sapo = [
+    function(){start_act()},
+    function(){new_dialogue(dialogo_Porta_MgSapo)},
+    function(){end_cutscene()}
+];
+
+
+
+// CAP1_ESCALAR_TORRE
+Cutscene_Escalar_Torre = [
+    function(){start_act()},
+    function(){new_dialogue(Dialogo_Cair)},
+    function(){end_cutscene()}
+];
+
+
+// CAP1_GRITAR_PRINCESA
+Cutscene_Gritar_Princesa = [
+    function(){start_act()},
+    function(){new_dialogue(Dialogo_Janela)},
+    function(){end_cutscene()}
+];
+
+
+// CAP1_LUZ_FLORESTA
+Cutscene_Luz_Floresta = [
+    function(){start_act()},
+    function(){new_dialogue(Dialogo_Luz)},
+    function(){end_cutscene()}
+];
+
+
+// CAP1_CASA_MAGO
+Cutscene_Casa_Mago = [
+    function(){start_act()},
+    function(){new_dialogue(Dialogo_Casa)},
+    function(){end_cutscene()}
+];
+
+
+// CAP1_ENTRAR_CASA
+Cutscene_Entrar_Casa = [
+    function(){start_act()},
+    function(){new_dialogue(Dialogo_Casa)},
+    function(){end_cutscene()}
+];
+
+
+// CAP1_BATER_CASA
+Cutscene_Bater_Casa = [
+    function(){start_act()},
+    function(){new_dialogue(Dialogo_Casa)},
+    function(){end_cutscene()}
+];
+
+
+global.cutscenes = [
+
+    Cutscene_Floresta_Inicio,
+    Cutscene_Caminho_Torre,
+    Cutscene_Caminho_Escuridao,
+    Cutscene_Torre_Porta,
+    Cutscene_Torre_Janela,
+
+    Cutscene_Mago_Mal,
+    Cutscene_Mago_Bom,
+	Cutscene_Mago_Sapo,
+
+    Cutscene_Escalar_Torre,
+    Cutscene_Gritar_Princesa,
+
+    Cutscene_Luz_Floresta,
+    Cutscene_Casa_Mago,
+
+    Cutscene_Entrar_Casa,
+    Cutscene_Bater_Casa
+];
+
+enum CUTSCENE{
+	
+	CUT_FLORESTA,
+	
+	CUT_TORRE,
+    CUT_ESCURIDAO,
+	
+	CUT_PORTA,
+	CUT_JANELA,
+	
+	CUT_MGBOM,
+	CUT_MGMAL,
+	CUT_MGSAPO,
+	
+	CUT_ESCALAR,
+	CUT_GRITAR,
+	
+	CUT_LUZ,
+	CUT_CASA,
+	
+	CUT_ENTRAR,
+	CUT_BATER
+}

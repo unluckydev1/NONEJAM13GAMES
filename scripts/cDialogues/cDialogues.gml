@@ -7,12 +7,11 @@ enum NomesConhecidos{
 }
 global.nomes = array_create(NomesConhecidos.size)
 // --- Funções de Atalho para Facilitar a Escrita ---
-function Texto(_speaker, _portrait, _text, _type = -1, _card = -1, _func = -1){
+function Texto(_speaker, _portrait, _text , _card = [], _func = -1){
     return {
         speaker: _speaker,
 		portrait: _portrait,
         text: _text,
-		tipo: _type,
 		card : _card,
         func: _func
     };
@@ -21,32 +20,348 @@ function Create_dialogue(falas){
     var inst = instance_create_layer(x,y,layer,oDialogo)
     inst.text = falas
 }
-// --- Montagem do Diálogo ---
-Dialogo_Teste = [
-	Texto("Miguel",spr_text_box_idoso ,"e na estrada, esta uma figura familiar"),
-	Texto("Marcelo",spr_text_box_idoso,"o * caminhando, ele esta prestes a agir!",TIPOS.PERSONAGEM,get_card(CARD.BARDO),
-	function(){
-		switch global.card.id{
-			case CARD.REI: global.cutscene_query = 1; global.card = -1
-			break;
-			case CARD.BARDO: global.cutscene_query = 2; global.card = -1
-			break;
-			case CARD.SAPO: global.cutscene_query = 3; global.card = -1
-			break;
-		}
-	}
-	)
+
+// ===============================
+// CAPÍTULO 1 - A PRINCESA
+// ===============================
+
+
+// FLORESTA
+Dialogo_Floresta = [
+
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Era uma vez uma *...",
+        [CARD.FLORESTA],
+        function(){
+
+            global.cutscene_query = CUTSCENE.CUT_FLORESTA;
+            global.card = -1;
+
+        }
+    ),
+
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Densa onde bravos heróis ousam se aventurar todos os dias blablabla games."
+    ),
+
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Após caminhar alguns instantes, encontrou uma intersecção em seu caminho..."
+    ),
+
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "O que levou nosso bravo herói a seguir a *",
+        [CARD.TORRE,CARD.ESCURIDAO],
+        function(){
+
+            switch(global.card.id)
+            {
+                case CARD.TORRE:
+                    global.cutscene_query = CUTSCENE.CUT_TORRE;
+                break;
+
+                case CARD.ESCURIDAO:
+                    global.cutscene_query = CUTSCENE.CUT_ESCURIDAO;
+                break;
+            }
+
+            global.card = -1;
+
+        }
+    )
 ];
-Dialogo_Teste1 = [
-	Texto("Miguel",spr_text_box_idoso,"o rei sobe!"),
-	
+
+
+
+// ===============================
+// TORRE
+// ===============================
+
+Dialogo_Torre = [
+
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Pois estava com MUITA pressa, e se demorasse demais para resgatar a princesa, sabe lá Deus o que poderia acontecer!"
+    ),
+
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Após uma loooonga caminhada e várias pedras no caminho, nosso herói chega a alta torre onde sua amada fora presa pelo grandioso mago mal."
+    ),
+
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Uma chama dentro de seu peito acende, e sente que precisa salva-la o quanto antes..."
+    ),
+
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Nosso herói então decide agir pela *",
+        [CARD.PORTA,CARD.JANELA],
+        function(){
+
+            switch(global.card.id)
+            {
+                case CARD.PORTA:
+                    global.cutscene_query = CUTSCENE.CUT_PORTA;
+                break;
+
+                case CARD.JANELA:
+                    global.cutscene_query = CUTSCENE.CUT_JANELA;
+                break;
+            }
+
+            global.card = -1;
+
+        }
+    )
+];
+
+
+
+// ===============================
+// PORTA DA TORRE
+// ===============================
+
+Dialogo_Porta = [
+
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "De entrada da torre, e pensou que seria uma boa ideia tentar entrar diretamente por ela."
+    ),
+
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "O que no fim não foi tão eficiente assim..."
+    ),
+
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Pois o mago *...",
+        [CARD.BOM,CARD.MALIGNO,CARD.SAPO],
+        function(){
+
+            switch(global.card.id)
+            {
+                case CARD.MALIGNO:
+                    global.cutscene_query =	CUTSCENE.CUT_MGMAL;
+                break;
+
+                case CARD.BOM:
+                    global.cutscene_query = CUTSCENE.CUT_MGBOM;
+                break;
+				case CARD.SAPO:
+                    global.cutscene_query = CUTSCENE.CUT_MGSAPO;
+                break;
+            }
+
+            global.card = -1;
+
+        }
+    )
+];
+
+
+dialogo_Porta_MgMal = [
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Apareceu e matou o herói, que fim cruel."
+    )
 ]
-Dialogo_Teste2 = [
-	Texto("Miguel",spr_text_box_idoso,"o bardo desce!")
-	
+dialogo_Porta_MgBom = [
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Apareceu e ajudou ele a subir a torre."
+    )
 ]
-Dialogo_Teste3 = [
-	Texto("Miguel",spr_text_box_idoso,"o sapo volta!")
-	
+dialogo_Porta_MgSapo = [
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Apareceu e engoliu o herói."
+    )
 ]
-global.dialogues = [Dialogo_Teste,Dialogo_Teste1,Dialogo_Teste2,Dialogo_Teste3];
+// ===============================
+// JANELA DA TORRE
+// ===============================
+
+Dialogo_Janela = [
+
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Da torre, pois é uma das partes de mais fácil acesso..."
+    ),
+
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "E pensou que seria uma boa ideia tentar *...",
+        [CARD.ESCALAR,CARD.GRITAR],
+        function(){
+
+            switch(global.card.id)
+            {
+                case CARD.ESCALAR:
+                    global.cutscene_query = CUTSCENE.CUT_ESCALAR;
+                break;
+
+                case CARD.GRITAR:
+                    global.cutscene_query = CUTSCENE.CUT_GRITAR;
+                break;
+            }
+
+            global.card = -1;
+
+        }
+    )
+];
+
+Dialogo_Cair = [
+
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "A torre. Então nosso herói de dispõe a fazer um grande esforço, mas ao chegar lá em cima, acaba falhando no ultimo tijolo...."
+    ),
+
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "O que de fato não daria certo, pois estamos em um conto medieval, e não em histórias de super heróis que não possuem fadiga.",
+        
+    )
+];
+
+
+
+// ===============================
+// ESCURIDÃO
+// ===============================
+
+Dialogo_Escuridao = [
+
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Que não parecia ser um dos caminhos mais seguros, mas ainda assim seguiu adiante com toda a determinação que havia dentro de seu coração."
+    ),
+
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Caminhando um pouco mais, avistou uma *",
+        [CARD.LUZ,CARD.CASA],
+        function(){
+
+            switch(global.card.id)
+            {
+                case CARD.LUZ:
+                    global.cutscene_query = CUTSCENE.CUT_LUZ;
+                break;
+
+                case CARD.CASA:
+                    global.cutscene_query = CUTSCENE.CUT_CASA;
+                break;
+            }
+
+            global.card = -1;
+
+        }
+    )
+];
+
+
+
+// ===============================
+// LUZ
+// ===============================
+
+Dialogo_Luz = [
+
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "E decidiu se aproximar, pois poderia ser algo valioso, ou um poderoso artefato que ajudaria a chegar na torre!"
+    ),
+
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Mas, é... Não era nenhum dos dois."
+    ),
+
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "O herói acabou caindo em uma armadilha de urso, que o fez sangrar até a morte."
+    )
+];
+
+
+
+// ===============================
+// CASA
+// ===============================
+
+Dialogo_Casa = [
+
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Que era de fato muito engraçada, nunca havia visto nada parecido, então decidiu se aproximar..."
+    ),
+
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Ao dar de cara com a porta, decidiu *",
+        [CARD.ENTRAR,CARD.BATER],
+        function(){
+
+            switch(global.card.id)
+            {
+                case CARD.ENTRAR:
+                    global.cutscene_query = CUTSCENE.CUT_ENTRAR;
+                break;
+
+                case CARD.BATER:
+                    global.cutscene_query = CUTSCENE.CUT_BATER;
+                break;
+            }
+
+            global.card = -1;
+
+        }
+    )
+];
+
+
+
+// ===============================
+
+global.dialogues = [
+    Dialogo_Floresta,
+    Dialogo_Torre,
+    Dialogo_Porta,
+    Dialogo_Janela,
+    Dialogo_Escuridao,
+    Dialogo_Luz,
+    Dialogo_Casa
+];

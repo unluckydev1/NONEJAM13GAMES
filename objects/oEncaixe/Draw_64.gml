@@ -7,7 +7,7 @@ yscale = (string_height("a")/_div + 1) *scale
 
 
 _x = x_base + sprite_get_width(sEncaixe)*xscale/2
-_y = y + sprite_get_height(sEncaixe)*yscale/2
+_y = y + sprite_get_height(sEncaixe)*yscale/2 - 5 + sin(get_timer()/100000)
 
 
 draw_sprite_ext(sEncaixe,0,_x,_y,xscale,yscale,0,c_white,1)

@@ -1,30 +1,29 @@
+/// Organização elástica
+if (!organized){
+	_force = (basex - x) * 0.08;
+	xspd *= 0.85;
+	xspd += _force;
 
+	x += xspd;
 
-
-/// Organização
-if (!organized) {
-	var _col = collision_circle(x, y, 64, oCarta, false, true);
-
-	if (_col != noone) {
-		x -= lengthdir_x(
-			(64 - distance_to_object(_col)) * .075,
-			point_direction(x, y, _col.x, _col.y)
-		);
-	} else {
-		basex = x;
-		organized = true;
+	if (abs(basex - x) < 1 && abs(xspd) < 1)
+	{
+	    x = basex;
+	    xspd = 0;
+		organized = true
 	}
 }
-
 /// Desenho
 var _multiplier = 3.5;
 var hw = 16 * _multiplier;
 var hh = 32 * _multiplier;
 
+ysin = sin(get_timer()/100005 + atraso)*2
+
 var left   = x - hw;
-var top    = y - hh + yhover;
+var top    = y - hh + yhover + ysin;
 var right  = x + hw;
-var bottom = y + hh + yhover;
+var bottom = y + hh + yhover + ysin;
 
 draw_set_colour(card.color);
 draw_rectangle(left, top, right, bottom, false);
@@ -113,4 +112,4 @@ if (pursue) {
 
 
 /// Depth
-depth = (hovering || pursue) ? -999 : dep_init;
+depth = ((hovering || pursue)&&global.card_in_mouse == id) ? -999 : dep_init;

@@ -65,17 +65,34 @@ if(contains){
 		var _x = textbox_x + borderx + string_width(str_encaixe)
 		var inst = instance_create_depth(_x, textbox_y + bordery - 8,depth - 1,oEncaixe)
 		inst.x_base = _x
-		inst.card = text[page].card
-		global.card = text[page].card
 
-		for(var i = 0; i < CARD.HEIGHT; i ++){
-			if (get_card(i).unlocked == true) and (get_card(i) != global.card){
-				if (get_card(i).tipo = text[page].tipo){
-					inst = instance_create_layer(x,y,layer,oCarta)
-					inst.x = guiw/2 + i
-					inst.card = get_card(i)
-				}
+		var _pos = 0;
+		var _spacing = 80;
+		var _cards = [];
+		
+		for(var i = 0; i < CARD.HEIGHT; i++)
+		{
+			if(get_card(i).unlocked && array_contains(text[page].card,get_card(i).id))
+			{
+				array_push(_cards, get_card(i));
 			}
+		}
+
+
+		var _start = guiw/2 - (array_length(_cards) - 1) * _spacing / 2;
+
+
+		for(var i = 0; i < array_length(_cards); i++)
+		{
+			inst = instance_create_layer(x,y,layer,oCarta);
+			
+			inst.atraso -= 2*i
+			
+			inst.basex = _start + i * _spacing;
+			inst.x = guiw/2 + i;
+
+			inst.card = _cards[i];
+			inst.dep_init += i;
 		}
 		
 	}else{
@@ -90,24 +107,36 @@ if accept_key {
 		
 		
 		
-		if (page >= page_number - 1){
-			if (text[page].func != -1){
-				text[page].func()
-			}
-			global.reading = false
-			instance_destroy()
-			if instance_exists(oEncaixe) instance_destroy(oEncaixe) 
-			if instance_exists(oCarta) instance_destroy(oCarta) 
-		}else{
-			if (text[page].func != -1){
-				text[page].func()
-			}
-			page ++;
-			//draw_char = 0;
-			contains = false
-			if instance_exists(oEncaixe) instance_destroy(oEncaixe) 
-			if instance_exists(oCarta) instance_destroy(oCarta) 
+		if (page >= page_number - 1) {
 			
+			repeat(1){
+				if (contains and global.card == noone){
+					break;
+				}
+				if (text[page].func != -1){
+					text[page].func()
+				}
+				global.card = noone
+				global.reading = false
+				instance_destroy()
+				if instance_exists(oEncaixe) instance_destroy(oEncaixe) 
+				if instance_exists(oCarta) instance_destroy(oCarta) 
+			}
+		}else{
+			repeat(1){
+				if (contains and global.card == noone){
+					break;
+				}
+				if (text[page].func != -1){
+					text[page].func()
+				}
+				page ++;
+				global.card = noone
+				//draw_char = 0;
+				contains = false
+				if instance_exists(oEncaixe) instance_destroy(oEncaixe) 
+				if instance_exists(oCarta) instance_destroy(oCarta) 
+			}
 		}
 	}else{
 		typist.skip_to_pause(1)
