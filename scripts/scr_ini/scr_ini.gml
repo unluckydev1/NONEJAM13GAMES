@@ -3,6 +3,74 @@
 global.nodes = [];
 global.liberados = [];
 
+function skill_node(_spr, _nome, _x, _y, _img, _conect = [], _desc = "", _final) constructor
+{
+    _time  = 0;
+    
+    id = _nome;
+    
+    xs   = .5;
+    ys   = .5;
+    nxs  = 1;
+    nys  = 1;
+    ang  = 20;
+    
+    x   = _x;
+    y   = _y;
+    spr = _spr;
+    
+    apear = false;
+    can   = false;
+    
+    final = _final;
+    
+    alp_b = 0;
+    alp   = 0;
+    
+    info = {
+        xsmax : 10, 
+        ysmax : 4, 
+        
+        alp  : [0, 0],
+        balp : [0, 0],
+        xs   : 1,
+        ys   : 1,
+        nxs  : 10,
+        nys  : 5,
+        
+        txt : _desc,
+        
+        img : _img,
+        
+        nivel : 0,
+        
+        addy : 0
+    }
+    
+    offy = {
+        r : 0,
+        o : 0,
+    };
+    
+    w = sprite_get_width(spr);
+    h = sprite_get_height(spr);
+    
+    conects = _conect;
+    linha = [];
+    
+    for (var i = 0; i < array_length(conects); i++) {
+    	linha[i] = {
+            x : x,
+            y : y,
+            
+            alp_rainbow : 0,
+            
+            cores_corda    : [0, 0, 0],
+            inicores_corda : [random_range(100, 300), random_range(100, 300), random_range(100, 300)]
+        }
+    }
+}
+
 function libera_node(_name){
     for (var i = 0; i < array_length(global.nodes); i++) {
     	if (global.nodes[i].id == _name and !array_contains(global.liberados, global.nodes[i])){
@@ -118,6 +186,12 @@ global.node_settings =
         final: false
 	},
 ]
+
+for (var i = 0; i < array_length(global.node_settings); i++) {
+    var _ns = global.node_settings[i];
+    
+	array_push(global.nodes, new skill_node(_ns.sprite, _ns.title, _ns.cordx, _ns.cordy, _ns.imagem, _ns.conect, _ns.desc, _ns.final));
+}
 
 
 #endregion

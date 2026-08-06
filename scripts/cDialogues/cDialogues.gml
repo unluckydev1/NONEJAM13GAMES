@@ -21,6 +21,18 @@ function Create_dialogue(falas){
     inst.text = falas
 }
 
+function debug()
+{
+    var _strings = [];
+    
+    for (var i = 0; i < array_length(global.liberados); i++) {
+    	array_push(_strings, global.liberados[i].id);
+    }
+    
+    show_message(_strings);
+    show_message(global.liberados);
+}
+
 // ===============================
 // CAPÍTULO 1 - A PRINCESA
 // ===============================
@@ -65,7 +77,7 @@ Dialogo_Floresta = [
                 case CARD.TORRE:
                     global.cutscene_query = CUTSCENE.CUT_TORRE;
 					libera_node(global.node_names.p2)
-					show_message("oi")
+					debug();
                 break;
 
                 case CARD.ESCURIDAO:
@@ -164,17 +176,20 @@ Dialogo_Porta = [
                     global.cutscene_query =	CUTSCENE.CUT_MGMAL;
 					libera_node(global.node_names.p4)
 					room_goto(rm_fluxograma)
+                    debug();
                 break;
 
                 case CARD.BOM:
                     global.cutscene_query = CUTSCENE.CUT_MGBOM;
 					libera_node(global.node_names.p5)
 					room_goto(rm_fluxograma)
+                    debug();
                 break;
 				case CARD.SAPO:
                     global.cutscene_query = CUTSCENE.CUT_MGSAPO;
 					libera_node(global.node_names.p6)
 					room_goto(rm_fluxograma)
+                    debug();
                 break;
             }
 
