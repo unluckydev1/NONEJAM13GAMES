@@ -82,6 +82,7 @@ Dialogo_Floresta = [
 
                 case CARD.ESCURIDAO:
                     global.cutscene_query = CUTSCENE.CUT_ESCURIDAO;
+					libera_node(global.node_names.p10)
                 break;
             }
 
@@ -133,6 +134,7 @@ Dialogo_Torre = [
 
                 case CARD.JANELA:
                     global.cutscene_query = CUTSCENE.CUT_JANELA;
+					libera_node(global.node_names.p7)
 					//libera_node(global.node_names.p21)
                 break;
             }
@@ -204,21 +206,36 @@ dialogo_Porta_MgMal = [
     Texto(
         "Miguel",
         spr_text_box_idoso,
-        "Apareceu e matou o herói, que fim cruel."
+        "Apareceu e matou o herói, que fim cruel.",
+        noone,
+		function(){
+
+			room_goto(rm_fluxograma)
+		}
     )
 ]
 dialogo_Porta_MgBom = [
     Texto(
         "Miguel",
         spr_text_box_idoso,
-        "Apareceu e ajudou ele a subir a torre."
+        "Apareceu e ajudou ele a subir a torre.",
+        noone,
+		function(){
+
+			room_goto(rm_fluxograma)
+		}
     )
 ]
 dialogo_Porta_MgSapo = [
     Texto(
         "Miguel",
         spr_text_box_idoso,
-        "Apareceu e engoliu o herói, não lembrava dessa parte..."
+        "Apareceu e engoliu o herói, não lembrava dessa parte...",
+        noone,
+		function(){
+
+			room_goto(rm_fluxograma)
+		}
     )
 ]
 // ===============================
@@ -244,10 +261,12 @@ Dialogo_Janela = [
             {
                 case CARD.ESCALAR:
                     global.cutscene_query = CUTSCENE.CUT_ESCALAR;
+					libera_node(global.node_names.p8)
                 break;
 
                 case CARD.GRITAR:
                     global.cutscene_query = CUTSCENE.CUT_GRITAR;
+					libera_node(global.node_names.p9)
                 break;
             }
 
@@ -288,7 +307,12 @@ Dialogo_Gritar = [
     Texto(
         "Miguel",
         spr_text_box_idoso,
-        "Ela logo jogou uma corda que aparentava ser feita de seus lençóis, e não demorou muito para que o herói escalasse..."
+        "Ela logo jogou uma corda que aparentava ser feita de seus lençóis, e não demorou muito para que o herói escalasse...",
+        noone,
+		function(){
+
+			room_goto(rm_fluxograma)
+		}
     )
 ];
 
@@ -318,10 +342,12 @@ Dialogo_Escuridao = [
             {
                 case CARD.LUZ:
                     global.cutscene_query = CUTSCENE.CUT_LUZ;
+					libera_node(global.node_names.p11)
                 break;
 
                 case CARD.CASA:
                     global.cutscene_query = CUTSCENE.CUT_CASA;
+					libera_node(global.node_names.p12)
                 break;
             }
 
@@ -354,7 +380,12 @@ Dialogo_Luz = [
     Texto(
         "Miguel",
         spr_text_box_idoso,
-        "O herói acabou caindo em uma armadilha de urso, que o fez sangrar até a morte."
+        "O herói acabou caindo em uma armadilha de urso, que o fez sangrar até a morte.",
+        noone,
+		function(){
+
+			room_goto(rm_fluxograma)
+		}
     )
 ];
 
@@ -383,10 +414,12 @@ Dialogo_Casa = [
             {
                 case CARD.ENTRAR:
                     global.cutscene_query = CUTSCENE.CUT_ENTRAR;
+					libera_node(global.node_names.p14)
                 break;
 
                 case CARD.BATER:
                     global.cutscene_query = CUTSCENE.CUT_BATER;
+					libera_node(global.node_names.p13)
                 break;
             }
 			
@@ -412,7 +445,12 @@ Dialogo_Abrir = [
     Texto(
         "Miguel",
         spr_text_box_idoso,
-        "E o transformou em um [c_yellow]SAPO[/c] para que nunca mais fizesse essas coisas feias."
+        "E o transformou em um [c_yellow]SAPO[/c] para que nunca mais fizesse essas coisas feias.",
+        noone,
+		function(){
+
+			room_goto(rm_fluxograma)
+		}
     )
 ]
 Dialogo_Bater = [
@@ -431,7 +469,12 @@ Dialogo_Bater = [
     Texto(
         "Miguel",
         spr_text_box_idoso,
-        "O Herói explicou ao mago a situação de sua amada, e o mago compreendeu totalmente, e estalou os dedos para que a princesa fosse teletransportada até sua casa."
+        "O Herói explicou ao mago a situação de sua amada, e o mago compreendeu totalmente, e estalou os dedos para que a princesa fosse teletransportada até sua casa.",
+        noone,
+		function(){
+
+			room_goto(rm_fluxograma)
+		}
     )
 ]
 //======================================================

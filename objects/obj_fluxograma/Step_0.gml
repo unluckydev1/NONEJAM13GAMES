@@ -7,6 +7,16 @@ if (keyboard_check_pressed(ord("T"))){
     libera_node(global.node_names.p2);
     libera_node(global.node_names.p3);
     libera_node(global.node_names.p4);
+    libera_node(global.node_names.p5);
+    libera_node(global.node_names.p6);
+    libera_node(global.node_names.p7);
+    libera_node(global.node_names.p8);
+    libera_node(global.node_names.p9);
+    libera_node(global.node_names.p10);
+    libera_node(global.node_names.p11);
+    libera_node(global.node_names.p12);
+    libera_node(global.node_names.p13);
+    libera_node(global.node_names.p14);
    // libera_node(global.node_names.p5);
    // libera_node(global.node_names.p6);
   //  libera_node(global.node_names.p10);
