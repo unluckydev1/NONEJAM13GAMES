@@ -7,7 +7,7 @@ function libera_node(_name){
     for (var i = 0; i < array_length(global.nodes); i++) {
     	if (global.nodes[i].id == _name and !array_contains(global.liberados, global.nodes[i])){
             array_push(global.liberados, global.nodes[i]);
-            
+          
             return i;
         }
     }
@@ -19,135 +19,104 @@ function libera_node(_name){
 
 
 global.node_names = {
-    p1  : "Floresta",
+    p1 : "Floresta",
+	//Torre
     p2  : "Torre",
-    p3  : "Bosque",
-    p4  : "Subir na Torre",
-    p5  : "",
-    p6  : "InsaneV6",
-    p7  : "InsaneV7",
-    p8  : "InsaneV8",
-    p9  : "InsaneV9",
-    p10 : "InsaneV10",
+	
+	p3 : "Porta",
+	p4 : "Mago Mal",
+	p5 : "Mago Bom",
+	p6 : "Mago Sapo"
+	/*
+	p21 : "Janela",
+	p210: "Escalada",
+	p211: "Gritar",
+	
+	//Bosque
+	p3: "Bosque",
+	p30: "Luz estranha",
+	p31: "Casa",
+	
+	p310: "Bater a porta",
+	p311: "Entrar sem bater",
+	
+	//Princesa
+	
+	p4: "Quarto da Princesa"*/
 }
 
 //Como nao da para pegar metade da tela, tenho que botar manualmente 
 var _rm_width = 640;
 var _rm_height = 360;
 
+
+var _db = 100
 var _names = global.node_names;
 
-global.node_settings = 
+global.node_settings =
 [
     {
         sprite : spr_node,
         cordx  : _rm_width/2,
         cordy  : _rm_height/2,
         title  : _names.p1,
-        conect : [_names.p2, _names.p4],
+        conect : [_names.p2],//_names.p3],
         desc   : "A nossa história começa em uma vasta floresta.",
         imagem : spr_node,
         final  : false
-    },
-    
+	},
+	
+	// torre 
     {
         sprite : spr_node,
-        cordx  : _rm_width/2+100,
-        cordy  : _rm_height/2,
+        cordx  : _rm_width/2 + _db,
+        cordy  : _rm_height/2 - _db,
         title  : _names.p2,
-        conect : [_names.p5],
-        desc   : "Bata555to do 5565 555555 bom dia didi a diab seloco de dia bomom dsia ceu",
-        imagem : spr_foto_placeholder,
-        final  : false
-    },
-    
+        conect : [_names.p3],//, _names.p21],
+        desc   : "O Principe vai ate à torre.",
+        imagem : spr_node,
+        final: false
+	},
     {
         sprite : spr_node,
-        cordx  : _rm_width/2+200,
-        cordy  : _rm_height/2,
+        cordx  : _rm_width/2 + _db,
+        cordy  : _rm_height/2 + _db,
         title  : _names.p3,
-        conect : [],
-        desc   : "Batato do ceu",
-        imagem : spr_foto_placeholder,
-        final  : false
-    },
-    
+        conect : [_names.p4, _names.p5, _names.p6],
+        desc   : "O principe usa a porta.",
+        imagem : spr_node,
+        final: false
+	},
     {
         sprite : spr_node,
-        cordx  : _rm_width/2+100,
-        cordy  : _rm_height/2-100,
+        cordx  : _rm_width/2 + _db + _db,
+        cordy  : _rm_height/2 + _db - _db,
         title  : _names.p4,
-        conect : [_names.p3],
-        desc   : "Batato do ceu",
-        imagem : spr_foto_placeholder,
-        final  : false
-    },
-    
+        conect : [],
+        desc   : "O principe morre pelo mago.",
+        imagem : spr_node,
+        final: false,
+	},
     {
         sprite : spr_node,
-        cordx  : _rm_width/2+200,
-        cordy  : _rm_height/2+100,
+        cordx  : _rm_width/2  + _db + _db,
+        cordy  : _rm_height/2  + _db,
         title  : _names.p5,
-        conect : [_names.p6],
-        desc   : "Batato do ceu",
-        imagem : spr_foto_placeholder,
-        final  : false
-    },
-    
+        conect : [],
+        desc   : "O principe sobe a torre com ajuda do mago.",
+        imagem : spr_node,
+        final: false
+	},
     {
         sprite : spr_node,
-        cordx  : _rm_width/2+300,
-        cordy  : _rm_height/2+100,
+        cordx  : _rm_width/2  + _db + _db,
+        cordy  : _rm_height/2  + _db  + _db,
         title  : _names.p6,
-        conect : [_names.p7, _names.p8],
-        desc   : "Batato do ceu",
-        imagem : spr_foto_placeholder,
-        final  : false
-    },
-    
-    {
-        sprite : spr_node,
-        cordx  : _rm_width/2+300,
-        cordy  : _rm_height/2,
-        title  : _names.p7,
         conect : [],
-        desc   : "Batato do ceu",
-        imagem : spr_foto_placeholder,
-        final  : false
-    },
-    
-    {
-        sprite : spr_node,
-        cordx  : _rm_width/2+400,
-        cordy  : _rm_height/2,
-        title  : _names.p8,
-        conect : [_names.p9],
-        desc   : "Batato do ceu",
-        imagem : spr_foto_placeholder,
-        final  : false
-    },
-    
-    {
-        sprite : spr_node,
-        cordx  : _rm_width/2+500,
-        cordy  : _rm_height/2,
-        title  : _names.p9,
-        conect : [_names.p10],
-        desc   : "Batato do ceu",
-        imagem : spr_foto_placeholder,
-        final  : false
-    },
-    
-    {
-        sprite : spr_node,
-        cordx  : _rm_width/2+600,
-        cordy  : _rm_height/2+100,
-        title  : _names.p10,
-        conect : [],
-        desc   : "Batato do ceu",
-        imagem : spr_foto_placeholder,
-        final  : true
-    },
+        desc   : "O principe é engolido pelo sapo.",
+        imagem : spr_node,
+        final: false
+	},
 ]
 
 

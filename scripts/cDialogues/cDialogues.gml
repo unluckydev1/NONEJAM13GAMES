@@ -35,7 +35,6 @@ Dialogo_Floresta = [
         "Era uma vez uma *...",
         [CARD.FLORESTA],
         function(){
-
             global.cutscene_query = CUTSCENE.CUT_FLORESTA;
             global.card = -1;
 
@@ -65,6 +64,8 @@ Dialogo_Floresta = [
             {
                 case CARD.TORRE:
                     global.cutscene_query = CUTSCENE.CUT_TORRE;
+					libera_node(global.node_names.p2)
+					show_message("oi")
                 break;
 
                 case CARD.ESCURIDAO:
@@ -115,10 +116,12 @@ Dialogo_Torre = [
             {
                 case CARD.PORTA:
                     global.cutscene_query = CUTSCENE.CUT_PORTA;
+					libera_node(global.node_names.p3)
                 break;
 
                 case CARD.JANELA:
                     global.cutscene_query = CUTSCENE.CUT_JANELA;
+					//libera_node(global.node_names.p21)
                 break;
             }
 
@@ -159,13 +162,19 @@ Dialogo_Porta = [
             {
                 case CARD.MALIGNO:
                     global.cutscene_query =	CUTSCENE.CUT_MGMAL;
+					libera_node(global.node_names.p4)
+					room_goto(rm_fluxograma)
                 break;
 
                 case CARD.BOM:
                     global.cutscene_query = CUTSCENE.CUT_MGBOM;
+					libera_node(global.node_names.p5)
+					room_goto(rm_fluxograma)
                 break;
 				case CARD.SAPO:
                     global.cutscene_query = CUTSCENE.CUT_MGSAPO;
+					libera_node(global.node_names.p6)
+					room_goto(rm_fluxograma)
                 break;
             }
 
@@ -247,7 +256,7 @@ Dialogo_Cair = [
         "O que de fato não daria certo, pois estamos em um conto medieval, e não em histórias de super heróis que não possuem fadiga.",
         noone,
 		function(){
-			libera_node(global.node_names.p2)
+
 			room_goto(rm_fluxograma)
 		}
     )
@@ -410,7 +419,217 @@ Dialogo_Bater = [
         "O Herói explicou ao mago a situação de sua amada, e o mago compreendeu totalmente, e estalou os dedos para que a princesa fosse teletransportada até sua casa."
     )
 ]
+//======================================================
+// CAPÍTULO 1 - PRINCESA
+//======================================================
 
+Dialogo_Princesa = [
+
+Texto(
+    "Miguel",
+    spr_text_box_idoso,
+    "E lá, no alto da torre, anseia a princesa... pensando se um dia conseguiria sair de dentro daquele minúsculo quarto."
+),
+
+Texto(
+    "Miguel",
+    spr_text_box_idoso,
+    "Todo esse pensamento a levantou um questionamento, sobre *",
+    [CARD.PRINCIPE, CARD.JANELA],
+    function(){
+
+        switch(global.card.id)
+        {
+            case CARD.PRINCIPE:
+                global.cutscene_query = CUTSCENE.CUT_PRINCIPE;
+            break;
+
+            case CARD.JANELA:
+                global.cutscene_query = CUTSCENE.CUT_PRINCESA_JANELA;
+            break;
+        }
+
+        global.card = -1;
+
+    }
+)
+
+];
+
+
+//======================================================
+// PRÍNCIPE CHEGOU
+//======================================================
+
+Dialogo_Principe = [
+
+Texto(
+    "Miguel",
+    spr_text_box_idoso,
+    "Se o príncipe chegou ao castelo..."
+),
+
+Texto(
+    "Miguel",
+    spr_text_box_idoso,
+    "A princesa decide *",
+    [CARD.ABRACAR, CARD.MATAR, CARD.PORTA],
+    function(){
+
+        switch(global.card.id)
+        {
+            case CARD.ABRACAR:
+                global.cutscene_query = CUTSCENE.CUT_PABRACAR;
+            break;
+
+            case CARD.MATAR:
+                global.cutscene_query = CUTSCENE.CUT_PMATAR;
+            break;
+
+            case CARD.PORTA:
+                global.cutscene_query = CUTSCENE.CUT_PPORTA;
+            break;
+        }
+
+        global.card = -1;
+
+    }
+)
+
+];
+
+
+//======================================================
+// PORTA
+//======================================================
+
+Dialogo_Princesa_Porta = [
+
+Texto(
+    "Miguel",
+    spr_text_box_idoso,
+    "Embora a porta sempre estivesse ali para ser aberta, a princesa nunca ousou abrir ela. Mas ao lado de seu salvador, se sentiu mais confiante."
+),
+
+Texto(
+    "Miguel",
+    spr_text_box_idoso,
+    "Logo o príncipe arrombou a porta, e não foi muito agradável o que encontraram..."
+),
+
+Texto(
+    "Miguel",
+    spr_text_box_idoso,
+    "Um grande * surgiu em sua frente.",
+    [CARD.REI, CARD.BOM, CARD.MALIGNO, CARD.SAPO],
+    function(){
+
+        switch(global.card.id)
+        {
+            case CARD.REI:
+                global.cutscene_query = CUTSCENE.CUT_PREI;
+            break;
+
+            case CARD.BOM:
+                global.cutscene_query = CUTSCENE.CUT_PMGBOM;
+            break;
+
+            case CARD.MALIGNO:
+                global.cutscene_query = CUTSCENE.CUT_PMGMAL;
+            break;
+
+            case CARD.SAPO:
+                global.cutscene_query = CUTSCENE.CUT_PSAPO;
+            break;
+        }
+
+        global.card = -1;
+
+    }
+)
+
+];
+
+
+//======================================================
+// FINAIS
+//======================================================
+
+Dialogo_Abracar = [
+
+Texto(
+    "Miguel",
+    spr_text_box_idoso,
+    "A princesa correu aos braços fortes de seu salvador, e da mesma forma na qual o príncipe veio a subir a torre, os dois desceram juntos."
+)
+
+];
+
+Dialogo_Matar = [
+
+Texto(
+    "Miguel",
+    spr_text_box_idoso,
+    "A princesa associou a imagem do príncipe a um caçador que queria seu coração, e o empurrou da torre."
+),
+
+Texto(
+    "Miguel",
+    spr_text_box_idoso,
+    "Pelo menos ela conseguiu descer da torre pela janela."
+)
+
+];
+
+Dialogo_Princesa_Janela = [
+
+Texto(
+    "Miguel",
+    spr_text_box_idoso,
+    "A princesa decidiu que não precisaria de um príncipe para salvá-la. Afinal, ela era muito responsável sobre suas próprias decisões."
+)
+
+];
+
+Dialogo_PRei = [
+
+Texto(
+    "Miguel",
+    spr_text_box_idoso,
+    "Era o próprio rei! Pai da princesa. Os dois voltaram para casa em segurança."
+)
+
+];
+
+Dialogo_PMgBom = [
+
+Texto(
+    "Miguel",
+    spr_text_box_idoso,
+    "Era um mago bom. Ele compreendeu a situação e teletransportou os dois de volta ao castelo."
+)
+
+];
+
+Dialogo_PMgMal = [
+
+Texto(
+    "Miguel",
+    spr_text_box_idoso,
+    "Era um mago maligno. Ao ver os dois tentando fugir, desintegrou ambos com sua magia."
+)
+
+];
+
+Dialogo_PSapo = [
+
+Texto(
+    "Miguel",
+    spr_text_box_idoso,
+    "O sapo abriu sua enorme boca e engoliu o príncipe. Enquanto isso, a princesa conseguiu fugir."
+)
+
+];
 // ===============================
 
 global.dialogues = [

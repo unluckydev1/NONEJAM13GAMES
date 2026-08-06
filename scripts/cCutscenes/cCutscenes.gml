@@ -239,6 +239,79 @@ Cutscene_Bater_Casa = [
     function(){new_dialogue(Dialogo_Bater)},
     function(){end_cutscene()}
 ];
+//======================================================
+// CAPÍTULO 1 - PRINCESA
+//======================================================
+
+// CAP1_PRINCESA
+Cutscene_Princesa = [
+function(){start_act()},
+function(){new_dialogue(Dialogo_Princesa)},
+function(){end_cutscene()}
+];
+
+// CAP1_PRINCIPE
+Cutscene_Principe = [
+function(){start_act()},
+function(){new_dialogue(Dialogo_Principe)},
+function(){end_cutscene()}
+];
+
+// CAP1_PRINCESA_JANELA
+Cutscene_Princesa_Janela = [
+function(){start_act()},
+function(){new_dialogue(Dialogo_Princesa_Janela)},
+function(){end_cutscene()}
+];
+
+// CAP1_PRINCESA_ABRACAR
+Cutscene_Princesa_Abracar = [
+function(){start_act()},
+function(){new_dialogue(Dialogo_Abracar)},
+function(){end_cutscene()}
+];
+
+// CAP1_PRINCESA_MATAR
+Cutscene_Princesa_Matar = [
+function(){start_act()},
+function(){new_dialogue(Dialogo_Matar)},
+function(){end_cutscene()}
+];
+
+// CAP1_PRINCESA_PORTA
+Cutscene_Princesa_Porta = [
+function(){start_act()},
+function(){new_dialogue(Dialogo_Princesa_Porta)},
+function(){end_cutscene()}
+];
+
+// CAP1_PRINCESA_REI
+Cutscene_Princesa_Rei = [
+function(){start_act()},
+function(){new_dialogue(Dialogo_PRei)},
+function(){end_cutscene()}
+];
+
+// CAP1_PRINCESA_MAGO_BOM
+Cutscene_Princesa_MgBom = [
+function(){start_act()},
+function(){new_dialogue(Dialogo_PMgBom)},
+function(){end_cutscene()}
+];
+
+// CAP1_PRINCESA_MAGO_MAL
+Cutscene_Princesa_MgMal = [
+function(){start_act()},
+function(){new_dialogue(Dialogo_PMgMal)},
+function(){end_cutscene()}
+];
+
+// CAP1_PRINCESA_SAPO
+Cutscene_Princesa_Sapo = [
+function(){start_act()},
+function(){new_dialogue(Dialogo_PSapo)},
+function(){end_cutscene()}
+];
 
 
 global.cutscenes = [
@@ -260,7 +333,21 @@ global.cutscenes = [
     Cutscene_Casa_Mago,
 
     Cutscene_Entrar_Casa,
-    Cutscene_Bater_Casa
+    Cutscene_Bater_Casa,
+	
+	Cutscene_Princesa,
+	
+	Cutscene_Principe,
+	Cutscene_Princesa_Janela,
+
+	Cutscene_Princesa_Abracar,
+	Cutscene_Princesa_Matar,
+	Cutscene_Princesa_Porta,
+
+	Cutscene_Princesa_Rei,
+	Cutscene_Princesa_MgBom,
+	Cutscene_Princesa_MgMal,
+	Cutscene_Princesa_Sapo
 ];
 
 enum CUTSCENE{
@@ -284,5 +371,19 @@ enum CUTSCENE{
 	CUT_CASA,
 	
 	CUT_ENTRAR,
-	CUT_BATER
+	CUT_BATER,
+	
+	CUT_PRINCESA,
+
+	CUT_PRINCIPE,
+	CUT_PRINCESA_JANELA,
+
+	CUT_PABRACAR,
+	CUT_PMATAR,
+	CUT_PPORTA,
+
+	CUT_PREI,
+	CUT_PMGBOM,
+	CUT_PMGMAL,
+	CUT_PSAPO
 }

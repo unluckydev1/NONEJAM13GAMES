@@ -3,7 +3,9 @@ global.card = noone
 enum CARD {
 	//Cena
 	FLORESTA,
-	// Personagem
+
+	// PERSONAGENS
+	PRINCIPE,
     REI,
     BARDO,
     SAPO,
@@ -17,7 +19,11 @@ enum CARD {
     CASA,
     JANELA,
 	PORTA,
-    CAMA,
+	QUADRO,
+	RELOGIO,
+	BOLA_CRISTAL,
+	LENCOL,
+	CAMA,
 
     // Verbos
     ESCALAR,
@@ -225,7 +231,48 @@ global.card_db[CARD.FLORESTA] = {
     unlocked: true
 };
 
+global.card_db[CARD.PRINCIPE] = {
+	id: CARD.PRINCIPE,
+	nome: "Príncipe",
+	color: c_blue,
+	tipo: TIPOS.PERSONAGEM,
+	unlocked: true
+};
+//======================================================
+// SUBSTANTIVOS
+//======================================================
 
+global.card_db[CARD.QUADRO] = {
+	id: CARD.QUADRO,
+	nome: "Quadro",
+	color: make_color_rgb(120,80,40),
+	tipo: TIPOS.SUBSTANTIVO,
+	unlocked: true
+};
+
+global.card_db[CARD.RELOGIO] = {
+	id: CARD.RELOGIO,
+	nome: "Relógio",
+	color: c_gray,
+	tipo: TIPOS.SUBSTANTIVO,
+	unlocked: true
+};
+
+global.card_db[CARD.BOLA_CRISTAL] = {
+	id: CARD.BOLA_CRISTAL,
+	nome: "Bola de Cristal",
+	color: c_aqua,
+	tipo: TIPOS.SUBSTANTIVO,
+	unlocked: true
+};
+
+global.card_db[CARD.LENCOL] = {
+	id: CARD.LENCOL,
+	nome: "Lençol",
+	color: c_white,
+	tipo: TIPOS.SUBSTANTIVO,
+	unlocked: true
+};
 
 function get_card(_id) {
     return global.card_db[_id];
