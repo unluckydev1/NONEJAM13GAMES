@@ -194,7 +194,7 @@ dialogo_Porta_MgSapo = [
     Texto(
         "Miguel",
         spr_text_box_idoso,
-        "Apareceu e engoliu o herói."
+        "Apareceu e engoliu o herói, não lembrava dessa parte..."
     )
 ]
 // ===============================
@@ -245,9 +245,29 @@ Dialogo_Cair = [
         "Miguel",
         spr_text_box_idoso,
         "O que de fato não daria certo, pois estamos em um conto medieval, e não em histórias de super heróis que não possuem fadiga.",
-        
+        noone,
+		function(){
+			libera_node(global.node_names.p2)
+			room_goto(rm_fluxograma)
+		}
     )
 ];
+
+Dialogo_Gritar = [
+
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Pela princesa. Então não pensou duas vezes, e gritou o nome de sua querida amada..."
+    ),
+
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Ela logo jogou uma corda que aparentava ser feita de seus lençóis, e não demorou muito para que o herói escalasse..."
+    )
+];
+
 
 
 
@@ -345,14 +365,51 @@ Dialogo_Casa = [
                     global.cutscene_query = CUTSCENE.CUT_BATER;
                 break;
             }
-
+			
             global.card = -1;
 
         }
     )
 ];
 
+Dialogo_Abrir = [
 
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Na casa, mas mal sabia ele que havia alguém morando ali..."
+    ),
+
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "O mago, dono da propriedade, apesar de ser [c_yellow]BOM[/c], abominou a falta de educação do herói... !"
+    ),
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "E o transformou em um [c_yellow]SAPO[/c] para que nunca mais fizesse essas coisas feias."
+    )
+]
+Dialogo_Bater = [
+
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Na porta, na esperança de receber alguma resposta, e não demorou muito para que conseguisse uma"
+    ),
+
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "um mago cogumelo o atendeu e perguntou oque lhe aflingia..."
+    ),
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "O Herói explicou ao mago a situação de sua amada, e o mago compreendeu totalmente, e estalou os dedos para que a princesa fosse teletransportada até sua casa."
+    )
+]
 
 // ===============================
 

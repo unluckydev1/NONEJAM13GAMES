@@ -116,6 +116,7 @@
     {"id":{"name":"oScreenShake","path":"objects/oScreenShake/oScreenShake.yy",},},
     {"id":{"name":"oTeste","path":"objects/oTeste/oTeste.yy",},},
     {"id":{"name":"OTeste2","path":"objects/OTeste2/OTeste2.yy",},},
+    {"id":{"name":"rm_fluxograma","path":"rooms/rm_fluxograma/rm_fluxograma.yy",},},
     {"id":{"name":"rm_teste","path":"rooms/rm_teste/rm_teste.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"__scribble_class_element","path":"scripts/__scribble_class_element/__scribble_class_element.yy",},},
@@ -317,6 +318,7 @@
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
     {"id":{"name":"spr_red","path":"sprites/spr_red/spr_red.yy",},},
     {"id":{"name":"spr_selec","path":"sprites/spr_selec/spr_selec.yy",},},
+    {"id":{"name":"spr_sqr","path":"sprites/spr_sqr/spr_sqr.yy",},},
     {"id":{"name":"spr_text_box_idoso","path":"sprites/spr_text_box_idoso/spr_text_box_idoso.yy",},},
     {"id":{"name":"spr_text_box","path":"sprites/spr_text_box/spr_text_box.yy",},},
     {"id":{"name":"Sprite22","path":"sprites/Sprite22/Sprite22.yy",},},
@@ -326,6 +328,7 @@
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_teste","path":"rooms/rm_teste/rm_teste.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"rm_fluxograma","path":"rooms/rm_fluxograma/rm_fluxograma.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

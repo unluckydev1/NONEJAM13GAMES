@@ -17,12 +17,13 @@ function libera_node(_name){
 
 #region Nodes Settings
 
+
 global.node_names = {
-    p1  : "InsaneV1",
-    p2  : "InsaneV2",
-    p3  : "InsaneV3",
-    p4  : "InsaneV4",
-    p5  : "InsaneV5",
+    p1  : "Floresta",
+    p2  : "Torre",
+    p3  : "Bosque",
+    p4  : "Subir na Torre",
+    p5  : "",
     p6  : "InsaneV6",
     p7  : "InsaneV7",
     p8  : "InsaneV8",
@@ -44,7 +45,7 @@ global.node_settings =
         cordy  : _rm_height/2,
         title  : _names.p1,
         conect : [_names.p2, _names.p4],
-        desc   : "Batatoo do mds ce ta é louco ceu",
+        desc   : "A nossa história começa em uma vasta floresta.",
         imagem : spr_node,
         final  : false
     },

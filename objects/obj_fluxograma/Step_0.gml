@@ -3,9 +3,6 @@ puxa_mouse();
 //show_debug_message(string("{0}   {1}", addx[0], addy[0]));
 
 if (keyboard_check_pressed(ord("T"))){
-    var _ind = acha_ind(global.node_names.p1);
-    
-    global.nodes[_ind].can = true;
     
     libera_node(global.node_names.p2);
     libera_node(global.node_names.p5);

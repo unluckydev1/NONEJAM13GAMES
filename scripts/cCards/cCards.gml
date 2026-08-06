@@ -224,6 +224,14 @@ global.card_db[CARD.FLORESTA] = {
     tipo: TIPOS.CENA,
     unlocked: true
 };
+
+
+
 function get_card(_id) {
     return global.card_db[_id];
 }
+
+function libera_card(_id){
+	get_card(_id).unlocked = true
+}
+

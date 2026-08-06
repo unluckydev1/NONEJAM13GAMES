@@ -132,7 +132,7 @@ for (var i = 0; i < array_length(global.node_settings); i++) {
 array_push(global.liberados, global.nodes[0]);
 
 global.nodes[0].alp = 1;
-//global.nodes[0].can = true;
+global.nodes[0].can = true;
 global.nodes[0].apear = true; //Faz parte da animacao
 
 #region Funcoes

@@ -204,7 +204,7 @@ Cutscene_Escalar_Torre = [
 // CAP1_GRITAR_PRINCESA
 Cutscene_Gritar_Princesa = [
     function(){start_act()},
-    function(){new_dialogue(Dialogo_Janela)},
+    function(){new_dialogue(Dialogo_Gritar)},
     function(){end_cutscene()}
 ];
 
@@ -228,7 +228,7 @@ Cutscene_Casa_Mago = [
 // CAP1_ENTRAR_CASA
 Cutscene_Entrar_Casa = [
     function(){start_act()},
-    function(){new_dialogue(Dialogo_Casa)},
+    function(){new_dialogue(Dialogo_Abrir)},
     function(){end_cutscene()}
 ];
 
@@ -236,7 +236,7 @@ Cutscene_Entrar_Casa = [
 // CAP1_BATER_CASA
 Cutscene_Bater_Casa = [
     function(){start_act()},
-    function(){new_dialogue(Dialogo_Casa)},
+    function(){new_dialogue(Dialogo_Bater)},
     function(){end_cutscene()}
 ];
 

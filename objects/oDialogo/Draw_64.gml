@@ -40,7 +40,8 @@ if (string_pos("*",text_to_draw)){
 }
 
 if assigned_portrait != noone{
-	draw_sprite_ext(text[page].portrait,0,0,guih + sqr(1 - alp)*55,.5,.55,0,c_white,alp)
+	var _ysin = sin(get_timer()/100005)/2
+	draw_sprite_ext(text[page].portrait,0,0,guih + sqr(1 - alp)*60 + _ysin,.5,.55,0,c_white,alp)
 }
 
 
@@ -121,6 +122,7 @@ if accept_key {
 				instance_destroy()
 				if instance_exists(oEncaixe) instance_destroy(oEncaixe) 
 				if instance_exists(oCarta) instance_destroy(oCarta) 
+				assigned_portrait = text[page].portrait
 			}
 		}else{
 			repeat(1){
@@ -136,6 +138,7 @@ if accept_key {
 				contains = false
 				if instance_exists(oEncaixe) instance_destroy(oEncaixe) 
 				if instance_exists(oCarta) instance_destroy(oCarta) 
+				assigned_portrait = text[page].portrait
 			}
 		}
 	}else{
@@ -153,7 +156,8 @@ draw_set_color(#423128)
 draw_set_halign(fa_left)
 scribble_font_set_default("fnt_1")
 ///Draw
-var _text = string(text_to_draw)
+scribble_anim_wave(1,.1,.1)
+var _text = "[wave]" + string(text_to_draw)
 scribble(_text).draw(textbox_x + borderx, textbox_y + bordery, typist);
 scribble(_text).blend(draw_get_colour(),draw_get_alpha())
 scribble(_text).wrap(900)
