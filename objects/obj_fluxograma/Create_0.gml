@@ -24,6 +24,8 @@ info_spr = spr_caixa;
 
 escala = 1;
 
+shake = [0, 0];
+
 upd_mousex = function() {return mouse_x / escala};
 upd_mousey = function() {return mouse_y / escala};
 
@@ -190,7 +192,7 @@ puxa_mouse = function()
         var _antes_my = upd_mousey()-addy[0]; 
         
         escala += _add*.1;
-        escala = clamp(escala, .5, 2);
+        escala = clamp(escala, 1, 2);
         
         var _depois_mx = upd_mousex()-addx[0];
         var _depois_my = upd_mousey()-addy[0]; 
@@ -508,13 +510,13 @@ desenha_nodes = function()
         _n.info.xsmax = max(_n.info.xsmax, 8);
         
         var _h = sprite_get_height(info_spr)*_n.info.ys;
-        var _marg = 25;
+        var _marg = 35;
         
         for (var j = 1; j >= 0; j--) {
             if (_n.info.alp[0] < .01) break;
             
             var _x = _rx;
-            var _y = _ry-(_h/2)-_marg+_n.info.addy;
+            var _y = _ry-(_h/2)-_marg+_n.info.addy+sin(current_time/2000)*2;
             
             draw_sprite_ext(info_spr, 0, _x, _y+1, _n.info.xs, _n.info.ys, 0, c_black, _n.info.alp[0]);
             if (_n.final){
@@ -548,17 +550,19 @@ desenha_nodes = function()
             //2 é a parte de baixo
             var _hpreta = _h-_offy-2;
             
-            //Margem da area preta
-            var _top = _y-_hpreta/2+8;
-            
-            var _yy = _top;
+                //Margem da area preta
+                var _top = _y-_hpreta/2-string_height(_n.id)/4;
+                
+                var _yy = _top;
             
             var _w = sprite_get_width(spr_caixa)*_n.info.xs;
             
             //show_message(string("{0}   {1}   {2}",  _n.info.xs, _n.info.xsmax, _n.info.xs/_n.info.xsmax))
             
             //Escreve o titulo
-            draw_text_transformed(_x, _y-(_h/2-string_height(_n.id)/1.8)*_divys, _n.id, _divxs, _divys, 0);
+            draw_text_transformed(_x, _yy, _n.id, _divxs, _divys, 0);
+            
+            _yy += string_height(_n.id)/4 + 6;
             
             draw_set_valign(-1);
             draw_text_ext_transformed(_x, _yy, _txt, _sep, _maxw, _divxs, _divys, 0);

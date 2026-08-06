@@ -1,4 +1,4 @@
-surface_resize(application_surface, 640, 360);
+//surface_resize(application_surface, 896, 504);
 
 global.nodes = [];
 global.liberados = [];

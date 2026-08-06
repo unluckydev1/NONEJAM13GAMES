@@ -4,9 +4,7 @@
   "eventList":[],
   "managed":true,
   "name":"obj_torch_red",
-  "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_uls_light","path":"objects/obj_uls_light/obj_uls_light.yy",},"propertyId":{"name":"light_animation","path":"objects/obj_uls_light/obj_uls_light.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"False",},
-  ],
+  "overriddenProperties":[],
   "parent":{
     "name":"Example",
     "path":"folders/objetos/Efeitos/Luz/Example.yy",
