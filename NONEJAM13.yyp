@@ -309,6 +309,7 @@
     {"id":{"name":"sPlayerR6","path":"sprites/sPlayerR6/sPlayerR6.yy",},},
     {"id":{"name":"sPlayerR7","path":"sprites/sPlayerR7/sPlayerR7.yy",},},
     {"id":{"name":"sPlayerR8","path":"sprites/sPlayerR8/sPlayerR8.yy",},},
+    {"id":{"name":"spr_cadeado","path":"sprites/spr_cadeado/spr_cadeado.yy",},},
     {"id":{"name":"spr_caixa","path":"sprites/spr_caixa/spr_caixa.yy",},},
     {"id":{"name":"spr_dialogo_box","path":"sprites/spr_dialogo_box/spr_dialogo_box.yy",},},
     {"id":{"name":"spr_foto_placeholder","path":"sprites/spr_foto_placeholder/spr_foto_placeholder.yy",},},
@@ -326,8 +327,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"rm_teste","path":"rooms/rm_teste/rm_teste.yy",},},
     {"roomId":{"name":"rm_fluxograma","path":"rooms/rm_fluxograma/rm_fluxograma.yy",},},
+    {"roomId":{"name":"rm_teste","path":"rooms/rm_teste/rm_teste.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "templateType":"game",
