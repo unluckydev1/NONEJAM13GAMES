@@ -33,6 +33,17 @@ function debug()
     show_message(global.liberados);
 }
 
+function libera_chave(){
+
+	oCutscene.has_key = true;
+
+}
+
+function libera_lencol(){
+
+	oCutscene.has_lencol = true;
+
+}
 // ===============================
 // CAPÍTULO 1 - A PRINCESA
 // ===============================
@@ -712,7 +723,7 @@ Dialogo_Quarto_Janela = [
         noone,
         function(){
             // CHECAGEM: Substitua 'global.tem_lencol' pela sua variável/lógica de fato
-            if (global.tem_lencol == true) {
+            if (oCutscene.has_lencol == true) {
                 global.cutscene_query = CUTSCENE.CUT_QUARTO_JANELA_LENCOL;
             } else {
                 global.cutscene_query = CUTSCENE.CUT_QUARTO_JANELA_MORTE;
@@ -802,7 +813,7 @@ Dialogo_Quarto_Porta_So = [
         noone,
         function(){
             // CHECAGEM: Substitua 'global.tem_chave' pela sua variável/lógica de fato
-            if (global.tem_chave == true) {
+            if (oCutscene.has_key == true) {
                 global.cutscene_query = CUTSCENE.CUT_QUARTO_PORTA_CHAVE;
             } else {
                 global.cutscene_query = CUTSCENE.CUT_QUARTO_PORTA_TRANCADA;

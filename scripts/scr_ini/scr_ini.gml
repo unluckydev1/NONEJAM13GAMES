@@ -105,24 +105,65 @@ global.node_names = {
 	
 	p13: "Bater a porta",
 	p14: "Entrar sem bater",
-	
-	//Princesa
-	
-	//p15: "Quarto da Princesa"
+
+	// ===== Quarto da Princesa (fluxograma separado) =====
+
+	// raízes
+	q1  : "Príncipe vivo",
+	q2  : "Príncipe não vivo",
+
+	// -------- COM PRÍNCIPE --------
+	q3  : "Quarto da Princesa (com príncipe)",
+	q4  : "Abraçar",
+	q5  : "Matar",
+	q6  : "Porta (com príncipe)",
+	q7  : "Mago (com príncipe)",
+	q8  : "Mago Maligno (com príncipe)",
+	q9  : "Mago Bom (com príncipe)",
+	q10 : "Rei (com príncipe)",
+	q11 : "Sapo (com príncipe)",
+
+	// -------- SEM PRÍNCIPE --------
+	q12 : "Quarto da Princesa (sem príncipe)",
+
+	q13 : "Princesa pegou o lençol",
+	q14 : "Janela do Quarto",   // <- antes era "Janela", colidia com p7
+	q15 : "Escapou pelo lençol",
+	q16 : "Morte na queda",
+
+	q17 : "Esperar",
+	q18 : "Cama",
+
+	q19 : "Princesa pegou a chave",
+	q20 : "Porta (sem príncipe)",
+	q21 : "Porta trancada",
+
+	q22 : "O que surgiu? (sem príncipe)",
+	q23 : "Mago (sem príncipe)",
+	q24 : "Mago Bom (sem príncipe)",
+	q25 : "Mago Maligno (sem príncipe)",
+	q26 : "Rei (sem príncipe)",
+	q27 : "Sapo (sem príncipe)"
 }
+
 //Como nao da para pegar metade da tela, tenho que botar manualmente 
-var _rm_width = 640;
+var _rm_width  = 640;
 var _rm_height = 360;
-var _db = 100
+var _db   = 100;
+var _tree_gap = 900;   // <- distância horizontal entre os dois fluxogramas
 var _names = global.node_names;
+
 global.node_settings =
 [
+    // ===================================================
+    // FLUXOGRAMA 1 - FLORESTA / TORRE / BOSQUE
+    // ===================================================
     {
         sprite : spr_node,
         cordx  : _rm_width/2,
         cordy  : _rm_height/2,
         title  : _names.p1,
-        conect : [_names.p2, _names.p10],   // <- corrigido: era _names.p7
+        conect : [_names.p2, _names.p10],
         desc   : "A nossa história começa em uma vasta floresta.",
         imagem : spr_node,
         final  : false
@@ -134,7 +175,7 @@ global.node_settings =
         cordx  : _rm_width/2 + _db*2,
         cordy  : _rm_height/2 - _db*2,
         title  : _names.p2,
-        conect : [_names.p3, _names.p7],   // <- corrigido: faltava _names.p7
+        conect : [_names.p3, _names.p7],
         desc   : "O Principe vai ate à torre.",
         imagem : spr_node,
         final: false
@@ -206,7 +247,7 @@ global.node_settings =
         cordx  : _rm_width/2 + _db*2 + _db*1.5 + _db,
         cordy  : _rm_height/2 - _db*2 + _db*1.5 + _db,
         title  : _names.p9,
-        conect : [],//_names.p15],
+        conect : [],
         desc   : "O principe grita, a princesa joga uma corda de lençóis.",
         imagem : spr_node,
         final: false
@@ -248,7 +289,7 @@ global.node_settings =
         cordx  : _rm_width/2 - _db*2 - _db*1.5 - _db,
         cordy  : _rm_height/2 + _db*2 - _db*1.5 - _db,
         title  : _names.p13,
-        conect : [],//_names.p15],
+        conect : [],
         desc   : "O principe bate na porta; o mago cogumelo teleporta a princesa até ele.",
         imagem : spr_node,
         final: false
@@ -264,6 +305,211 @@ global.node_settings =
         final: true
 	},
 
+    // ===================================================
+    // FLUXOGRAMA 2 - QUARTO DA PRINCESA (deslocado por _tree_gap)
+    // ===================================================
+
+    // ---- raízes ----
+    {
+        sprite : spr_node, cordx : 460 + _tree_gap, cordy : 60,
+        title  : _names.q1,
+        conect : [_names.q3],
+        desc   : "O príncipe conseguiu chegar até a torre.",
+        imagem : spr_node, final : false
+    },
+    {
+        sprite : spr_node, cordx : 460 + _tree_gap, cordy : 700,
+        title  : _names.q2,
+        conect : [_names.q12],
+        desc   : "O príncipe não sobreviveu para chegar até a torre.",
+        imagem : spr_node, final : false
+    },
+
+    // ---- com príncipe ----
+    {
+        sprite : spr_node, cordx : 460 + _tree_gap, cordy : 170,
+        title  : _names.q3,
+        conect : [_names.q4, _names.q5, _names.q6],
+        desc   : "A princesa se questiona sobre o que fazer com seu salvador.",
+        imagem : spr_node, final : false
+    },
+    {
+        sprite : spr_node, cordx : 300 + _tree_gap, cordy : 290,
+        title  : _names.q4,
+        conect : [],
+        desc   : "A princesa abraça o príncipe e descem juntos da torre.",
+        imagem : spr_node, final : true
+    },
+    {
+        sprite : spr_node, cordx : 460 + _tree_gap, cordy : 290,
+        title  : _names.q5,
+        conect : [],
+        desc   : "A princesa confunde o príncipe com um caçador e o empurra da torre.",
+        imagem : spr_node, final : true
+    },
+    {
+        sprite : spr_node, cordx : 620 + _tree_gap, cordy : 290,
+        title  : _names.q6,
+        conect : [_names.q7, _names.q10, _names.q11],
+        desc   : "Os dois arrombam a porta do quarto e encontram algo do outro lado.",
+        imagem : spr_node, final : false
+    },
+    {
+        sprite : spr_node, cordx : 480 + _tree_gap, cordy : 410,
+        title  : _names.q7,
+        conect : [_names.q8, _names.q9],
+        desc   : "Um mago surge na frente dos dois.",
+        imagem : spr_node, final : false
+    },
+    {
+        sprite : spr_node, cordx : 420 + _tree_gap, cordy : 530,
+        title  : _names.q8,
+        conect : [],
+        desc   : "O mago maligno desintegra os dois com um raio.",
+        imagem : spr_node, final : true
+    },
+    {
+        sprite : spr_node, cordx : 540 + _tree_gap, cordy : 530,
+        title  : _names.q9,
+        conect : [],
+        desc   : "O mago bom os teletransporta de volta ao castelo.",
+        imagem : spr_node, final : true
+    },
+    {
+        sprite : spr_node, cordx : 620 + _tree_gap, cordy : 410,
+        title  : _names.q10,
+        conect : [],
+        desc   : "O rei, pai da princesa, surge e os leva para casa em segurança.",
+        imagem : spr_node, final : true
+    },
+    {
+        sprite : spr_node, cordx : 760 + _tree_gap, cordy : 410,
+        title  : _names.q11,
+        conect : [],
+        desc   : "Um sapo surge e suga o príncipe para dentro do estômago.",
+        imagem : spr_node, final : true
+    },
+
+    // ---- sem príncipe ----
+    {
+        sprite : spr_node, cordx : 460 + _tree_gap, cordy : 810,
+        title  : _names.q12,
+        conect : [_names.q14, _names.q17, _names.q18, _names.q20],
+        desc   : "Sozinha na torre, a princesa se questiona sobre como sair dali.",
+        imagem : spr_node, final : false
+    },
+
+    // janela / lençol
+    {
+        sprite : spr_node, cordx : 140 + _tree_gap, cordy : 930,
+        title  : _names.q14,
+        conect : [_names.q16, _names.q13],
+        desc   : "A princesa decide pular pela janela.",
+        imagem : spr_node, final : false
+    },
+    {
+        sprite : spr_node, cordx : 80 + _tree_gap, cordy : 1050,
+        title  : _names.q16,
+        conect : [],
+        desc   : "Ela não pensou em como amorteceria a queda.",
+        imagem : spr_node, final : true
+    },
+    {
+        sprite : spr_node, cordx : 200 + _tree_gap, cordy : 1050,
+        title  : _names.q13,
+        conect : [_names.q15],
+        desc   : "A princesa já havia pego o lençol de sua cama antes.",
+        imagem : spr_node, final : false
+    },
+    {
+        sprite : spr_node, cordx : 200 + _tree_gap, cordy : 1170,
+        title  : _names.q15,
+        conect : [],
+        desc   : "Usando o lençol como corda, ela consegue descer em segurança.",
+        imagem : spr_node, final : true
+    },
+
+    // esperar / cama
+    {
+        sprite : spr_node, cordx : 320 + _tree_gap, cordy : 930,
+        title  : _names.q17,
+        conect : [],
+        desc   : "Ela espera pelo príncipe até virar apenas ossos.",
+        imagem : spr_node, final : true
+    },
+    {
+        sprite : spr_node, cordx : 500 + _tree_gap, cordy : 930,
+        title  : _names.q18,
+        conect : [],
+        desc   : "Ao procurar algo embaixo da cama, o bicho-papão a abocanha.",
+        imagem : spr_node, final : true
+    },
+
+    // porta / chave
+    {
+        sprite : spr_node, cordx : 680 + _tree_gap, cordy : 930,
+        title  : _names.q20,
+        conect : [_names.q21, _names.q19],
+        desc   : "A princesa se aproxima da porta trancada de seu quarto.",
+        imagem : spr_node, final : false
+    },
+    {
+        sprite : spr_node, cordx : 610 + _tree_gap, cordy : 1050,
+        title  : _names.q21,
+        conect : [],
+        desc   : "A porta está trancada; frustrada, ela desiste de tentar qualquer coisa.",
+        imagem : spr_node, final : true
+    },
+    {
+        sprite : spr_node, cordx : 750 + _tree_gap, cordy : 1050,
+        title  : _names.q19,
+        conect : [_names.q22],
+        desc   : "A princesa já havia conseguido a chave da porta antes.",
+        imagem : spr_node, final : false
+    },
+    {
+        sprite : spr_node, cordx : 750 + _tree_gap, cordy : 1170,
+        title  : _names.q22,
+        conect : [_names.q23, _names.q26, _names.q27],
+        desc   : "Ela destranca e abre a porta, encontrando algo do outro lado.",
+        imagem : spr_node, final : false
+    },
+    {
+        sprite : spr_node, cordx : 610 + _tree_gap, cordy : 1290,
+        title  : _names.q23,
+        conect : [_names.q24, _names.q25],
+        desc   : "Um mago surge na sua frente.",
+        imagem : spr_node, final : false
+    },
+    {
+        sprite : spr_node, cordx : 550 + _tree_gap, cordy : 1410,
+        title  : _names.q24,
+        conect : [],
+        desc   : "O mago bom a resgata, resmungando da incompetência do príncipe.",
+        imagem : spr_node, final : true
+    },
+    {
+        sprite : spr_node, cordx : 670 + _tree_gap, cordy : 1410,
+        title  : _names.q25,
+        conect : [],
+        desc   : "O mago maligno a transforma em pó com seus poderes de raio.",
+        imagem : spr_node, final : true
+    },
+    {
+        sprite : spr_node, cordx : 750 + _tree_gap, cordy : 1290,
+        title  : _names.q26,
+        conect : [],
+        desc   : "O próprio rei surge e a leva para casa em segurança.",
+        imagem : spr_node, final : true
+    },
+    {
+        sprite : spr_node, cordx : 890 + _tree_gap, cordy : 1290,
+        title  : _names.q27,
+        conect : [],
+        desc   : "Um sapo fofo surge, mas acaba engolindo a princesa.",
+        imagem : spr_node, final : true
+    },
+]
 	// final feliz (convergência de Gritar e Bater a porta)
 	//{
     //    sprite : spr_node,
@@ -275,7 +521,6 @@ global.node_settings =
     //    imagem : spr_node,
     //    final: true
 	//},
-]
 for (var i = 0; i < array_length(global.node_settings); i++) {
     var _ns = global.node_settings[i];
     
@@ -283,5 +528,5 @@ for (var i = 0; i < array_length(global.node_settings); i++) {
 }
 
 
-#endregion
+
 
