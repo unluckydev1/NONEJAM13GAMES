@@ -239,80 +239,175 @@ Cutscene_Bater_Casa = [
     function(){new_dialogue(Dialogo_Bater)},
     function(){end_cutscene()}
 ];
-//======================================================
-// CAPÍTULO 1 - PRINCESA
-//======================================================
+// ===============================
+// CUTSCENES: QUARTO DA PRINCESA (COM PRÍNCIPE)
+// ===============================
 
-// CAP1_PRINCESA
-Cutscene_Princesa = [
-function(){start_act()},
-function(){new_dialogue(Dialogo_Princesa)},
-function(){end_cutscene()}
+// QUARTO_PRINCESA_COMPRIN
+Cutscene_Quarto_Princesa_ComPrincipe = [
+    function(){start_act()},
+    function(){new_dialogue(Dialogo_Quarto_Princesa_ComPrincipe)},
+    function(){end_cutscene()}
 ];
 
-// CAP1_PRINCIPE
-Cutscene_Principe = [
-function(){start_act()},
-function(){new_dialogue(Dialogo_Principe)},
-function(){end_cutscene()}
+// QUARTO_ABRACAR
+Cutscene_Quarto_Abracar = [
+    function(){start_act()},
+    function(){new_dialogue(Dialogo_Quarto_Abracar)},
+    function(){end_cutscene()}
 ];
 
-// CAP1_PRINCESA_JANELA
-Cutscene_Princesa_Janela = [
-function(){start_act()},
-function(){new_dialogue(Dialogo_Princesa_Janela)},
-function(){end_cutscene()}
+// QUARTO_MATAR
+Cutscene_Quarto_Matar = [
+    function(){start_act()},
+    function(){new_dialogue(Dialogo_Quarto_Matar)},
+    function(){end_cutscene()}
 ];
 
-// CAP1_PRINCESA_ABRACAR
-Cutscene_Princesa_Abracar = [
-function(){start_act()},
-function(){new_dialogue(Dialogo_Abracar)},
-function(){end_cutscene()}
+// QUARTO_PORTA_PR
+Cutscene_Quarto_Porta_Pr = [
+    function(){start_act()},
+    function(){new_dialogue(Dialogo_Quarto_Porta_Pr)},
+    function(){end_cutscene()}
 ];
 
-// CAP1_PRINCESA_MATAR
-Cutscene_Princesa_Matar = [
-function(){start_act()},
-function(){new_dialogue(Dialogo_Matar)},
-function(){end_cutscene()}
+// QUARTO_MAGO_PR
+Cutscene_Quarto_Mago_Pr = [
+    function(){start_act()},
+    function(){new_dialogue(Dialogo_Quarto_Mago_Pr)},
+    function(){end_cutscene()}
 ];
 
-// CAP1_PRINCESA_PORTA
-Cutscene_Princesa_Porta = [
-function(){start_act()},
-function(){new_dialogue(Dialogo_Princesa_Porta)},
-function(){end_cutscene()}
+// QUARTO_MGMAL_PR
+Cutscene_Quarto_MgMal_Pr = [
+    function(){start_act()},
+    function(){new_dialogue(Dialogo_Quarto_MgMal_Pr)},
+    function(){end_cutscene()}
 ];
 
-// CAP1_PRINCESA_REI
-Cutscene_Princesa_Rei = [
-function(){start_act()},
-function(){new_dialogue(Dialogo_PRei)},
-function(){end_cutscene()}
+// QUARTO_MGBOM_PR
+Cutscene_Quarto_MgBom_Pr = [
+    function(){start_act()},
+    function(){new_dialogue(Dialogo_Quarto_MgBom_Pr)},
+    function(){end_cutscene()}
 ];
 
-// CAP1_PRINCESA_MAGO_BOM
-Cutscene_Princesa_MgBom = [
-function(){start_act()},
-function(){new_dialogue(Dialogo_PMgBom)},
-function(){end_cutscene()}
+// QUARTO_REI_PR
+Cutscene_Quarto_Rei_Pr = [
+    function(){start_act()},
+    function(){new_dialogue(Dialogo_Quarto_Rei_Pr)},
+    function(){end_cutscene()}
 ];
 
-// CAP1_PRINCESA_MAGO_MAL
-Cutscene_Princesa_MgMal = [
-function(){start_act()},
-function(){new_dialogue(Dialogo_PMgMal)},
-function(){end_cutscene()}
+// QUARTO_SAPO_PR
+Cutscene_Quarto_Sapo_Pr = [
+    function(){start_act()},
+    function(){new_dialogue(Dialogo_Quarto_Sapo_Pr)},
+    function(){end_cutscene()}
 ];
 
-// CAP1_PRINCESA_SAPO
-Cutscene_Princesa_Sapo = [
-function(){start_act()},
-function(){new_dialogue(Dialogo_PSapo)},
-function(){end_cutscene()}
+
+// ===============================
+// CUTSCENES: QUARTO DA PRINCESA (SEM PRÍNCIPE)
+// ===============================
+
+// QUARTO_PRINCESA_SEMPRIN
+Cutscene_Quarto_Princesa_SemPrincipe = [
+    function(){start_act()},
+    function(){new_dialogue(Dialogo_Quarto_Princesa_SemPrincipe)},
+    function(){end_cutscene()}
 ];
 
+// QUARTO_JANELA
+Cutscene_Quarto_Janela = [
+    function(){start_act()},
+    function(){new_dialogue(Dialogo_Quarto_Janela)},
+    function(){end_cutscene()}
+];
+
+// QUARTO_JANELA_MORTE
+Cutscene_Quarto_Janela_Morte = [
+    function(){start_act()},
+    function(){new_dialogue(Dialogo_Quarto_Janela_Morte)},
+    function(){end_cutscene()}
+];
+
+// QUARTO_JANELA_LENCOL
+Cutscene_Quarto_Janela_Lencol = [
+    function(){start_act()},
+    function(){new_dialogue(Dialogo_Quarto_Janela_Lencol)},
+    function(){end_cutscene()}
+];
+
+// QUARTO_ESPERAR
+Cutscene_Quarto_Esperar = [
+    function(){start_act()},
+    function(){new_dialogue(Dialogo_Quarto_Esperar)},
+    function(){end_cutscene()}
+];
+
+// QUARTO_CAMA
+Cutscene_Quarto_Cama = [
+    function(){start_act()},
+    function(){new_dialogue(Dialogo_Quarto_Cama)},
+    function(){end_cutscene()}
+];
+
+// QUARTO_PORTA_SO
+Cutscene_Quarto_Porta_So = [
+    function(){start_act()},
+    function(){new_dialogue(Dialogo_Quarto_Porta_So)},
+    function(){end_cutscene()}
+];
+
+// QUARTO_PORTA_TRANCADA
+Cutscene_Quarto_Porta_Trancada = [
+    function(){start_act()},
+    function(){new_dialogue(Dialogo_Quarto_Porta_Trancada)},
+    function(){end_cutscene()}
+];
+
+// QUARTO_PORTA_CHAVE
+Cutscene_Quarto_Porta_Chave = [
+    function(){start_act()},
+    function(){new_dialogue(Dialogo_Quarto_Porta_Chave)},
+    function(){end_cutscene()}
+];
+
+// QUARTO_MAGO_SO
+Cutscene_Quarto_Mago_So = [
+    function(){start_act()},
+    function(){new_dialogue(Dialogo_Quarto_Mago_So)},
+    function(){end_cutscene()}
+];
+
+// QUARTO_MGBOM_SO
+Cutscene_Quarto_MgBom_So = [
+    function(){start_act()},
+    function(){new_dialogue(Dialogo_Quarto_MgBom_So)},
+    function(){end_cutscene()}
+];
+
+// QUARTO_MGMAL_SO
+Cutscene_Quarto_MgMal_So = [
+    function(){start_act()},
+    function(){new_dialogue(Dialogo_Quarto_MgMal_So)},
+    function(){end_cutscene()}
+];
+
+// QUARTO_REI_SO
+Cutscene_Quarto_Rei_So = [
+    function(){start_act()},
+    function(){new_dialogue(Dialogo_Quarto_Rei_So)},
+    function(){end_cutscene()}
+];
+
+// QUARTO_SAPO_SO
+Cutscene_Quarto_Sapo_So = [
+    function(){start_act()},
+    function(){new_dialogue(Dialogo_Quarto_Sapo_So)},
+    function(){end_cutscene()}
+];
 
 global.cutscenes = [
 
@@ -334,20 +429,34 @@ global.cutscenes = [
 
     Cutscene_Entrar_Casa,
     Cutscene_Bater_Casa,
+	// --- QUARTO DA PRINCESA (COM PRÍNCIPE) ---
+    Cutscene_Quarto_Princesa_ComPrincipe,
+    Cutscene_Quarto_Abracar,
+    Cutscene_Quarto_Matar,
+    Cutscene_Quarto_Porta_Pr,
+    Cutscene_Quarto_Mago_Pr,
+    Cutscene_Quarto_MgMal_Pr,
+    Cutscene_Quarto_MgBom_Pr,
+    Cutscene_Quarto_Rei_Pr,
+    Cutscene_Quarto_Sapo_Pr,
+    
+    // --- QUARTO DA PRINCESA (SEM PRÍNCIPE) ---
+    Cutscene_Quarto_Princesa_SemPrincipe,
+    Cutscene_Quarto_Janela,
+    Cutscene_Quarto_Janela_Morte,
+    Cutscene_Quarto_Janela_Lencol,
+    Cutscene_Quarto_Esperar,
+    Cutscene_Quarto_Cama,
+    Cutscene_Quarto_Porta_So,
+    Cutscene_Quarto_Porta_Trancada,
+    Cutscene_Quarto_Porta_Chave,
+    Cutscene_Quarto_Mago_So,
+    Cutscene_Quarto_MgBom_So,
+    Cutscene_Quarto_MgMal_So,
+    Cutscene_Quarto_Rei_So,
+    Cutscene_Quarto_Sapo_So
 	
-	Cutscene_Princesa,
 	
-	Cutscene_Principe,
-	Cutscene_Princesa_Janela,
-
-	Cutscene_Princesa_Abracar,
-	Cutscene_Princesa_Matar,
-	Cutscene_Princesa_Porta,
-
-	Cutscene_Princesa_Rei,
-	Cutscene_Princesa_MgBom,
-	Cutscene_Princesa_MgMal,
-	Cutscene_Princesa_Sapo
 ];
 
 enum CUTSCENE{
@@ -373,17 +482,29 @@ enum CUTSCENE{
 	CUT_ENTRAR,
 	CUT_BATER,
 	
-	CUT_PRINCESA,
-
-	CUT_PRINCIPE,
-	CUT_PRINCESA_JANELA,
-
-	CUT_PABRACAR,
-	CUT_PMATAR,
-	CUT_PPORTA,
-
-	CUT_PREI,
-	CUT_PMGBOM,
-	CUT_PMGMAL,
-	CUT_PSAPO
+	CUT_QUARTO_PRINCESA_COMPRIN,
+    CUT_QUARTO_ABRACAR,
+    CUT_QUARTO_MATAR,
+    CUT_QUARTO_PORTA_PR,
+    CUT_QUARTO_MAGO_PR,
+    CUT_QUARTO_MGMAL_PR,
+    CUT_QUARTO_MGBOM_PR,
+    CUT_QUARTO_REI_PR,
+    CUT_QUARTO_SAPO_PR,
+    
+    // Rotas SEM Príncipe
+    CUT_QUARTO_PRINCESA_SEMPRIN,
+    CUT_QUARTO_JANELA,
+    CUT_QUARTO_JANELA_MORTE,
+    CUT_QUARTO_JANELA_LENCOL,
+    CUT_QUARTO_ESPERAR,
+    CUT_QUARTO_CAMA,
+    CUT_QUARTO_PORTA_SO,
+    CUT_QUARTO_PORTA_TRANCADA,
+    CUT_QUARTO_PORTA_CHAVE,
+    CUT_QUARTO_MAGO_SO,
+    CUT_QUARTO_MGBOM_SO,
+    CUT_QUARTO_MGMAL_SO,
+    CUT_QUARTO_REI_SO,
+    CUT_QUARTO_SAPO_SO
 }

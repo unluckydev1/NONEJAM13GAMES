@@ -24,6 +24,7 @@ enum CARD {
 	BOLA_CRISTAL,
 	LENCOL,
 	CAMA,
+	CHAVE,
 
     // Verbos
     ESCALAR,
@@ -273,7 +274,14 @@ global.card_db[CARD.LENCOL] = {
 	tipo: TIPOS.SUBSTANTIVO,
 	unlocked: true
 };
-
+// Adicione a chave ao banco de dados global de cartas
+global.card_db[CARD.CHAVE] = {
+    id: CARD.CHAVE,
+    nome: "Chave",
+    color: c_yellow,
+    tipo: TIPOS.SUBSTANTIVO,
+    unlocked: true
+};
 function get_card(_id) {
     return global.card_db[_id];
 }

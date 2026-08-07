@@ -210,7 +210,8 @@ dialogo_Porta_MgMal = [
         noone,
 		function(){
 
-			room_goto(rm_fluxograma)
+			//room_goto(rm_fluxograma)
+			global.cutscene_query = CUTSCENE.CUT_QUARTO_PRINCESA_SEMPRIN
 		}
     )
 ]
@@ -221,8 +222,8 @@ dialogo_Porta_MgBom = [
         "Apareceu e ajudou ele a subir a torre.",
         noone,
 		function(){
-
-			room_goto(rm_fluxograma)
+			global.cutscene_query = CUTSCENE.CUT_QUARTO_PRINCESA_COMPRIN
+			//room_goto(rm_fluxograma)
 		}
     )
 ]
@@ -233,8 +234,8 @@ dialogo_Porta_MgSapo = [
         "Apareceu e engoliu o herói, não lembrava dessa parte...",
         noone,
 		function(){
-
-			room_goto(rm_fluxograma)
+			global.cutscene_query = CUTSCENE.CUT_QUARTO_PRINCESA_SEMPRIN
+			//room_goto(rm_fluxograma)
 		}
     )
 ]
@@ -290,8 +291,8 @@ Dialogo_Cair = [
         "O que de fato não daria certo, pois estamos em um conto medieval, e não em histórias de super heróis que não possuem fadiga.",
         noone,
 		function(){
-
-			room_goto(rm_fluxograma)
+			global.cutscene_query = CUTSCENE.CUT_QUARTO_PRINCESA_SEMPRIN
+			//room_goto(rm_fluxograma)
 		}
     )
 ];
@@ -310,8 +311,8 @@ Dialogo_Gritar = [
         "Ela logo jogou uma corda que aparentava ser feita de seus lençóis, e não demorou muito para que o herói escalasse...",
         noone,
 		function(){
-
-			room_goto(rm_fluxograma)
+			global.cutscene_query = CUTSCENE.CUT_QUARTO_PRINCESA_COMPRIN
+			//room_goto(rm_fluxograma)
 		}
     )
 ];
@@ -383,8 +384,8 @@ Dialogo_Luz = [
         "O herói acabou caindo em uma armadilha de urso, que o fez sangrar até a morte.",
         noone,
 		function(){
-
-			room_goto(rm_fluxograma)
+			global.cutscene_query = CUTSCENE.CUT_QUARTO_PRINCESA_SEMPRIN
+			//room_goto(rm_fluxograma)
 		}
     )
 ];
@@ -448,8 +449,8 @@ Dialogo_Abrir = [
         "E o transformou em um [c_yellow]SAPO[/c] para que nunca mais fizesse essas coisas feias.",
         noone,
 		function(){
-
-			room_goto(rm_fluxograma)
+			global.cutscene_query = CUTSCENE.CUT_QUARTO_PRINCESA_SEMPRIN
+			//room_goto(rm_fluxograma)
 		}
     )
 ]
@@ -477,219 +478,460 @@ Dialogo_Bater = [
 		}
     )
 ]
-//======================================================
-// CAPÍTULO 1 - PRINCESA
-//======================================================
 
-Dialogo_Princesa = [
-
-Texto(
-    "Miguel",
-    spr_text_box_idoso,
-    "E lá, no alto da torre, anseia a princesa... pensando se um dia conseguiria sair de dentro daquele minúsculo quarto."
-),
-
-Texto(
-    "Miguel",
-    spr_text_box_idoso,
-    "Todo esse pensamento a levantou um questionamento, sobre *",
-    [CARD.PRINCIPE, CARD.JANELA],
-    function(){
-
-        switch(global.card.id)
-        {
-            case CARD.PRINCIPE:
-                global.cutscene_query = CUTSCENE.CUT_PRINCIPE;
-            break;
-
-            case CARD.JANELA:
-                global.cutscene_query = CUTSCENE.CUT_PRINCESA_JANELA;
-            break;
-        }
-
-        global.card = -1;
-
-    }
-)
-
-];
-
-
-//======================================================
-// PRÍNCIPE CHEGOU
-//======================================================
-
-Dialogo_Principe = [
-
-Texto(
-    "Miguel",
-    spr_text_box_idoso,
-    "Se o príncipe chegou ao castelo..."
-),
-
-Texto(
-    "Miguel",
-    spr_text_box_idoso,
-    "A princesa decide *",
-    [CARD.ABRACAR, CARD.MATAR, CARD.PORTA],
-    function(){
-
-        switch(global.card.id)
-        {
-            case CARD.ABRACAR:
-                global.cutscene_query = CUTSCENE.CUT_PABRACAR;
-            break;
-
-            case CARD.MATAR:
-                global.cutscene_query = CUTSCENE.CUT_PMATAR;
-            break;
-
-            case CARD.PORTA:
-                global.cutscene_query = CUTSCENE.CUT_PPORTA;
-            break;
-        }
-
-        global.card = -1;
-
-    }
-)
-
-];
-
-
-//======================================================
-// PORTA
-//======================================================
-
-Dialogo_Princesa_Porta = [
-
-Texto(
-    "Miguel",
-    spr_text_box_idoso,
-    "Embora a porta sempre estivesse ali para ser aberta, a princesa nunca ousou abrir ela. Mas ao lado de seu salvador, se sentiu mais confiante."
-),
-
-Texto(
-    "Miguel",
-    spr_text_box_idoso,
-    "Logo o príncipe arrombou a porta, e não foi muito agradável o que encontraram..."
-),
-
-Texto(
-    "Miguel",
-    spr_text_box_idoso,
-    "Um grande * surgiu em sua frente.",
-    [CARD.REI, CARD.BOM, CARD.MALIGNO, CARD.SAPO],
-    function(){
-
-        switch(global.card.id)
-        {
-            case CARD.REI:
-                global.cutscene_query = CUTSCENE.CUT_PREI;
-            break;
-
-            case CARD.BOM:
-                global.cutscene_query = CUTSCENE.CUT_PMGBOM;
-            break;
-
-            case CARD.MALIGNO:
-                global.cutscene_query = CUTSCENE.CUT_PMGMAL;
-            break;
-
-            case CARD.SAPO:
-                global.cutscene_query = CUTSCENE.CUT_PSAPO;
-            break;
-        }
-
-        global.card = -1;
-
-    }
-)
-
-];
-
-
-//======================================================
-// FINAIS
-//======================================================
-
-Dialogo_Abracar = [
-
-Texto(
-    "Miguel",
-    spr_text_box_idoso,
-    "A princesa correu aos braços fortes de seu salvador, e da mesma forma na qual o príncipe veio a subir a torre, os dois desceram juntos."
-)
-
-];
-
-Dialogo_Matar = [
-
-Texto(
-    "Miguel",
-    spr_text_box_idoso,
-    "A princesa associou a imagem do príncipe a um caçador que queria seu coração, e o empurrou da torre."
-),
-
-Texto(
-    "Miguel",
-    spr_text_box_idoso,
-    "Pelo menos ela conseguiu descer da torre pela janela."
-)
-
-];
-
-Dialogo_Princesa_Janela = [
-
-Texto(
-    "Miguel",
-    spr_text_box_idoso,
-    "A princesa decidiu que não precisaria de um príncipe para salvá-la. Afinal, ela era muito responsável sobre suas próprias decisões."
-)
-
-];
-
-Dialogo_PRei = [
-
-Texto(
-    "Miguel",
-    spr_text_box_idoso,
-    "Era o próprio rei! Pai da princesa. Os dois voltaram para casa em segurança."
-)
-
-];
-
-Dialogo_PMgBom = [
-
-Texto(
-    "Miguel",
-    spr_text_box_idoso,
-    "Era um mago bom. Ele compreendeu a situação e teletransportou os dois de volta ao castelo."
-)
-
-];
-
-Dialogo_PMgMal = [
-
-Texto(
-    "Miguel",
-    spr_text_box_idoso,
-    "Era um mago maligno. Ao ver os dois tentando fugir, desintegrou ambos com sua magia."
-)
-
-];
-
-Dialogo_PSapo = [
-
-Texto(
-    "Miguel",
-    spr_text_box_idoso,
-    "O sapo abriu sua enorme boca e engoliu o príncipe. Enquanto isso, a princesa conseguiu fugir."
-)
-
-];
+// ===============================
+// CAPÍTULO 12.2 - QUARTO DA PRINCESA
 // ===============================
 
+// ---------------------------------------------------------
+// SE O PRÍNCIPE CHEGOU AO CASTELO
+// ---------------------------------------------------------
+
+Dialogo_Quarto_Princesa_ComPrincipe = [
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "E lá, no alto da torre, anseia a princesa..."
+    ),
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "pensando se um dia conseguiria sair de dentro daquele minúsculo quarto."
+    ),
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Todo esse pensamento a levantou um questionamento, sobre *...",
+        [CARD.ABRACAR, CARD.MATAR, CARD.PORTA],
+        function(){
+            switch(global.card.id)
+            {
+                case CARD.ABRACAR:
+                    global.cutscene_query = CUTSCENE.CUT_QUARTO_ABRACAR;
+                    // libera_node(...)
+                break;
+                case CARD.MATAR:
+                    global.cutscene_query = CUTSCENE.CUT_QUARTO_MATAR;
+                    // libera_node(...)
+                break;
+                case CARD.PORTA:
+                    global.cutscene_query = CUTSCENE.CUT_QUARTO_PORTA_PR;
+                    // libera_node(...)
+                break;
+            }
+            global.card = -1;
+        }
+    )
+];
+
+Dialogo_Quarto_Abracar = [
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "O príncipe, já que ansiava tanto pela sua chegada... Então correu aos braços fortes de seu salvador..."
+    ),
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "E da mesma forma na qual o príncipe veio a subir a torre, eles a desceram.",
+        noone,
+        function(){
+            room_goto(rm_fluxograma);
+        }
+    )
+];
+
+Dialogo_Quarto_Matar = [
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "O príncipe. E mesmo embora não tivesse uma madrasta má, nem sido envenenada por uma maçã, e muito menos estivesse em uma casa com sete anões..."
+    ),
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "a princesa associou a imagem do nosso príncipe a um caçador de recompensa que queria seu coração, e o empurrou da torre."
+    ),
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Pelo menos ela conseguiu descer da torre pela janela.",
+        noone,
+        function(){
+            room_goto(rm_fluxograma);
+        }
+    )
+];
+
+Dialogo_Quarto_Porta_Pr = [
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "A porta de seu quarto. Embora a porta sempre estivesse ali para ser aberta, a princesa nunca ousou abrir ela..."
+    ),
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Mas ao lado de seu salvador, se sentiu mais confiante. Logo o príncipe arrombou a porta, e não foi muito agradável o que encontraram do outro lado...."
+    ),
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Um grande *",
+        [CARD.MAGO, CARD.REI, CARD.SAPO],
+        function(){
+            switch(global.card.id)
+            {
+                case CARD.MAGO: global.cutscene_query = CUTSCENE.CUT_QUARTO_MAGO_PR; break;
+                case CARD.REI: global.cutscene_query = CUTSCENE.CUT_QUARTO_REI_PR; break;
+                case CARD.SAPO: global.cutscene_query = CUTSCENE.CUT_QUARTO_SAPO_PR; break;
+            }
+            global.card = -1;
+        }
+    )
+];
+
+Dialogo_Quarto_Mago_Pr = [
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Mago surgiu em sua frente, mas mal sabiam eles que..."
+    ),
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Era o mago *",
+        [CARD.MALIGNO, CARD.BOM],
+        function(){
+            switch(global.card.id)
+            {
+                case CARD.MALIGNO: global.cutscene_query = CUTSCENE.CUT_QUARTO_MGMAL_PR; break;
+                case CARD.BOM: global.cutscene_query = CUTSCENE.CUT_QUARTO_MGBOM_PR; break;
+            }
+            global.card = -1;
+        }
+    )
+];
+
+Dialogo_Quarto_MgMal_Pr = [
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Maligno. Então, ao ver os dois tentando escapar da torre que ele deixou a princesa confinada, não pensou duas vezes em desintegrar os dois com sua magia de raio.",
+        noone,
+        function(){
+            room_goto(rm_fluxograma);
+        }
+    )
+];
+
+Dialogo_Quarto_MgBom_Pr = [
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Bom. Então o mago ajudou eles, teletransportando-os de volta ao castelo.",
+        noone,
+        function(){
+            room_goto(rm_fluxograma);
+        }
+    )
+];
+
+Dialogo_Quarto_Rei_Pr = [
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Rei surgiu em sua frente! eles ficaram surpresos, até porque não era de se esperar que o próprio Pai da princesa viesse salva-la..."
+    ),
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "De qualquer forma, eles voltaram para a casa em segurança.",
+        noone,
+        function(){
+            room_goto(rm_fluxograma);
+        }
+    )
+];
+
+Dialogo_Quarto_Sapo_Pr = [
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Sapo surgiu em sua frente! Eles acharam o sapo fofo, até o momento em que ele abriu sua boca e sugou o príncipe para dentro de seu estomago..."
+    ),
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Foi assustador, mas sobrou tempo para que a princesa pudesse correr para longe dalí.",
+        noone,
+        function(){
+            room_goto(rm_fluxograma);
+        }
+    )
+];
+
+// ---------------------------------------------------------
+// SE O PRÍNCIPE NÃO CHEGOU AO CASTELO
+// ---------------------------------------------------------
+
+Dialogo_Quarto_Princesa_SemPrincipe = [
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "E lá, no alto da torre, anseia a princesa..."
+    ),
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "pensando se um dia conseguiria sair de dentro daquele minúsculo quarto."
+    ),
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Todo esse pensamento a levantou um questionamento, sobre a *...",
+        [CARD.JANELA, CARD.ESPERAR, CARD.CAMA, CARD.PORTA],
+        function(){
+            switch(global.card.id)
+            {
+                case CARD.JANELA: global.cutscene_query = CUTSCENE.CUT_QUARTO_JANELA; break;
+                case CARD.ESPERAR: global.cutscene_query = CUTSCENE.CUT_QUARTO_ESPERAR; break;
+                case CARD.CAMA: global.cutscene_query = CUTSCENE.CUT_QUARTO_CAMA; break;
+                case CARD.PORTA: global.cutscene_query = CUTSCENE.CUT_QUARTO_PORTA_SO; break;
+            }
+            global.card = -1;
+        }
+    )
+];
+
+Dialogo_Quarto_Janela = [
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Janela. E decidiu que não precisava de um príncipe para lhe salvar, pois afinal... ela era muito responsável sobre suas decisões.",
+        noone,
+        function(){
+            // CHECAGEM: Substitua 'global.tem_lencol' pela sua variável/lógica de fato
+            if (global.tem_lencol == true) {
+                global.cutscene_query = CUTSCENE.CUT_QUARTO_JANELA_LENCOL;
+            } else {
+                global.cutscene_query = CUTSCENE.CUT_QUARTO_JANELA_MORTE;
+            }
+        }
+    )
+];
+
+Dialogo_Quarto_Janela_Morte = [
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Talvez nem tanto assim, tendo em vista de que não pensou em como pousaria no chão de forma que não se machucasse..."
+    ),
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "E bem... o desfecho disso já está bem óbvio.",
+        noone,
+        function(){
+            room_goto(rm_fluxograma);
+        }
+    )
+];
+
+Dialogo_Quarto_Janela_Lencol = [
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "E ela tinha razão, utilizando seu lençol, talvez ela não fosse tão burra assim no final das contas...",
+        noone,
+        function(){
+            room_goto(rm_fluxograma);
+        }
+    )
+];
+
+Dialogo_Quarto_Esperar = [
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Esperar. O príncipe, pois tinha total convicção de que um dia ele chegaria para lhe salvar."
+    ),
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Então ela se sentou, e esperou.... e esperou.... e esperou.... até que passou tanto tempo que ela simplesmente virou apenas ossos."
+    ),
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "É... parece que príncipes encantados não existem.",
+        noone,
+        function(){
+            room_goto(rm_fluxograma);
+        }
+    )
+];
+
+Dialogo_Quarto_Cama = [
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Cama. O que levou a princesa a pensar sobre a cama que dormiu em todas essas noites, talvez pudesse haver algo em baixo dela!"
+    ),
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Algo que poderia salvar sua vida, e lhe tirar dali! Então a princesa se dirigiu a cama, e quando se abaixou para procurar alguma coisa..."
+    ),
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "O bixo papão abocanhou ela… Bem, agora ela não vai mais se preocupar em sair daquela torre…",
+        noone,
+        function(){
+            room_goto(rm_fluxograma);
+        }
+    )
+];
+
+Dialogo_Quarto_Porta_So = [
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "A porta de seu quarto. Embora a porta sempre estivesse ali para ser aberta, a princesa nunca ousou abrir ela, pois tinha muito medo…",
+        noone,
+        function(){
+            // CHECAGEM: Substitua 'global.tem_chave' pela sua variável/lógica de fato
+            if (global.tem_chave == true) {
+                global.cutscene_query = CUTSCENE.CUT_QUARTO_PORTA_CHAVE;
+            } else {
+                global.cutscene_query = CUTSCENE.CUT_QUARTO_PORTA_TRANCADA;
+            }
+        }
+    )
+];
+
+Dialogo_Quarto_Porta_Trancada = [
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "A princesa então se aproximou da porta, e colocou a mão na maçaneta… A porta estava trancada."
+    ),
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "A princesa se frustrou por ter tentado e falhado que nunca mais tentou fazer nada, e ficou sentada no cantinho do seu quarto por toda a eternidade…",
+        noone,
+        function(){
+            room_goto(rm_fluxograma);
+        }
+    )
+];
+
+Dialogo_Quarto_Porta_Chave = [
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "A princesa então se aproxima da porta, e encaixa a chave na grande fechadura, gira duas vezes e abre a porta..."
+    ),
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Mas acabou não sendo muito agradável o que encontrou do outro lado…"
+    ),
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "O * surgiu na sua frente!",
+        [CARD.MAGO, CARD.REI, CARD.SAPO],
+        function(){
+            switch(global.card.id)
+            {
+                case CARD.MAGO: global.cutscene_query = CUTSCENE.CUT_QUARTO_MAGO_SO; break;
+                case CARD.REI: global.cutscene_query = CUTSCENE.CUT_QUARTO_REI_SO; break;
+                case CARD.SAPO: global.cutscene_query = CUTSCENE.CUT_QUARTO_SAPO_SO; break;
+            }
+            global.card = -1;
+        }
+    )
+];
+
+Dialogo_Quarto_Mago_So = [
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Mago. Mas mal sabia ela que seria..."
+    ),
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "O mago *",
+        [CARD.BOM, CARD.MALIGNO],
+        function(){
+            switch(global.card.id)
+            {
+                case CARD.BOM: global.cutscene_query = CUTSCENE.CUT_QUARTO_MGBOM_SO; break;
+                case CARD.MALIGNO: global.cutscene_query = CUTSCENE.CUT_QUARTO_MGMAL_SO; break;
+            }
+            global.card = -1;
+        }
+    )
+];
+
+Dialogo_Quarto_MgBom_So = [
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Bom! Que a tiraria dali em pouco instantes! E ainda resmungou da incompetência do principe…",
+        noone,
+        function(){
+            room_goto(rm_fluxograma);
+        }
+    )
+];
+
+Dialogo_Quarto_MgMal_So = [
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Maligno! Que não pensou duas vezes em transforma-la em pó com seus poderes de raio.",
+        noone,
+        function(){
+            room_goto(rm_fluxograma);
+        }
+    )
+];
+
+Dialogo_Quarto_Rei_So = [
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "O que deixou a princesa muito surpresa e emocionada, afinal, não esperava que seu pai lhe salvaria da torre!",
+        noone,
+        function(){
+            room_goto(rm_fluxograma);
+        }
+    )
+];
+
+Dialogo_Quarto_Sapo_So = [
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "A princesa ficou encantada! como um sapinho tão fofo daquele estava sendo aprisionado na torre junto dela?!"
+    ),
+    Texto(
+        "Miguel",
+        spr_text_box_idoso,
+        "Quando a princesa abaixou-se para fazer carinho no sapo, ele acaba engolindo a princesa…",
+        noone,
+        function(){
+            room_goto(rm_fluxograma);
+        }
+    )
+];
+
+// Lembre-se de adicionar todos esses arrays novos à `global.dialogues` se o seu sistema for por índice numérico!
 global.dialogues = [
     Dialogo_Floresta,
     Dialogo_Torre,
