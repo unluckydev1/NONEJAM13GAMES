@@ -289,7 +289,7 @@ desenha_nodes = function()
         if (_n.final) shader_reset();
     	draw_sprite_ext(_n.spr, 0, _rx, _ry, _n.xs, _n.ys, _n.ang, c_white, _n.alp);
         
-    	if (!_n.can and _n.final) draw_sprite_ext(_n.spr, 0, _rx, _ry, _n.xs, _n.ys, _n.ang, c_black, _n.alp/2);
+    	if (!_n.can) draw_sprite_ext(_n.spr, 0, _rx, _ry, _n.xs, _n.ys, _n.ang, c_black, _n.alp/2);
         
         shader_reset();
         
@@ -411,8 +411,8 @@ desenha_nodes = function()
         
         if (!_n.apear) continue;
         
-        var _txt = (!_n.final or _n.can) ? _n.info.txt : "TRAVADO";
-        var _img = (!_n.final or _n.can) ? _n.info.img : spr_nula; 
+        var _txt = (_n.can) ? _n.info.txt : "TRAVADO";
+        var _img = (_n.can) ? _n.info.img : spr_nula; 
         
         var _rx = _n.x+addx[0];
         var _ry = _n.y+_n.offy.r+addy[0];
@@ -430,10 +430,12 @@ desenha_nodes = function()
         var _imgh = sprite_get_height(_img)+4;
         var _imgw = sprite_get_width(_img)+9;
         
-        _n.info.xsmax = max(_str_w, _imgw)/_realw;
+        var _name_w = string_width(_n.id)+9;
+        
+        _n.info.xsmax = max(_str_w, _imgw, _name_w)/_realw;
         _n.info.ysmax = (_str_h+_imgh+_offy)/_realh;
         
-        _n.info.xsmax = max(_n.info.xsmax, 8);
+        _n.info.xsmax = max(_n.info.xsmax, 8); 
         
         var _h = sprite_get_height(info_spr)*_n.info.ys;
         var _marg = 35;
@@ -488,13 +490,27 @@ desenha_nodes = function()
             //Escreve o titulo
             draw_text_transformed(_x, _yy, _n.id, _divxs, _divys, 0);
             
-            _yy += string_height(_n.id)/4 + 6;
+            _yy += string_height(_n.id)/4 + 8;
             
             draw_set_valign(-1);
-            draw_text_ext_transformed(_x, _yy, _txt, _sep, _maxw, _divxs, _divys, 0);
-            
-            //Colocando a imagem para baixo e evitando que de o bug de voar
-            _yy += (_imgh/2+_str_h)*_divys;
+            if (_n.can){
+                draw_text_ext_transformed(_x, _yy, _txt, _sep, _maxw, _divxs, _divys, 0);
+                
+                //Colocando a imagem para baixo e evitando que de o bug de voar
+                _yy += (_imgh/2+_str_h)*_divys;
+            }else{
+                var _spr_tam = 12;
+                var _spr = spr_cadeado;
+                
+                var _scale = _spr_tam/sprite_get_width(_spr);
+                
+                var _spr_realh = sprite_get_height(_spr)*_scale+4;
+                
+                draw_sprite_ext(_spr, 0, _x, _yy+_spr_realh/2, _divxs*_scale, _divys*_scale, 0, c_white, _n.info.alp[0]/1.5);
+                
+                //Colocando a imagem para baixo e evitando que de o bug de voar
+                _yy += (_imgh/2+_str_h)*_divys;
+            }
             
             draw_sprite_ext(_img, 0, _x, _yy, _divxs, _divys, 0, c_white, _n.info.alp[0]/1.5);
             
