@@ -329,6 +329,7 @@
     {"id":{"name":"spr_bg_2","path":"sprites/spr_bg_2/spr_bg_2.yy",},},
     {"id":{"name":"spr_bg_3_5","path":"sprites/spr_bg_3_5/spr_bg_3_5.yy",},},
     {"id":{"name":"spr_bg_3","path":"sprites/spr_bg_3/spr_bg_3.yy",},},
+    {"id":{"name":"spr_bg_4","path":"sprites/spr_bg_4/spr_bg_4.yy",},},
     {"id":{"name":"spr_bg_5","path":"sprites/spr_bg_5/spr_bg_5.yy",},},
     {"id":{"name":"spr_cadeado","path":"sprites/spr_cadeado/spr_cadeado.yy",},},
     {"id":{"name":"spr_caixa","path":"sprites/spr_caixa/spr_caixa.yy",},},
