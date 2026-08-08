@@ -1,1 +1,1 @@
-room_goto(rm_teste)
+transicao(rm_main)

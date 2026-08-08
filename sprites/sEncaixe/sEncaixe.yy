@@ -19,6 +19,7 @@
   "height":12,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"dd336d53-24af-4e86-a820-dd43b2b691d0","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"dd336d53-24af-4e86-a820-dd43b2b691d0","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":false,},
     {"$GMImageLayer":"","%Name":"5ca152fb-2926-4d9f-8d3b-881f560d6a58","blendMode":0,"displayName":"default","isLocked":false,"name":"5ca152fb-2926-4d9f-8d3b-881f560d6a58","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"sEncaixe",

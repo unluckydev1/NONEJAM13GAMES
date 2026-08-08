@@ -1,3 +1,4 @@
+
 draw_set_alpha(alp)
 alp = lerp(alp,1,.1)
 scribble_font_set_default("fnt_1")
@@ -25,7 +26,7 @@ if (string_pos("*",text_to_draw)){
 			show_debug_message(largura_encaixe)
 	        var qtd_espacos = ceil(largura_encaixe / largura_espaco)
 	        var espacos = "";
-	        repeat (qtd_espacos + 1)
+	        repeat (qtd_espacos + 2)
 	        {
 	            espacos += " ";
 	        }

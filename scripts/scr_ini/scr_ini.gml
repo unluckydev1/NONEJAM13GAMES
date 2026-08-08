@@ -308,7 +308,7 @@ global.node_settings =
         cordy  : _rm_height/2 + _db*2 - _db*1.5 - _db,
         title  : _names.p13,
         conect : [],
-        desc   : "O principe bate na porta; o mago cogumelo teleporta a princesa até ele.",
+        desc   : "O principe bate na porta; o mago cogumelo teleporta ele ate à princesa.",
         imagem : spr_node,
         final: false
 	},

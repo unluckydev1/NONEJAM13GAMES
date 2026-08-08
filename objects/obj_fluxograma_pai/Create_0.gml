@@ -446,7 +446,7 @@ desenha_nodes = function()
             var _x = _rx;
             var _y = _ry-(_h/2)-_marg+_n.info.addy+sin(current_time/2000)*2;
             
-            draw_sprite_ext(info_spr, 0, _x, _y+1, _n.info.xs, _n.info.ys, 0, c_black, _n.info.alp[0]);
+           draw_sprite_ext(info_spr, 0, _x, _y+1, _n.info.xs, _n.info.ys, 0, c_black, _n.info.alp[0]);
             if (_n.final){
                 shader_set(sh_rainbow);
                 var uv = sprite_get_uvs(_n.spr, 0);
@@ -462,7 +462,7 @@ desenha_nodes = function()
                 shader_set_uniform_f(_uniMultiColor, 0);
             } 
             
-            draw_sprite_ext(info_spr, j, _x, _y, _n.info.xs, _n.info.ys, 0, c_white, _n.info.alp[0]);
+           draw_sprite_ext(info_spr, j, _x, _y, _n.info.xs, _n.info.ys, 0, c_white, _n.info.alp[0]);
             shader_reset();
             
             draw_set_halign(1);
