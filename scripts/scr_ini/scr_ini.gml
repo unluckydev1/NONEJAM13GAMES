@@ -551,7 +551,7 @@ global.node_setting_princesa =
 	//},
 
 puxa_tudo();
-puxa_tudo(global.node_setting_princesa,global.liberados.fluxo2,global.nodes.fluxo2);
+puxa_tudo(global.node_setting_princesa, global.nodes.fluxo2, global.liberados.fluxo2);
 
 
 

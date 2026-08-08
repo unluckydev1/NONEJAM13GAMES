@@ -400,7 +400,6 @@ desenha_nodes = function()
     }
     
     var _sep  = 15;
-    var _maxw = 180;
     var _offy = 23;
     
     var _info_fh = sprite_get_height(info_spr)-_offy;
@@ -422,14 +421,16 @@ desenha_nodes = function()
         var _realw = sprite_get_width(spr_caixa);
         var _realh = sprite_get_height(spr_caixa);
         
+        var _name_w = string_width(_n.id)+9;
+        
+        var _maxw = max(_name_w, 180);
+        
         //Somando a margem
         var _str_w = string_width_ext(_txt, _sep, _maxw)+9;
         var _str_h = string_height_ext(_txt, _sep, _maxw);
         
         var _imgh = sprite_get_height(_img)+4;
         var _imgw = sprite_get_width(_img)+9;
-        
-        var _name_w = string_width(_n.id)+9;
         
         _n.info.xsmax = max(_str_w, _imgw, _name_w)/_realw;
         _n.info.ysmax = (_str_h+_imgh+_offy)/_realh;

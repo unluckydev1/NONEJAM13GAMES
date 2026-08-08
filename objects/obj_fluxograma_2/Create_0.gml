@@ -3,7 +3,7 @@ event_inherited();
 
 nodes = global.nodes.fluxo2;
 liberados = global.liberados.fluxo2;
-puxa_tudo(global.node_setting_princesa,nodes,liberados)
+//puxa_tudo(global.node_setting_princesa, nodes, liberados)
 
 
 array_push(liberados, nodes[0]);
