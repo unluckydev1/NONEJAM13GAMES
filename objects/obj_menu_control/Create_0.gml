@@ -9,8 +9,12 @@ alpha = {
     n : 0,
 };
 
+frames = [0, 0, 0, 0];
+
 txt = {
-    escrita : "Feito por:\n\n\nLens (Programador e Roterista)\n\nUnlucky (Programador)\n\nxGab (Programador)\n\nPallerma (Artista)",
+    escrita : string("Feito por:\n\n\nLens (Programador e Roterista)\n[spr_coin, {0}]\nUnlucky (Programador)\n[spr_coin, {1}]\nxGab (Programador)\n[spr_coin, {2}]\nPallerma (Artista)\n[spr_coin, {3}]", 
+    frames[0], frames[1], frames[2], frames[3]),
+    
     addy    : 0,
 }
 
