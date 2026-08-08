@@ -89,7 +89,7 @@ Dialogo_Floresta = [
                 case CARD.TORRE:
                     global.cutscene_query = CUTSCENE.CUT_TORRE;
 					libera_node(global.node_names.p2)
-					debug();
+					//debug();
                 break;
 
                 case CARD.ESCURIDAO:
@@ -219,7 +219,7 @@ dialogo_Porta_MgMal = [
         noone,
 		function(){
 
-			//room_goto(rm_fluxograma)
+			//transicao(rm_fluxograma)
 			global.cutscene_query = CUTSCENE.CUT_QUARTO_PRINCESA_SEMPRIN
 			global.Fluxo2 = true;
 			libera_node(global.node_names.q0,global.nodes.fluxo2,global.liberados.fluxo2)
@@ -238,7 +238,7 @@ dialogo_Porta_MgBom = [
 			global.Fluxo2 = true;
 			libera_node(global.node_names.q0,global.nodes.fluxo2,global.liberados.fluxo2)
 			libera_node(global.node_names.q1,global.nodes.fluxo2,global.liberados.fluxo2)
-			//room_goto(rm_fluxograma)
+			//transicao(rm_fluxograma)
 		}
     )
 ]
@@ -253,7 +253,7 @@ dialogo_Porta_MgSapo = [
 			global.Fluxo2 = true;
 			libera_node(global.node_names.q0,global.nodes.fluxo2,global.liberados.fluxo2)
 			libera_node(global.node_names.q2,global.nodes.fluxo2,global.liberados.fluxo2)
-			//room_goto(rm_fluxograma)
+			//transicao(rm_fluxograma)
 		}
     )
 ]
@@ -313,7 +313,7 @@ Dialogo_Cair = [
 			global.Fluxo2 = true;
 			libera_node(global.node_names.q0,global.nodes.fluxo2,global.liberados.fluxo2)
 			libera_node(global.node_names.q2,global.nodes.fluxo2,global.liberados.fluxo2)
-			//room_goto(rm_fluxograma)
+			//transicao(rm_fluxograma)
 		}
     )
 ];
@@ -336,7 +336,7 @@ Dialogo_Gritar = [
 			global.Fluxo2 = true;
 			libera_node(global.node_names.q0,global.nodes.fluxo2,global.liberados.fluxo2)
 			libera_node(global.node_names.q1,global.nodes.fluxo2,global.liberados.fluxo2)
-			//room_goto(rm_fluxograma)
+			//transicao(rm_fluxograma)
 		}
     )
 ];
@@ -412,7 +412,7 @@ Dialogo_Luz = [
 			global.Fluxo2 = true;
 			libera_node(global.node_names.q0,global.nodes.fluxo2,global.liberados.fluxo2)
 			libera_node(global.node_names.q2,global.nodes.fluxo2,global.liberados.fluxo2)
-			//room_goto(rm_fluxograma)
+			//transicao(rm_fluxograma)
 		}
     )
 ];
@@ -572,7 +572,7 @@ Dialogo_Quarto_Abracar = [
         "E da mesma forma na qual o príncipe veio a subir a torre, eles a desceram.",
         noone,
         function(){
-            room_goto(rm_fluxograma);
+            transicao(rm_fluxograma);
         }
     )
 ];
@@ -594,7 +594,7 @@ Dialogo_Quarto_Matar = [
         "Pelo menos ela conseguiu descer da torre pela janela.",
         noone,
         function(){
-            room_goto(rm_fluxograma);
+            transicao(rm_fluxograma);
         }
     )
 ];
@@ -671,7 +671,7 @@ Dialogo_Quarto_MgMal_Pr = [
         "Maligno. Então, ao ver os dois tentando escapar da torre que ele deixou a princesa confinada, não pensou duas vezes em desintegrar os dois com sua magia de raio.",
         noone,
         function(){
-            room_goto(rm_fluxograma);
+            transicao(rm_fluxograma);
         }
     )
 ];
@@ -683,7 +683,7 @@ Dialogo_Quarto_MgBom_Pr = [
         "Bom. Então o mago ajudou eles, teletransportando-os de volta ao castelo.",
         noone,
         function(){
-            room_goto(rm_fluxograma);
+            transicao(rm_fluxograma);
         }
     )
 ];
@@ -700,7 +700,7 @@ Dialogo_Quarto_Rei_Pr = [
         "De qualquer forma, eles voltaram para a casa em segurança.",
         noone,
         function(){
-            room_goto(rm_fluxograma);
+            transicao(rm_fluxograma);
         }
     )
 ];
@@ -717,7 +717,7 @@ Dialogo_Quarto_Sapo_Pr = [
         "Foi assustador, mas sobrou tempo para que a princesa pudesse correr para longe dalí.",
         noone,
         function(){
-            room_goto(rm_fluxograma);
+            transicao(rm_fluxograma);
         }
     )
 ];
@@ -802,7 +802,7 @@ Dialogo_Quarto_Janela_Morte = [
         "E bem... o desfecho disso já está bem óbvio.",
         noone,
         function(){
-            room_goto(rm_fluxograma);
+            transicao(rm_fluxograma);
         }
     )
 ];
@@ -814,7 +814,7 @@ Dialogo_Quarto_Janela_Lencol = [
         "E ela tinha razão, utilizando seu lençol, talvez ela não fosse tão burra assim no final das contas...",
         noone,
         function(){
-            room_goto(rm_fluxograma);
+            transicao(rm_fluxograma);
         }
     )
 ];
@@ -836,7 +836,7 @@ Dialogo_Quarto_Esperar = [
         "É... parece que príncipes encantados não existem.",
         noone,
         function(){
-            room_goto(rm_fluxograma);
+            transicao(rm_fluxograma);
         }
     )
 ];
@@ -858,7 +858,7 @@ Dialogo_Quarto_Cama = [
         "O bixo papão abocanhou ela… Bem, agora ela não vai mais se preocupar em sair daquela torre…",
         noone,
         function(){
-            room_goto(rm_fluxograma);
+            transicao(rm_fluxograma);
         }
     )
 ];
@@ -894,7 +894,7 @@ Dialogo_Quarto_Porta_Trancada = [
         "A princesa se frustrou por ter tentado e falhado que nunca mais tentou fazer nada, e ficou sentada no cantinho do seu quarto por toda a eternidade…",
         noone,
         function(){
-            room_goto(rm_fluxograma);
+            transicao(rm_fluxograma);
         }
     )
 ];
@@ -971,7 +971,7 @@ Dialogo_Quarto_MgBom_So = [
         "Bom! Que a tiraria dali em pouco instantes! E ainda resmungou da incompetência do principe…",
         noone,
         function(){
-            room_goto(rm_fluxograma);
+            transicao(rm_fluxograma);
         }
     )
 ];
@@ -983,7 +983,7 @@ Dialogo_Quarto_MgMal_So = [
         "Maligno! Que não pensou duas vezes em transforma-la em pó com seus poderes de raio.",
         noone,
         function(){
-            room_goto(rm_fluxograma);
+            transicao(rm_fluxograma);
         }
     )
 ];
@@ -995,7 +995,7 @@ Dialogo_Quarto_Rei_So = [
         "O que deixou a princesa muito surpresa e emocionada, afinal, não esperava que seu pai lhe salvaria da torre!",
         noone,
         function(){
-            room_goto(rm_fluxograma);
+            transicao(rm_fluxograma);
         }
     )
 ];
@@ -1012,7 +1012,7 @@ Dialogo_Quarto_Sapo_So = [
         "Quando a princesa abaixou-se para fazer carinho no sapo, ele acaba engolindo a princesa…",
         noone,
         function(){
-            room_goto(rm_fluxograma);
+            transicao(rm_fluxograma);
         }
     )
 ];

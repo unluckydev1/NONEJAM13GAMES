@@ -6,3 +6,10 @@ function transicao(_destino)
     
     _trans.destino = _destino;
 }
+
+function transicao_fade(_destino)
+{
+    var _trans = instance_create_depth(0, 0, -9999, obj_transicao_fade);
+    
+    _trans.destino = _destino;
+}
