@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Objetos",
-    "path":"folders/Fluxograma/Efeitos_Gerais/Objetos.yy",
+    "path":"folders/Efeitos_Gerais/Objetos.yy",
   },
   "parentObjectId":null,
   "persistent":false,

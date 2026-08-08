@@ -4,7 +4,7 @@
   "name":"sh_rainbow",
   "parent":{
     "name":"Shaders",
-    "path":"folders/Fluxograma/Efeitos_Gerais/Shaders.yy",
+    "path":"folders/Efeitos_Gerais/Shaders.yy",
   },
   "resourceType":"GMShader",
   "resourceVersion":"2.0",

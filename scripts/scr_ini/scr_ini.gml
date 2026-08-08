@@ -1,7 +1,14 @@
 //surface_resize(application_surface, 896, 504);
 
-global.nodes = [];
-global.liberados = [];
+global.nodes = {
+    fluxo1 : [],
+    fluxo2 : []
+}
+
+global.liberados = {
+    fluxo1 : [],
+    fluxo2 : []
+}
 
 function skill_node(_spr, _nome, _x, _y, _img, _conect = [], _desc = "", _final) constructor
 {
@@ -71,16 +78,26 @@ function skill_node(_spr, _nome, _x, _y, _img, _conect = [], _desc = "", _final)
     }
 }
 
-function libera_node(_name){
-    for (var i = 0; i < array_length(global.nodes); i++) {
-    	if (global.nodes[i].id == _name and !array_contains(global.liberados, global.nodes[i])){
-            array_push(global.liberados, global.nodes[i]);
+function libera_node(_name, _nodes = global.nodes.fluxo1, _liberados = global.liberados.fluxo1){ 
+    
+    for (var i = 0; i < array_length(_nodes); i++) {
+    	if (_nodes[i].id == _name and !array_contains(_liberados, _nodes[i])){
+            array_push(_liberados, _nodes[i]);
           
             return i;
         }
     }
     
     return -1;
+}
+
+puxa_tudo = function(setings = global.node_settings, _node = global.nodes.fluxo1, _libera = global.liberados.fluxo1)
+{
+    for (var i = 0; i < array_length(setings); i++) {
+        var _ns = setings[i];
+        
+    	array_push(_node, new skill_node(_ns.sprite, _ns.title, _ns.cordx, _ns.cordy, _ns.imagem, _ns.conect, _ns.desc, _ns.final));
+    }
 }
 
 #region Nodes Settings
@@ -521,12 +538,8 @@ global.node_settings =
     //    imagem : spr_node,
     //    final: true
 	//},
-for (var i = 0; i < array_length(global.node_settings); i++) {
-    var _ns = global.node_settings[i];
-    
-	array_push(global.nodes, new skill_node(_ns.sprite, _ns.title, _ns.cordx, _ns.cordy, _ns.imagem, _ns.conect, _ns.desc, _ns.final));
-}
 
+puxa_tudo();
 
 
 

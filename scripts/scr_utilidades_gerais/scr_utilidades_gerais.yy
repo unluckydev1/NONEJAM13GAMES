@@ -6,7 +6,7 @@
   "name":"scr_utilidades_gerais",
   "parent":{
     "name":"Scripts",
-    "path":"folders/Fluxograma/Efeitos_Gerais/Scripts.yy",
+    "path":"folders/Efeitos_Gerais/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

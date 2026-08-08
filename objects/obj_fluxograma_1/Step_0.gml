@@ -42,4 +42,4 @@ if (keyboard_check_pressed(ord("T"))){
 
 }
 
-//show_debug_message(array_length(global.liberados));
+//show_debug_message(array_length(liberados));

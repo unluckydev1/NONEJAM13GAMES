@@ -38,7 +38,6 @@ function fim_anim()
 /// @param  {real}   _amt Suavização do movimento (0 a 1). Controla o quanto o valor interno se aproxima do objetivo a cada step.
 /// @param  {real}   _ini Valor inicial da variável interna. Normalmente deixe 0.
 /// @return {real}   Retorna o valor suavizado (_val + deslocamento_elástico).
-
 function elastic (_nam, _val, _tar, _for=1, _amt=.25, _ini=0) {
     // ID do Objeto
     var _id  = id;

@@ -1,5 +1,8 @@
 randomize();
 
+nodes     = global.nodes.fluxo1;
+liberados = global.liberados.fluxo1;
+
 #region Shader Rainbow
 
 _uniUV         = shader_get_uniform(sh_rainbow, "u_uv");
@@ -52,16 +55,11 @@ hold = false;
 addx = [0, 0];
 addy = [0, 0];
 
-#region Nodes
+array_push(liberados, nodes[0]);
 
-
-#endregion
-
-array_push(global.liberados, global.nodes[0]);
-
-global.nodes[0].alp = 1;
-global.nodes[0].can = true;
-global.nodes[0].apear = true; //Faz parte da animacao
+nodes[0].alp = 1;
+nodes[0].can = true;
+nodes[0].apear = true; //Faz parte da animacao
 
 #region Funcoes
 
@@ -81,8 +79,8 @@ puxa_mouse = function()
     
     if ((mouse_check_button(mb_left) and at == noone) or ((_kr xor _kl) or (_kd xor _ku))){
         if (!(_kr xor _kl) and !(_kd xor _ku)){
-            hspd = (lmx-upd_mousex())*-(.45);
-            vspd = (lmy-upd_mousey())*-(.45);
+            hspd = (lmx-upd_mousex())*-.45;
+            vspd = (lmy-upd_mousey())*-.45;
             
             sm = true;
             
@@ -133,8 +131,8 @@ puxa_mouse = function()
 
 acha_ind = function(_qual)
 {
-    for (var i = 0; i < array_length(global.nodes); i++) {
-    	if (_qual == global.nodes[i].id) return i;
+    for (var i = 0; i < array_length(nodes); i++) {
+    	if (_qual == nodes[i].id) return i;
     }
     
     return -1;
@@ -142,7 +140,7 @@ acha_ind = function(_qual)
 
 draw_lines = function(_i)
 {
-    var _n = global.nodes;
+    var _n = nodes;
     
     var _n1 = _n[_i];
     var _n2 = _n[_i].conects;
@@ -152,7 +150,7 @@ draw_lines = function(_i)
     for (var i = 0; i < _nleng; i++) {
         var _ind = acha_ind(_n2[i]);
         
-        var _acha = array_contains(global.liberados, _n[_ind]);
+        var _acha = array_contains(liberados, _n[_ind]);
         
         if (_n1.final) continue;
         
@@ -211,7 +209,7 @@ draw_lines = function(_i)
     	draw_line_width(_n1.x+addx[0], _n1.y+_n1.offy.r+2+addy[0], _n1.linha[i].x+addx[0], _n1.linha[i].y+_offy+2+addy[0], 3);
         draw_set_colour(c_white);
         draw_line_width(_n1.x+addx[0], _n1.y+_n1.offy.r+addy[0], _n1.linha[i].x+addx[0], _n1.linha[i].y+_offy+addy[0], 3);
-        if (global.nodes[_ind].info.nivel > 0) _n1.linha[i].alp_rainbow = lerp(_n1.linha[i].alp_rainbow, 1, .05);
+        if (nodes[_ind].info.nivel > 0) _n1.linha[i].alp_rainbow = lerp(_n1.linha[i].alp_rainbow, 1, .05);
         draw_set_colour(_cor)
         draw_set_alpha(_n1.linha[i].alp_rainbow);    
     	draw_line_width(_n1.x+addx[0], _n1.y+_n1.offy.r+addy[0], _n1.linha[i].x+addx[0], _n1.linha[i].y+_offy+addy[0], 3);
@@ -226,12 +224,12 @@ draw_lines = function(_i)
 
 desenha_nodes = function()
 {
-    for (var i = 0; i < array_length(global.nodes); i++) {
+    for (var i = 0; i < array_length(nodes); i++) {
         draw_lines(i);        
     }
     
-    for (var i = 0; i < array_length(global.nodes); i++) {
-        var _n = global.nodes[i];
+    for (var i = 0; i < array_length(nodes); i++) {
+        var _n = nodes[i];
         
         if (_n.final){
             if (!_n.apear){
@@ -250,8 +248,8 @@ desenha_nodes = function()
         
         if (!_n.apear) continue;
             
-        //for (var j = 0; j < array_length(global.liberados); j++) {
-        	//show_debug_message(string("{1}", i, global.liberados[j].id));
+        //for (var j = 0; j < array_length(liberados); j++) {
+        	//show_debug_message(string("{1}", i, liberados[j].id));
         //}
         
         var _rx = _n.x+addx[0];
@@ -354,10 +352,10 @@ desenha_nodes = function()
                 //for (var j = 0; j < array_length(_n.conects); j++) {
                 	//var _ind = acha_ind(_n.conects[j]);
                     //
-                    //if (array_get_index(global.liberados, global.nodes[_ind]) == -1){
-                        //array_push(global.liberados, global.nodes[_ind]);
+                    //if (array_get_index(liberados, nodes[_ind]) == -1){
+                        //array_push(liberados, nodes[_ind]);
                         //
-                        //global.nodes[_ind].alp = 1;
+                        //nodes[_ind].alp = 1;
                     //}
                 //}
                 //
@@ -406,8 +404,8 @@ desenha_nodes = function()
     
     var _info_fh = sprite_get_height(info_spr)-_offy;
     
-    for (var i = 0; i < array_length(global.nodes); i++) { 
-        var _n = global.nodes[i];
+    for (var i = 0; i < array_length(nodes); i++) { 
+        var _n = nodes[i];
         
         if (!_n.apear) continue;
         
@@ -537,7 +535,7 @@ desenha_nodes = function()
     }
     
     if (lastat != noone){
-        var _n = global.nodes[lastat];
+        var _n = nodes[lastat];
         
         draw_sprite_ext(selec.spr, 0, selec.x+addx[0], selec.y+addy[0], selec.xs, selec.ys, 0, c_white, selec.alp[0]);
         
