@@ -86,7 +86,7 @@ if(contains){
 
 		for(var i = 0; i < array_length(_cards); i++)
 		{
-			inst = instance_create_layer(x,y,layer,oCarta);
+			inst = instance_create_depth(x,y,depth,oCarta);
 			
 			inst.atraso -= 2*i
 			

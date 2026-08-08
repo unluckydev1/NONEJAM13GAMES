@@ -17,7 +17,7 @@ function Texto(_speaker, _portrait, _text , _card = [], _func = -1){
     };
 }
 function Create_dialogue(falas){
-    var inst = instance_create_layer(x,y,layer,oDialogo)
+    var inst = instance_create_depth(x,y,-999,oDialogo)
     inst.text = falas
 }
 

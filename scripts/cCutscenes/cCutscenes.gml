@@ -1,4 +1,9 @@
 
+function cutscene_trigger(_cutscene){
+    with(oCutscene){
+    oCutscene.cutscene = global.cutscenes[_cutscene]
+    }
+}
 
 function start_act(){ 
     with(oCutscene){
@@ -13,12 +18,7 @@ function wait_in(time){
         end_act();
     }
 }
-function cutscene_trigger(_cutscene){
-    with(oCutscene){
-    oCutscene.cutscene = global.cutscenes[_cutscene]
-	show_debug_message("OI")
-    }
-}
+
 function end_act(){
     with(oCutscene){
     start = false
@@ -46,6 +46,7 @@ function change_spr(obj,sprite, _index = -1){
         end_act()
     }
 }
+	
 
 function move_add(obj,_x,_y,time,curve_type = linearmove){
     with(oCutscene){
@@ -119,7 +120,7 @@ function new_dialogue(text){
         Create_dialogue(text)
         start = true 
     }
-    if !instance_exists(oDialogo){
+    if !global.reading{
         end_act()
     }
     }
@@ -129,6 +130,13 @@ function new_dialogue(text){
 // CAPÍTULO 1 - A PRINCESA
 // ===============================
 
+
+cutscene_teste = [
+	function(){start_act()},
+	function(){move_add(oIdoso,-300,-300,2); oIdoso.estado = "andando"},
+	function(){oIdoso.estado = "parado"; end_cutscene()},
+
+]
 
 // CAP1_FLORESTA_INICIO
 Cutscene_Floresta_Inicio = [
@@ -140,16 +148,19 @@ Cutscene_Floresta_Inicio = [
 
 // CAP1_CAMINHO_TORRE
 Cutscene_Caminho_Torre = [
-    function(){start_act()},
-    function(){new_dialogue(Dialogo_Torre)},
-    function(){end_cutscene()}
+    function(){start_act(); room_goto(Room1_1);},
+	//function(){move_add(oIdoso,-300,-300,2); oIdoso.estado = "andando"},
+    function(){ new_dialogue(Dialogo_Torre);},
+    function(){end_cutscene()},
 ];
 
 
 // CAP1_CAMINHO_ESCURIDAO
 Cutscene_Caminho_Escuridao = [
     function(){start_act()},
-    function(){new_dialogue(Dialogo_Escuridao)},
+	//function(){move_add(oIdoso,-300,300,2); oIdoso.estado = "andando"},
+    function(){ new_dialogue(Dialogo_Escuridao)},
+    function(){end_cutscene()},
     function(){end_cutscene()}
 ];
 
@@ -411,6 +422,7 @@ Cutscene_Quarto_Sapo_So = [
 
 global.cutscenes = [
 
+	cutscene_teste,
     Cutscene_Floresta_Inicio,
     Cutscene_Caminho_Torre,
     Cutscene_Caminho_Escuridao,
@@ -461,6 +473,7 @@ global.cutscenes = [
 
 enum CUTSCENE{
 	
+	CUT_TESTE,
 	CUT_FLORESTA,
 	
 	CUT_TORRE,

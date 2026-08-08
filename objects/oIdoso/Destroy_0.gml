@@ -1,0 +1,1 @@
+//audio_play_sound(sound_destroy, 1, 0)

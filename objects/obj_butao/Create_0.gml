@@ -52,6 +52,7 @@ mouse_cima = function()
             if (action == noone){
                 transicao(local);
 				audio_play_sound(snd_start, 0, 0, 2);
+				audio_stop_sound(snd_menu_jogo)
             }else{
                 if (is_callable(action)) action(); //Ta dando erro mas ta certo
             }

@@ -11,4 +11,6 @@ disty = 0
 has_key = false
 has_lencol = false
 
-cutscene_trigger(0)
+cutscene_trigger(CUTSCENE.CUT_FLORESTA)
+
+
