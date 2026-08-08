@@ -1,13 +1,13 @@
 depth = 9999;
 
 //Quanto maior o numero, mais segue ;3
-var p1 = 2
-var p2 = 4
-var p3 = 10
-var p4 = 30
+var p1  = 0;
+var p2  = 10;
+var p3  = 20;
+var p4  = 25;
 
-var _offx = -20;
-var _offy = -20;
+var _offx = -60;
+var _offy = -60;
 
 var _camx = camera_get_view_x(view_camera[0])
 var _camy = camera_get_view_y(view_camera[0])
@@ -38,7 +38,7 @@ draw_sprite_tiled_ext(bg1, 0, _offx, _offy, _multi, _multi, c_white, 1);
 draw_sprite_tiled_ext(bg2, 0, parallax_x * p1 + _offx, parallax_y * p1 + _offy, _multi, _multi, c_white, 1);
 //Pouco
 draw_sprite_tiled_ext(bg3, 0, parallax_x * p2 + _offx, parallax_y * p2 + _offy, _multi, _multi, c_white, 1);
+//Meio
+draw_sprite_tiled_ext(bg35, 0, parallax_x * p2 + _offx, parallax_y * p2 + _offy, _multi, _multi, c_white, 1);
 //// Mais um pouco
-//draw_sprite_tiled(bg4, 0, parallax_x * p3, parallax_y * p3)
-//// Mais
-//draw_sprite_tiled(bg5, 0, parallax_x * p4, parallax_y * p4)
+draw_sprite_tiled_ext(bg4, 0, parallax_x * p3 + _offx, parallax_y * p3 + _offy, _multi, _multi, c_white, 1);
