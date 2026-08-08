@@ -19,6 +19,7 @@
   "height":64,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"f64610b6-077f-4ec3-9ba5-ffd45410b01c","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"f64610b6-077f-4ec3-9ba5-ffd45410b01c","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":false,},
     {"$GMImageLayer":"","%Name":"63c586c6-0551-42ad-ab58-04e9abc9a877","blendMode":0,"displayName":"default","isLocked":false,"name":"63c586c6-0551-42ad-ab58-04e9abc9a877","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"Sprite22",

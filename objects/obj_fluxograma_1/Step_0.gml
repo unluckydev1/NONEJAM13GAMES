@@ -1,5 +1,7 @@
-puxa_mouse();
 
+
+puxa_mouse();
+/*
 //show_debug_message(string("{0}   {1}", addx[0], addy[0]));
 
 if (keyboard_check_pressed(ord("T"))){

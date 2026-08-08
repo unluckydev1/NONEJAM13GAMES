@@ -8,6 +8,7 @@ liberados = global.liberados.fluxo2;
 
 array_push(liberados, nodes[0]);
 
-nodes[0].alp = 1;
+nodes[0].alp = 0;
 nodes[0].can = true;
 nodes[0].apear = true; //Faz parte da animacao
+

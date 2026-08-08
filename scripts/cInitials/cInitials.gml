@@ -7,3 +7,5 @@ global.cutscene = false
 global.font_narrar = fnt_1 
 global.cutscene_query = noone
 global.card_in_mouse = noone
+
+global.Fluxo2 = false

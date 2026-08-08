@@ -44,6 +44,7 @@ function libera_lencol(){
 	oCutscene.has_lencol = true;
 
 }
+
 // ===============================
 // CAPÍTULO 1 - A PRINCESA
 // ===============================
@@ -188,21 +189,18 @@ Dialogo_Porta = [
                 case CARD.MALIGNO:
                     global.cutscene_query =	CUTSCENE.CUT_MGMAL;
 					libera_node(global.node_names.p4)
-					room_goto(rm_fluxograma)
-                    debug();
                 break;
 
                 case CARD.BOM:
                     global.cutscene_query = CUTSCENE.CUT_MGBOM;
 					libera_node(global.node_names.p5)
-					room_goto(rm_fluxograma)
-                    debug();
+					
                 break;
 				case CARD.SAPO:
                     global.cutscene_query = CUTSCENE.CUT_MGSAPO;
 					libera_node(global.node_names.p6)
-					room_goto(rm_fluxograma)
-                    debug();
+					
+
                 break;
             }
 
@@ -223,6 +221,9 @@ dialogo_Porta_MgMal = [
 
 			//room_goto(rm_fluxograma)
 			global.cutscene_query = CUTSCENE.CUT_QUARTO_PRINCESA_SEMPRIN
+			global.Fluxo2 = true;
+			libera_node(global.node_names.q0,global.nodes.fluxo2,global.liberados.fluxo2)
+			libera_node(global.node_names.q2,global.nodes.fluxo2,global.liberados.fluxo2)
 		}
     )
 ]
@@ -234,6 +235,9 @@ dialogo_Porta_MgBom = [
         noone,
 		function(){
 			global.cutscene_query = CUTSCENE.CUT_QUARTO_PRINCESA_COMPRIN
+			global.Fluxo2 = true;
+			libera_node(global.node_names.q0,global.nodes.fluxo2,global.liberados.fluxo2)
+			libera_node(global.node_names.q1,global.nodes.fluxo2,global.liberados.fluxo2)
 			//room_goto(rm_fluxograma)
 		}
     )
@@ -246,6 +250,9 @@ dialogo_Porta_MgSapo = [
         noone,
 		function(){
 			global.cutscene_query = CUTSCENE.CUT_QUARTO_PRINCESA_SEMPRIN
+			global.Fluxo2 = true;
+			libera_node(global.node_names.q0,global.nodes.fluxo2,global.liberados.fluxo2)
+			libera_node(global.node_names.q2,global.nodes.fluxo2,global.liberados.fluxo2)
 			//room_goto(rm_fluxograma)
 		}
     )
@@ -303,6 +310,9 @@ Dialogo_Cair = [
         noone,
 		function(){
 			global.cutscene_query = CUTSCENE.CUT_QUARTO_PRINCESA_SEMPRIN
+			global.Fluxo2 = true;
+			libera_node(global.node_names.q0,global.nodes.fluxo2,global.liberados.fluxo2)
+			libera_node(global.node_names.q2,global.nodes.fluxo2,global.liberados.fluxo2)
 			//room_goto(rm_fluxograma)
 		}
     )
@@ -323,6 +333,9 @@ Dialogo_Gritar = [
         noone,
 		function(){
 			global.cutscene_query = CUTSCENE.CUT_QUARTO_PRINCESA_COMPRIN
+			global.Fluxo2 = true;
+			libera_node(global.node_names.q0,global.nodes.fluxo2,global.liberados.fluxo2)
+			libera_node(global.node_names.q1,global.nodes.fluxo2,global.liberados.fluxo2)
 			//room_goto(rm_fluxograma)
 		}
     )
@@ -396,6 +409,9 @@ Dialogo_Luz = [
         noone,
 		function(){
 			global.cutscene_query = CUTSCENE.CUT_QUARTO_PRINCESA_SEMPRIN
+			global.Fluxo2 = true;
+			libera_node(global.node_names.q0,global.nodes.fluxo2,global.liberados.fluxo2)
+			libera_node(global.node_names.q2,global.nodes.fluxo2,global.liberados.fluxo2)
 			//room_goto(rm_fluxograma)
 		}
     )
@@ -461,7 +477,9 @@ Dialogo_Abrir = [
         noone,
 		function(){
 			global.cutscene_query = CUTSCENE.CUT_QUARTO_PRINCESA_SEMPRIN
-			//room_goto(rm_fluxograma)
+			global.Fluxo2 = true;
+			libera_node(global.node_names.q0,global.nodes.fluxo2,global.liberados.fluxo2)
+			libera_node(global.node_names.q2,global.nodes.fluxo2,global.liberados.fluxo2)
 		}
     )
 ]
@@ -484,8 +502,11 @@ Dialogo_Bater = [
         "O Herói explicou ao mago a situação de sua amada, e o mago compreendeu totalmente, e estalou os dedos para que a princesa fosse teletransportada até sua casa.",
         noone,
 		function(){
-
-			room_goto(rm_fluxograma)
+			global.cutscene_query = CUTSCENE.CUT_QUARTO_PRINCESA_COMPRIN
+			global.Fluxo2 = true;
+			libera_node(global.node_names.q0,global.nodes.fluxo2,global.liberados.fluxo2)
+			libera_node(global.node_names.q1,global.nodes.fluxo2,global.liberados.fluxo2)
+			
 		}
     )
 ]
@@ -502,32 +523,36 @@ Dialogo_Quarto_Princesa_ComPrincipe = [
     Texto(
         "Miguel",
         spr_text_box_idoso,
-        "E lá, no alto da torre, anseia a princesa..."
+        "E lá, no alto da torre, anseia a princesa...",
+        noone,
+        function(){
+            libera_node(global.node_names.q3, global.nodes.fluxo2, global.liberados.fluxo2);
+        }
     ),
     Texto(
         "Miguel",
         spr_text_box_idoso,
-        "pensando se um dia conseguiria sair de dentro daquele minúsculo quarto."
+        "pensando se um dia conseguiria sair de dentro daquele minúsculo quarto, e então nosso bravo heroi surge!"
     ),
     Texto(
         "Miguel",
         spr_text_box_idoso,
-        "Todo esse pensamento a levantou um questionamento, sobre *...",
+        "Esse pensamento trouxe um questionamento, sobre *...",
         [CARD.ABRACAR, CARD.MATAR, CARD.PORTA],
         function(){
             switch(global.card.id)
             {
                 case CARD.ABRACAR:
                     global.cutscene_query = CUTSCENE.CUT_QUARTO_ABRACAR;
-                    // libera_node(...)
+                    libera_node(global.node_names.q4, global.nodes.fluxo2, global.liberados.fluxo2);
                 break;
                 case CARD.MATAR:
                     global.cutscene_query = CUTSCENE.CUT_QUARTO_MATAR;
-                    // libera_node(...)
+                    libera_node(global.node_names.q5, global.nodes.fluxo2, global.liberados.fluxo2);
                 break;
                 case CARD.PORTA:
                     global.cutscene_query = CUTSCENE.CUT_QUARTO_PORTA_PR;
-                    // libera_node(...)
+                    libera_node(global.node_names.q6, global.nodes.fluxo2, global.liberados.fluxo2);
                 break;
             }
             global.card = -1;
@@ -593,9 +618,18 @@ Dialogo_Quarto_Porta_Pr = [
         function(){
             switch(global.card.id)
             {
-                case CARD.MAGO: global.cutscene_query = CUTSCENE.CUT_QUARTO_MAGO_PR; break;
-                case CARD.REI: global.cutscene_query = CUTSCENE.CUT_QUARTO_REI_PR; break;
-                case CARD.SAPO: global.cutscene_query = CUTSCENE.CUT_QUARTO_SAPO_PR; break;
+                case CARD.MAGO:
+                    global.cutscene_query = CUTSCENE.CUT_QUARTO_MAGO_PR;
+                    libera_node(global.node_names.q7, global.nodes.fluxo2, global.liberados.fluxo2);
+                break;
+                case CARD.REI:
+                    global.cutscene_query = CUTSCENE.CUT_QUARTO_REI_PR;
+                    libera_node(global.node_names.q10, global.nodes.fluxo2, global.liberados.fluxo2);
+                break;
+                case CARD.SAPO:
+                    global.cutscene_query = CUTSCENE.CUT_QUARTO_SAPO_PR;
+                    libera_node(global.node_names.q11, global.nodes.fluxo2, global.liberados.fluxo2);
+                break;
             }
             global.card = -1;
         }
@@ -616,8 +650,14 @@ Dialogo_Quarto_Mago_Pr = [
         function(){
             switch(global.card.id)
             {
-                case CARD.MALIGNO: global.cutscene_query = CUTSCENE.CUT_QUARTO_MGMAL_PR; break;
-                case CARD.BOM: global.cutscene_query = CUTSCENE.CUT_QUARTO_MGBOM_PR; break;
+                case CARD.MALIGNO:
+                    global.cutscene_query = CUTSCENE.CUT_QUARTO_MGMAL_PR;
+                    libera_node(global.node_names.q8, global.nodes.fluxo2, global.liberados.fluxo2);
+                break;
+                case CARD.BOM:
+                    global.cutscene_query = CUTSCENE.CUT_QUARTO_MGBOM_PR;
+                    libera_node(global.node_names.q9, global.nodes.fluxo2, global.liberados.fluxo2);
+                break;
             }
             global.card = -1;
         }
@@ -690,7 +730,11 @@ Dialogo_Quarto_Princesa_SemPrincipe = [
     Texto(
         "Miguel",
         spr_text_box_idoso,
-        "E lá, no alto da torre, anseia a princesa..."
+        "E lá, no alto da torre, anseia a princesa...",
+        noone,
+        function(){
+            libera_node(global.node_names.q12, global.nodes.fluxo2, global.liberados.fluxo2);
+        }
     ),
     Texto(
         "Miguel",
@@ -700,15 +744,27 @@ Dialogo_Quarto_Princesa_SemPrincipe = [
     Texto(
         "Miguel",
         spr_text_box_idoso,
-        "Todo esse pensamento a levantou um questionamento, sobre a *...",
+        "Esse pensamento trouxe um questionamento, sobre a *...",
         [CARD.JANELA, CARD.ESPERAR, CARD.CAMA, CARD.PORTA],
         function(){
             switch(global.card.id)
             {
-                case CARD.JANELA: global.cutscene_query = CUTSCENE.CUT_QUARTO_JANELA; break;
-                case CARD.ESPERAR: global.cutscene_query = CUTSCENE.CUT_QUARTO_ESPERAR; break;
-                case CARD.CAMA: global.cutscene_query = CUTSCENE.CUT_QUARTO_CAMA; break;
-                case CARD.PORTA: global.cutscene_query = CUTSCENE.CUT_QUARTO_PORTA_SO; break;
+                case CARD.JANELA:
+                    global.cutscene_query = CUTSCENE.CUT_QUARTO_JANELA;
+                    libera_node(global.node_names.q14, global.nodes.fluxo2, global.liberados.fluxo2);
+                break;
+                case CARD.ESPERAR:
+                    global.cutscene_query = CUTSCENE.CUT_QUARTO_ESPERAR;
+                    libera_node(global.node_names.q17, global.nodes.fluxo2, global.liberados.fluxo2);
+                break;
+                case CARD.CAMA:
+                    global.cutscene_query = CUTSCENE.CUT_QUARTO_CAMA;
+                    libera_node(global.node_names.q18, global.nodes.fluxo2, global.liberados.fluxo2);
+                break;
+                case CARD.PORTA:
+                    global.cutscene_query = CUTSCENE.CUT_QUARTO_PORTA_SO;
+                    libera_node(global.node_names.q20, global.nodes.fluxo2, global.liberados.fluxo2);
+                break;
             }
             global.card = -1;
         }
@@ -725,8 +781,10 @@ Dialogo_Quarto_Janela = [
             // CHECAGEM: Substitua 'global.tem_lencol' pela sua variável/lógica de fato
             if (oCutscene.has_lencol == true) {
                 global.cutscene_query = CUTSCENE.CUT_QUARTO_JANELA_LENCOL;
+                libera_node(global.node_names.q15, global.nodes.fluxo2, global.liberados.fluxo2);
             } else {
                 global.cutscene_query = CUTSCENE.CUT_QUARTO_JANELA_MORTE;
+                libera_node(global.node_names.q16, global.nodes.fluxo2, global.liberados.fluxo2);
             }
         }
     )
@@ -815,8 +873,10 @@ Dialogo_Quarto_Porta_So = [
             // CHECAGEM: Substitua 'global.tem_chave' pela sua variável/lógica de fato
             if (oCutscene.has_key == true) {
                 global.cutscene_query = CUTSCENE.CUT_QUARTO_PORTA_CHAVE;
+                libera_node(global.node_names.q22, global.nodes.fluxo2, global.liberados.fluxo2);
             } else {
                 global.cutscene_query = CUTSCENE.CUT_QUARTO_PORTA_TRANCADA;
+                libera_node(global.node_names.q21, global.nodes.fluxo2, global.liberados.fluxo2);
             }
         }
     )
@@ -858,9 +918,18 @@ Dialogo_Quarto_Porta_Chave = [
         function(){
             switch(global.card.id)
             {
-                case CARD.MAGO: global.cutscene_query = CUTSCENE.CUT_QUARTO_MAGO_SO; break;
-                case CARD.REI: global.cutscene_query = CUTSCENE.CUT_QUARTO_REI_SO; break;
-                case CARD.SAPO: global.cutscene_query = CUTSCENE.CUT_QUARTO_SAPO_SO; break;
+                case CARD.MAGO:
+                    global.cutscene_query = CUTSCENE.CUT_QUARTO_MAGO_SO;
+                    libera_node(global.node_names.q23, global.nodes.fluxo2, global.liberados.fluxo2);
+                break;
+                case CARD.REI:
+                    global.cutscene_query = CUTSCENE.CUT_QUARTO_REI_SO;
+                    libera_node(global.node_names.q26, global.nodes.fluxo2, global.liberados.fluxo2);
+                break;
+                case CARD.SAPO:
+                    global.cutscene_query = CUTSCENE.CUT_QUARTO_SAPO_SO;
+                    libera_node(global.node_names.q27, global.nodes.fluxo2, global.liberados.fluxo2);
+                break;
             }
             global.card = -1;
         }
@@ -881,8 +950,14 @@ Dialogo_Quarto_Mago_So = [
         function(){
             switch(global.card.id)
             {
-                case CARD.BOM: global.cutscene_query = CUTSCENE.CUT_QUARTO_MGBOM_SO; break;
-                case CARD.MALIGNO: global.cutscene_query = CUTSCENE.CUT_QUARTO_MGMAL_SO; break;
+                case CARD.BOM:
+                    global.cutscene_query = CUTSCENE.CUT_QUARTO_MGBOM_SO;
+                    libera_node(global.node_names.q24, global.nodes.fluxo2, global.liberados.fluxo2);
+                break;
+                case CARD.MALIGNO:
+                    global.cutscene_query = CUTSCENE.CUT_QUARTO_MGMAL_SO;
+                    libera_node(global.node_names.q25, global.nodes.fluxo2, global.liberados.fluxo2);
+                break;
             }
             global.card = -1;
         }
