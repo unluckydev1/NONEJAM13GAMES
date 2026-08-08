@@ -1,18 +1,21 @@
 {
   "$GMObject":"",
-  "%Name":"oCutscene",
+  "%Name":"obj_fluxograma_2",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oCutscene",
+  "name":"obj_fluxograma_2",
   "overriddenProperties":[],
   "parent":{
-    "name":"controladores",
-    "path":"folders/objetos/controladores.yy",
+    "name":"Object",
+    "path":"folders/Fluxograma/Object.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_fluxograma_pai",
+    "path":"objects/obj_fluxograma_pai/obj_fluxograma_pai.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

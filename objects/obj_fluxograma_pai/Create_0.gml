@@ -55,7 +55,8 @@ hold = false;
 addx = [0, 0];
 addy = [0, 0];
 
-array_push(liberados, nodes[0]);
+if (!array_contains(liberados, nodes[0])) array_push(liberados, nodes[0]);
+
 
 nodes[0].alp = 1;
 nodes[0].can = true;
