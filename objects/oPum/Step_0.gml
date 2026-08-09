@@ -4,6 +4,6 @@ if(scala <=0){
 else{
     scala -= sub
 }
-speed = 10
+speed = 0
 image_xscale = scala; 
 image_yscale = scala;

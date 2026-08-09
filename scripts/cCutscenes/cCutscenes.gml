@@ -1,7 +1,8 @@
 function particle_create(obj){
-	repeat (10) {
+	repeat (20) {
 		instance_create_layer(obj.x,obj.y - 32, "Particulas", oParticle)
 	}
+	end_act()
 }
 function cutscene_trigger(_cutscene){
     with(oCutscene){
@@ -16,11 +17,13 @@ function start_act(){
     }
 }
 function wait_in(time){
+	with(oCutscene){
     timer += delta_time /  1000000;
     if (timer > time)
     {
         end_act();
     }
+	} 
 }
 
 function end_act(){
@@ -127,8 +130,7 @@ function move_to(obj,_x,_y,time,curve_type = linearmove){
         end_act();
     }
     }    
-}
-function move_to_speed(obj, _x, _y, _speed, curve_type = linearmove){
+}function move_to_speed(obj, _x, _y, _speed, curve_type = linearmove){
     
     with(oCutscene){
     if (!start)
@@ -138,21 +140,32 @@ function move_to_speed(obj, _x, _y, _speed, curve_type = linearmove){
         distx = _x - startx
         disty = _y - starty
         
-        // calcula a distância e converte velocidade -> duração
         var _dist = point_distance(startx, starty, _x, _y)
-        dur = _dist / _speed   // _speed em pixels/segundo
+        dur = _dist / _speed
         
         anim = animcurve_get_channel(curve_type, 0)
         timer = 0
+        tick_anterior = 0   // <-- controle dos "quartos de segundo"
         start = true
     }
-	var _par = false
+    
+    var _par = false
     if keyboard_check_pressed(vk_space){
-		timer = dur
-		_par = true
-	}
+        timer = dur
+        _par = true
+    }
     timer += delta_time / 1000000
+    
     var _pos = animcurve_channel_evaluate(anim, timer / dur)
+    
+    // checa se passou por mais um intervalo de 1/4 de segundo
+    var _intervalo = 0.25
+    var _tick_atual = floor(timer / _intervalo)
+    if (_tick_atual != tick_anterior)
+    {
+        tick_anterior = _tick_atual
+        instance_create_depth(obj.x, obj.y, obj.depth, oPum)
+    }
     
     obj.x = startx + distx * _pos
     obj.y = starty + disty * _pos
@@ -172,7 +185,6 @@ function new_dialogue(text){
     }
     if !global.reading{
         end_act()
-		show_message("oi")
     }
     }
 }
@@ -185,6 +197,17 @@ function room_change(_room){
 			
 		}
 	}
+}
+
+function npc_spawn(obj, _x, _y, _start = true){
+	var inst = instance_create_layer(_x,_y,"Instances",obj)	
+	inst.start = _start
+	if _start == false inst.scalax = 0 
+	end_act()
+}
+function npc_despawn(obj){
+	
+	if !instance_exists(obj){ end_act() }else if obj.despawn = false{ obj.despawn = true obj.alarm[0] = 90 }
 }
 // ===============================
 // CAPÍTULO 1 - A PRINCESA
@@ -201,7 +224,7 @@ cutscene_teste = [
 // CAP1_FLORESTA_INICIO
 Cutscene_Floresta_Inicio = [
     function(){start_act()},
-	function(){oPrincipe.estado = "andando";  move_to_speed(oPrincipe,1194,1671,200); },
+	function(){oPrincipe.estado = "andando";  move_to_speed(oPrincipe,1194,1671,global.vel_cutscene); },
 	function(){move_to_speed(oPrincipe,1537,1501,250);},
 	function(){move_to_speed(oPrincipe,1187,1278,250);},
 	function(){move_to_speed(oPrincipe,1754,924,250);},
@@ -216,10 +239,11 @@ Cutscene_Floresta_Inicio = [
 Cutscene_Caminho_Torre = [
 	
     function(){start_act();},
-	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,281,44,200);},
-	function(){ room_change(Room1_1);},
+	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,281,44,global.vel_cutscene);},
+	function(){ room_change(rm_torre);},
+	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,1970,1880,global.vel_cutscene);},
 	//function(){move_add(oIdoso,-300,-300,2); oIdoso.estado = "andando"},
-    function(){ new_dialogue(Dialogo_Torre);},
+    function(){;oPrincipe.estado = "parado";new_dialogue(Dialogo_Torre);},
     function(){end_cutscene()},
 ];
 
@@ -228,7 +252,7 @@ Cutscene_Caminho_Torre = [
 Cutscene_Caminho_Escuridao = [
     function(){start_act()},
 	//function(){move_add(oIdoso,-300,300,2); oIdoso.estado = "andando"},
-	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,3331,-66,200);},
+	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,3331,-66,global.vel_cutscene);},
 	function(){ room_change(Room1_1);},
     function(){new_dialogue(Dialogo_Escuridao)},
     function(){end_cutscene()}
@@ -238,7 +262,11 @@ Cutscene_Caminho_Escuridao = [
 // CAP1_TORRE_PORTA
 Cutscene_Torre_Porta = [
     function(){start_act()},
-    function(){new_dialogue(Dialogo_Porta)},
+	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,1690,1990,global.vel_cutscene);},
+	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,1440,1820,global.vel_cutscene);},
+	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,1060,2040,global.vel_cutscene);},
+	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,325,1560,global.vel_cutscene);},
+    function(){oPrincipe.estado = "parado"; new_dialogue(Dialogo_Porta)},
     function(){end_cutscene()}
 ];
 
@@ -246,7 +274,10 @@ Cutscene_Torre_Porta = [
 // CAP1_TORRE_JANELA
 Cutscene_Torre_Janela = [
     function(){start_act()},
-    function(){new_dialogue(Dialogo_Janela)},
+	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,1690,1990,global.vel_cutscene);},
+	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,1440,1820,global.vel_cutscene);},
+	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,1390,1185,global.vel_cutscene);},
+    function(){oPrincipe.estado = "parado";new_dialogue(Dialogo_Janela)},
     function(){end_cutscene()}
 ];
 
@@ -254,7 +285,10 @@ Cutscene_Torre_Janela = [
 // CAP1_MAGO_MAL
 Cutscene_Mago_Mal = [
     function(){start_act()},
+	function(){npc_spawn(oMagoMal,185,1385,false)},
     function(){new_dialogue(dialogo_Porta_MgMal)},
+	function(){npc_despawn(oPrincipe)},
+	function(){room_change(rm_quarto_princesa)},
     function(){end_cutscene()}
 ];
 
@@ -262,13 +296,22 @@ Cutscene_Mago_Mal = [
 // CAP1_MAGO_BOM
 Cutscene_Mago_Bom = [
     function(){start_act()},
+	function(){npc_spawn(oMagoBom,185,1385,false)},
     function(){new_dialogue(dialogo_Porta_MgBom)},
+	function(){particle_create(oPrincipe)},
+	function(){npc_despawn(oPrincipe)},
+	function(){room_change(rm_quarto_princesa)},
     function(){end_cutscene()}
 ];
 
 Cutscene_Mago_Sapo = [
-    function(){start_act()},
-    function(){new_dialogue(dialogo_Porta_MgSapo)},
+	function(){start_act()},
+	function(){npc_spawn(oMagoSapo,185,1385,false)},
+	function(){oMagoSapo.estado = "andando";move_to_speed(oMagoSapo,oPrincipe.x,oPrincipe.y,global.vel_cutscene);},
+	function(){oMagoSapo.scala_x_temp = -.05; oMagoSapo.scala_y_temp = .25; end_act()},
+	function(){npc_despawn(oPrincipe)},
+	function(){new_dialogue(dialogo_Porta_MgSapo)},
+	function(){room_change(rm_quarto_princesa)},
     function(){end_cutscene()}
 ];
 
@@ -277,6 +320,14 @@ Cutscene_Mago_Sapo = [
 // CAP1_ESCALAR_TORRE
 Cutscene_Escalar_Torre = [
     function(){start_act()},
+	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,1200,1180,global.vel_cutscene);},
+	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,1200,1080,global.vel_cutscene/3);},
+	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,1200,880,global.vel_cutscene/6);},
+	function(){wait_in(.5)},
+	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,1200,1380,global.vel_cutscene*4);},
+	function(){particle_create(oPrincipe)},
+	function(){particle_create(oPrincipe)},
+	function(){npc_despawn(oPrincipe)},
     function(){new_dialogue(Dialogo_Cair)},
     function(){end_cutscene()}
 ];
@@ -285,7 +336,9 @@ Cutscene_Escalar_Torre = [
 // CAP1_GRITAR_PRINCESA
 Cutscene_Gritar_Princesa = [
     function(){start_act()},
+	function(){obj_lencol.abrir = true; wait_in(3)},
     function(){new_dialogue(Dialogo_Gritar)},
+	function(){room_change(rm_quarto_princesa)},
     function(){end_cutscene()}
 ];
 
@@ -552,8 +605,8 @@ enum CUTSCENE{
 	CUT_PORTA,
 	CUT_JANELA,
 	
-	CUT_MGBOM,
 	CUT_MGMAL,
+	CUT_MGBOM,
 	CUT_MGSAPO,
 	
 	CUT_ESCALAR,

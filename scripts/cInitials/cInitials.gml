@@ -9,3 +9,5 @@ global.cutscene_query = noone
 global.card_in_mouse = noone
 
 global.Fluxo2 = false
+
+global.vel_cutscene = 350

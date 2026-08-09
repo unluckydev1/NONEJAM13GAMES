@@ -102,7 +102,7 @@ global.card_db[CARD.TORRE] = {
 
 global.card_db[CARD.ESCURIDAO] = {
     id: CARD.ESCURIDAO,
-    nome: "Escuridão",
+    nome: "Bosque",
     color: c_black,
     tipo: TIPOS.SUBSTANTIVO,
     unlocked: true, sprite: spr_bosque

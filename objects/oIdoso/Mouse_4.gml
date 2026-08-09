@@ -1,5 +1,8 @@
+if  !(start) exit
+
 scala_x_temp = .4
 scala_y_temp = -.4
+
 //instance_create_layer(x,y - 24, layer, oPum)
 
 repeat (10) {

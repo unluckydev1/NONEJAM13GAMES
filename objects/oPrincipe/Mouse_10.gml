@@ -1,2 +1,1 @@
-
-in = true
+event_inherited()

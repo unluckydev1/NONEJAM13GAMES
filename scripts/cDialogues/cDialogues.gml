@@ -167,7 +167,7 @@ Dialogo_Porta = [
     Texto(
         "Miguel",
         spr_text_box_idoso,
-        "O que no fim não foi tão eficiente assim..."
+        "O que no fim algo inesperado aconteceu..."
     ),
 
     Texto(

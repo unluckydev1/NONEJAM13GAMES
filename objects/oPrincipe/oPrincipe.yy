@@ -17,7 +17,10 @@
     "name":"Ingame",
     "path":"folders/objetos/Ingame.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oIdoso",
+    "path":"objects/oIdoso/oIdoso.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

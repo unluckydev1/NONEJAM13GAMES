@@ -1,4 +1,21 @@
-
+if  !(start){
+	destroi = false
+	scalax = elastic("scalax", scalax, 1, 1, .1);
+	if (abs(scalax - 1) < 0.001)
+	{
+		start = true
+	}
+	exit;
+}
+if (despawn){
+	scalax = elastic("scalax", scalax, 0, 1, .1);
+	if (alarm[0] <= 1)
+	{
+		instance_destroy()
+		
+	}
+	exit;
+}
 switch(tipo){
     case "player":
         #region PLAYER

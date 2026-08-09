@@ -1,5 +1,5 @@
 
-var accept_key = keyboard_check_pressed(vk_space)
+var accept_key = keyboard_check_pressed(vk_space) or mouse_check_button_pressed(mb_left);
 
 if appear == true{
 draw_set_alpha(alp)

@@ -16,6 +16,7 @@ estado = "parado";
 //variavel da carta ou item
 var_desbloqueada = -1;
 //------//Escalas//------//
+start = true;
 scalax  = 1;
 scalay  = 1;
 
@@ -29,4 +30,6 @@ acres_y   = 0;
 color   = c_white;
 //------//VALORES//------//
 in = false
+
+despawn = false
 
