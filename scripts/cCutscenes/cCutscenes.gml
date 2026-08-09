@@ -370,7 +370,8 @@ Cutscene_Luz_Floresta = [
     function(){start_act()},
 	function(){oBrilho.destroy = true end_act()},
 	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,oBrilho.x,oBrilho.y,global.vel_cutscene);},
-	function(){instance_destroy(obj_moita);particle_create(oPrincipe) npc_despawn(oPrincipe)},
+	function(){instance_destroy(obj_moita);particle_create(oPrincipe) npc_despawn(oPrincipe) new_shake(10,.95)},
+    function(){play_cutscene_sound(sfxArmadilha, 0, 0, 4)},
     function(){new_dialogue(Dialogo_Luz)},
 	function(){room_change(rm_quarto_princesa)},
     function(){end_cutscene()}

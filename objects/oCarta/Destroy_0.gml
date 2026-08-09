@@ -21,3 +21,5 @@ repeat (20) {
     
     _part.image_blend = c_orange;
 }
+audio_play_sound(sfxImpactoCarta1,0, 0)
+audio_play_sound(sfxImpactoCarta2,0, 0, 2)

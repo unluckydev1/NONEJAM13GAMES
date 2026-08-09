@@ -12,3 +12,7 @@ destino = noone;
 indo = true;
 
 toca = true
+
+
+delay_coiso = room_speed / 1.5
+timer_coiso = delay_coiso
