@@ -120,7 +120,6 @@ function puxa_tudo(setings = global.node_settings, _node = global.nodes.fluxo1, 
     }
 }
 
-#region Nodes Settings
 global.node_names = {
     p1 : "Floresta",
 	//Torre
@@ -198,7 +197,7 @@ global.node_settings =
     // FLUXOGRAMA 1 - FLORESTA / TORRE / BOSQUE
     // ===================================================
     {
-        sprite : spr_node,
+        sprite : spr_floresta,
         cordx  : _rm_width/2,
         cordy  : _rm_height/2,
         title  : _names.p1,
@@ -210,7 +209,7 @@ global.node_settings =
 	
 	// torre 
     {
-        sprite : spr_node,
+        sprite : spr_torre_icon,
         cordx  : _rm_width/2 + _db*2,
         cordy  : _rm_height/2 - _db*2,
         title  : _names.p2,
@@ -220,7 +219,7 @@ global.node_settings =
         final: false
 	},
     {
-        sprite : spr_node,
+        sprite : spr_porta,
         cordx  : _rm_width/2 + _db*2 + _db*1.5,
         cordy  : _rm_height/2 - _db*2 - _db*1.5,
         title  : _names.p3,
@@ -230,7 +229,7 @@ global.node_settings =
         final: false
 	},
     {
-        sprite : spr_node,
+        sprite : spr_mal,
         cordx  : _rm_width/2 + _db*2 + _db*1.5 + _db,
         cordy  : _rm_height/2 - _db*2 - _db*1.5 + _db,
         title  : _names.p4,
@@ -240,17 +239,19 @@ global.node_settings =
         final: true,
 	},
     {
-        sprite : spr_node,
-        cordx  : _rm_width/2 + _db*2 + _db*1.5 + _db,
+        sprite : spr_bom,
+        cordx  : _rm_width/2 + _db*2 + _db*1.5 + _db*2,
         cordy  : _rm_height/2 - _db*2 - _db*1.5,
         title  : _names.p5,
         conect : [],
         desc   : "O principe sobe a torre com ajuda do mago.",
         imagem: spr_nula,
-        final: true
+        final: true,
+		
+		conect_other : obj_fluxograma_2
 	},
     {
-        sprite : spr_node,
+        sprite : spr_sapo_icon,
         cordx  : _rm_width/2 + _db*2 + _db*1.5 + _db,
         cordy  : _rm_height/2 - _db*2 - _db*1.5 -_db,
         title  : _names.p6,
@@ -262,7 +263,7 @@ global.node_settings =
 
 	// janela (opção alternativa à porta, saindo da Torre)
 	{
-        sprite : spr_node,
+        sprite : spr_janela,
         cordx  : _rm_width/2 + _db*2 + _db*1.5,
         cordy  : _rm_height/2 - _db*2 + _db*1.5,
         title  : _names.p7,
@@ -272,7 +273,7 @@ global.node_settings =
         final: false
 	},
     {
-        sprite : spr_node,
+        sprite : spr_escalada,
         cordx  : _rm_width/2 + _db*2 + _db*1.5 + _db,
         cordy  : _rm_height/2 - _db*2 + _db*1.5 - _db,
         title  : _names.p8,
@@ -282,7 +283,7 @@ global.node_settings =
         final: true
 	},
     {
-        sprite : spr_node,
+        sprite : spr_janela,
         cordx  : _rm_width/2 + _db*2 + _db*1.5 + _db,
         cordy  : _rm_height/2 - _db*2 + _db*1.5 + _db,
         title  : _names.p9,
@@ -306,7 +307,7 @@ global.node_settings =
         final: false
 	},
     {
-        sprite : spr_node,
+        sprite : spr_luz_estranha,
         cordx  : _rm_width/2 - _db*2 - _db*1.5,
         cordy  : _rm_height/2 + _db*2 + _db*1.5,
         title  : _names.p11,
@@ -316,7 +317,7 @@ global.node_settings =
         final: true
 	},
     {
-        sprite : spr_node,
+        sprite : spr_casa_mago,
         cordx  : _rm_width/2 - _db*2 + _db*1.5,
         cordy  : _rm_height/2 + _db*2 + _db*1.5,
         title  : _names.p12,
@@ -328,17 +329,19 @@ global.node_settings =
         conect_other : obj_fluxograma_2
 	},
     {
-        sprite : spr_node,
+        sprite : spr_campainha,
         cordx  : _rm_width/2 - _db*2 + _db*1.5 + _db,
         cordy  : _rm_height/2 + _db*2 + _db*2 + _db,
         title  : _names.p13,
         conect : [],
         desc   : "O principe bate na porta; o mago cogumelo teleporta ele ate à princesa.",
         imagem: spr_nula,
-        final: false
+        final: false,
+		
+		conect_other : obj_fluxograma_2
 	},
     {
-        sprite : spr_node,
+        sprite : spr_cautela,
         cordx  : _rm_width/2 - _db*2 + _db*1.5 - _db,
         cordy  : _rm_height/2 + _db*2 + _db*2 + _db,
         title  : _names.p14,
@@ -357,7 +360,7 @@ global.node_setting_princesa =
 
     // raiz unica (nível 0) 
     {
-        sprite : spr_node,
+        sprite : spr_rei_icon,
         cordx  : _rm_width/2 + _tree_gapx,
         cordy  : _rm_height/2 - _db*6 + _tree_gapy,
         title  : _names.q0,
@@ -368,7 +371,7 @@ global.node_setting_princesa =
 
     // raizes (nível 1) 
     {
-        sprite : spr_node,
+        sprite : spr_quarto_chegar,
         cordx  : _rm_width/2 + _tree_gapx - _db*3,
         cordy  : _rm_height/2 - _db*4 + _tree_gapy,
         title  : _names.q1,
@@ -377,7 +380,7 @@ global.node_setting_princesa =
         imagem : spr_nula, final : false
     },
     {
-        sprite : spr_node,
+        sprite : kill_principe,
         cordx  : _rm_width/2 + _tree_gapx + _db*3,
         cordy  : _rm_height/2 - _db*4 + _tree_gapy,
         title  : _names.q2,
@@ -388,7 +391,7 @@ global.node_setting_princesa =
 
     // 2 
     {
-        sprite : spr_node,
+        sprite : spr_misterioso,
         cordx  : _rm_width/2 + _tree_gapx - _db*3,
         cordy  : _rm_height/2 - _db*2 + _tree_gapy,
         title  : _names.q3,
@@ -397,7 +400,7 @@ global.node_setting_princesa =
         imagem : spr_nula, final : false
     },
     {
-        sprite : spr_node,
+        sprite : spr_misterioso,
         cordx  : _rm_width/2 + _tree_gapx + _db*3,
         cordy  : _rm_height/2 - _db*2 + _tree_gapy,
         title  : _names.q12,
@@ -408,7 +411,7 @@ global.node_setting_princesa =
 
     // 3 (com principe) 
     {
-        sprite : spr_node,
+        sprite : spr_hug,
         cordx  : _rm_width/2 + _tree_gapx - _db*5,
         cordy  : _rm_height/2 + _tree_gapy,
         title  : _names.q4,
@@ -417,7 +420,7 @@ global.node_setting_princesa =
         imagem : spr_nula, final : true
     },
     {
-        sprite : spr_node,
+        sprite : kill_principe,
         cordx  : _rm_width/2 + _tree_gapx - _db*3,
         cordy  : _rm_height/2 + _tree_gapy,
         title  : _names.q5,
@@ -426,7 +429,7 @@ global.node_setting_princesa =
         imagem : spr_nula, final : true
     },
     {
-        sprite : spr_node,
+        sprite : spr_porta_misterio,
         cordx  : _rm_width/2 + _tree_gapx - _db,
         cordy  : _rm_height/2 + _tree_gapy,
         title  : _names.q6,
@@ -437,7 +440,7 @@ global.node_setting_princesa =
 
     // 3 (sem principe)
     {
-        sprite : spr_node,
+        sprite : spr_janela_escape,
         cordx  : _rm_width/2 + _tree_gapx + _db,
         cordy  : _rm_height/2 + _tree_gapy,
         title  : _names.q14,
@@ -446,7 +449,7 @@ global.node_setting_princesa =
         imagem : spr_nula, final : false
     },
     {
-        sprite : spr_node,
+        sprite : spr_relogio,
         cordx  : _rm_width/2 + _tree_gapx + _db*3,
         cordy  : _rm_height/2 + _tree_gapy,
         title  : _names.q17,
@@ -455,7 +458,7 @@ global.node_setting_princesa =
         imagem : spr_nula, final : true
     },
     {
-        sprite : spr_node,
+        sprite : spr_cama,
         cordx  : _rm_width/2 + _tree_gapx + _db*5,
         cordy  : _rm_height/2 + _tree_gapy,
         title  : _names.q18,
@@ -464,7 +467,7 @@ global.node_setting_princesa =
         imagem : spr_nula, final : true
     },
     {
-        sprite : spr_node,
+        sprite : spr_porta_misteriosa,
         cordx  : _rm_width/2 + _tree_gapx + _db*7,
         cordy  : _rm_height/2 + _tree_gapy,
         title  : _names.q20,
@@ -475,7 +478,7 @@ global.node_setting_princesa =
 
     // 4 (com principe) 
     {
-        sprite : spr_node,
+        sprite : spr_mago_quarto,
         cordx  : _rm_width/2 + _tree_gapx - _db*2.5,
         cordy  : _rm_height/2 + _db*2 + _tree_gapy,
         title  : _names.q7,
@@ -484,7 +487,7 @@ global.node_setting_princesa =
         imagem : spr_nula, final : false
     },
     {
-        sprite : spr_node,
+        sprite : spr_rei_icon,
         cordx  : _rm_width/2 + _tree_gapx - _db*1.5,
         cordy  : _rm_height/2 + _db*2 + _tree_gapy,
         title  : _names.q10,
@@ -493,7 +496,7 @@ global.node_setting_princesa =
         imagem : spr_nula, final : true
     },
     {
-        sprite : spr_node,
+        sprite : spr_sapo_icon,
         cordx  : _rm_width/2 + _tree_gapx - _db*0.5,
         cordy  : _rm_height/2 + _db*2 + _tree_gapy,
         title  : _names.q11,
@@ -504,7 +507,7 @@ global.node_setting_princesa =
 
     // 4 (sem principe)
     {
-        sprite : spr_node,
+        sprite : spr_principe_morto,
         cordx  : _rm_width/2 + _tree_gapx + _db*0.5,
         cordy  : _rm_height/2 + _db*2 + _tree_gapy,
         title  : _names.q16,
@@ -513,7 +516,7 @@ global.node_setting_princesa =
         imagem : spr_nula, final : true
     },
     {
-        sprite : spr_node,
+        sprite : spr_lencol,
         cordx  : _rm_width/2 + _tree_gapx + _db*1.5,
         cordy  : _rm_height/2 + _db*2 + _tree_gapy,
         title  : _names.q13,
@@ -522,7 +525,7 @@ global.node_setting_princesa =
         imagem : spr_nula, final : false
     },
     {
-        sprite : spr_node,
+        sprite : spr_porta_trancada,
         cordx  : _rm_width/2 + _tree_gapx + _db*6,
         cordy  : _rm_height/2 + _db*2 + _tree_gapy,
         title  : _names.q21,
@@ -531,7 +534,7 @@ global.node_setting_princesa =
         imagem : spr_nula, final : true
     },
     {
-        sprite : spr_node,
+        sprite : spr_chave,
         cordx  : _rm_width/2 + _tree_gapx + _db*8,
         cordy  : _rm_height/2 + _db*2 + _tree_gapy,
         title  : _names.q19,
@@ -542,7 +545,7 @@ global.node_setting_princesa =
 
     // 5 
     {
-        sprite : spr_node,
+        sprite : spr_mal,
         cordx  : _rm_width/2 + _tree_gapx - _db*3,
         cordy  : _rm_height/2 + _db*4 + _tree_gapy,
         title  : _names.q8,
@@ -551,7 +554,7 @@ global.node_setting_princesa =
         imagem : spr_nula, final : true
     },
     {
-        sprite : spr_node,
+        sprite : spr_bom,
         cordx  : _rm_width/2 + _tree_gapx - _db*2,
         cordy  : _rm_height/2 + _db*4 + _tree_gapy,
         title  : _names.q9,
@@ -560,7 +563,7 @@ global.node_setting_princesa =
         imagem : spr_nula, final : true
     },
     {
-        sprite : spr_node,
+        sprite : spr_lencol,
         cordx  : _rm_width/2 + _tree_gapx + _db*1.5,
         cordy  : _rm_height/2 + _db*4 + _tree_gapy,
         title  : _names.q15,
@@ -569,7 +572,7 @@ global.node_setting_princesa =
         imagem : spr_nula, final : true
     },
     {
-        sprite : spr_node,
+        sprite : spr_oque_veio,
         cordx  : _rm_width/2 + _tree_gapx + _db*8,
         cordy  : _rm_height/2 + _db*4 + _tree_gapy,
         title  : _names.q22,
@@ -580,7 +583,7 @@ global.node_setting_princesa =
 
     // 6
     {
-        sprite : spr_node,
+        sprite : spr_mago_quarto,
         cordx  : _rm_width/2 + _tree_gapx + _db*7,
         cordy  : _rm_height/2 + _db*6 + _tree_gapy,
         title  : _names.q23,
@@ -589,7 +592,7 @@ global.node_setting_princesa =
         imagem : spr_nula, final : false
     },
     {
-        sprite : spr_node,
+        sprite : spr_rei_icon,
         cordx  : _rm_width/2 + _tree_gapx + _db*8,
         cordy  : _rm_height/2 + _db*6 + _tree_gapy,
         title  : _names.q26,
@@ -598,7 +601,7 @@ global.node_setting_princesa =
         imagem : spr_nula, final : true
     },
     {
-        sprite : spr_node,
+        sprite : spr_sapo_icon,
         cordx  : _rm_width/2 + _tree_gapx + _db*9,
         cordy  : _rm_height/2 + _db*6 + _tree_gapy,
         title  : _names.q27,
@@ -609,7 +612,7 @@ global.node_setting_princesa =
 
     // 7 
     {
-        sprite : spr_node,
+        sprite : spr_bom,
         cordx  : _rm_width/2 + _tree_gapx + _db*6.5,
         cordy  : _rm_height/2 + _db*8 + _tree_gapy,
         title  : _names.q24,
@@ -618,7 +621,7 @@ global.node_setting_princesa =
         imagem : spr_nula, final : true
     },
     {
-        sprite : spr_node,
+        sprite : spr_mal,
         cordx  : _rm_width/2 + _tree_gapx + _db*7.5,
         cordy  : _rm_height/2 + _db*8 + _tree_gapy,
         title  : _names.q25,
@@ -627,17 +630,6 @@ global.node_setting_princesa =
         imagem : spr_nula, final : true
     },
 ]
-	//{
-    //    sprite : spr_node,
-    //    cordx  : _rm_width/2,
-    //    cordy  : _rm_height/2 + _db*3,
-    //    title  : _names.p15,
-    //    conect : [],
-    //    desc   : "O principe e a princesa finalmente se reencontram.",
-    //    imagem: spr_nula,
-    //    final: true
-	//},
-
 puxa_tudo();
 puxa_tudo(global.node_setting_princesa, global.nodes.fluxo2, global.liberados.fluxo2);
 

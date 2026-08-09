@@ -1,6 +1,6 @@
 {
   "$GMSprite":"v2",
-  "%Name":"spr_bruxo_verde",
+  "%Name":"spr_carta_bom",
   "bboxMode":0,
   "bbox_bottom":797,
   "bbox_left":0,
@@ -12,18 +12,18 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"93e61126-0b69-48ad-b3b8-9fad5503adfa","name":"93e61126-0b69-48ad-b3b8-9fad5503adfa","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"3b46d5da-cf17-4b4e-a26f-3b3027ade0d9","name":"3b46d5da-cf17-4b4e-a26f-3b3027ade0d9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":800,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"b0d96b8e-cf3a-45de-b5fd-64f4b92b4faa","blendMode":0,"displayName":"default","isLocked":false,"name":"b0d96b8e-cf3a-45de-b5fd-64f4b92b4faa","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"2c160732-6ffa-48b2-9545-46815ebfb5cc","blendMode":0,"displayName":"default","isLocked":false,"name":"2c160732-6ffa-48b2-9545-46815ebfb5cc","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"spr_bruxo_verde",
+  "name":"spr_carta_bom",
   "nineSlice":null,
-  "origin":4,
+  "origin":0,
   "parent":{
     "name":"cards",
     "path":"folders/Sprites/cards.yy",
@@ -33,7 +33,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1",
-    "%Name":"spr_bruxo_verde",
+    "%Name":"spr_carta_bom",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -57,7 +57,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"spr_bruxo_verde",
+    "name":"spr_carta_bom",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -69,14 +69,14 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"93e61126-0b69-48ad-b3b8-9fad5503adfa","path":"sprites/spr_bruxo_verde/spr_bruxo_verde.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"0f72cdbc-e410-4151-bd8f-cb915ebcd620","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"3b46d5da-cf17-4b4e-a26f-3b3027ade0d9","path":"sprites/spr_carta_bom/spr_carta_bom.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"0f18e27d-3ba8-46af-b48b-cc80cdb8a64e","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":224,
-    "yorigin":400,
+    "xorigin":0,
+    "yorigin":0,
   },
   "swatchColours":null,
   "swfPrecision":0.5,
