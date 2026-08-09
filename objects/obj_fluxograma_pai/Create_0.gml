@@ -26,7 +26,13 @@ title = {
     xs : [.4, .4],
     ys : [.4, .4],
     
-    states : "title"
+    states : "title",
+    
+    cooldown_passa : game_get_speed(gamespeed_fps)
+}
+
+if (global.fluxo_first_time){
+    title.states = "grande";
 }
 
 upd_mousex = function() {return mouse_x / escala};

@@ -10,7 +10,7 @@ global.liberados = {
     fluxo2 : []
 }
 
-global.fluxo_first_time = false;
+global.fluxo_first_time = true;
 
 function skill_node(_spr, _nome, _x, _y, _img, _conect = [], _desc = "", _final, _cotherskill = noone) constructor
 {

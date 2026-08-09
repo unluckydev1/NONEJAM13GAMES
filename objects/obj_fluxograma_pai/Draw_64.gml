@@ -9,10 +9,25 @@ var _txt = scribble(txt_title);
 switch (title.states) {
 	case "title":
         title.ny = string_height_scribble(txt_title)/title.ys[0];
+        
+        title.xs[1] = .4;
+        title.ys[1] = .4;
     break;
 
     case "grande":
         title.ny = room_height/2;
+        
+        title.xs[1] = 1;
+        title.ys[1] = 1;
+        
+        title.cooldown_passa--;
+        title.cooldown_passa = clamp(title.cooldown_passa, 0, infinity);
+        
+        if (title.cooldown_passa <= 0){
+            title.states = "title";
+            
+            global.fluxo_first_time = false;
+        }
     break;        
 }
 
@@ -22,6 +37,9 @@ _txt.transform(title.xs[0], title.ys[0], 0);
 _txt.draw(title.x, title.y);
 
 title.y = lerp(title.y, title.ny, .15);
+
+title.xs[0] = lerp(title.xs[0], title.xs[1], .15);
+title.ys[0] = lerp(title.ys[0], title.ys[1], .15);
 
 
 draw_set_halign(fa_left);
