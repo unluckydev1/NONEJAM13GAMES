@@ -344,7 +344,7 @@ Cutscene_Escalar_Torre = [
 	function(){particle_create(oPrincipe)},
 	function(){npc_despawn(oPrincipe)},
     function(){new_dialogue(Dialogo_Cair)},
-   	function(){room_change(rm_quarto_princesa)},
+	function(){room_change(rm_quarto_princesa)},
     function(){end_cutscene()}
 ];
 

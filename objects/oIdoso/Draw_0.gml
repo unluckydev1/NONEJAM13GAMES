@@ -1,6 +1,6 @@
 
 
-draw_sprite_ext(sIdosoPlace, 0, x,y, scalax + scala_x_temp + in_scale, scalay + scala_y_temp + in_scale, angle, color, 1)
+draw_sprite_ext(sprite_index, 0, x,y, scalax + scala_x_temp + in_scale, scalay + scala_y_temp + in_scale, angle, color, 1)
 
 ///var _px = point_direction(x,y,mouse_x,mouse_y)
 

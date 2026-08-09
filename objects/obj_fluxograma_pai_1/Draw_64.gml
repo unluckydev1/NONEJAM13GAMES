@@ -21,7 +21,7 @@ switch (title.states) {
         title.xs[1] = 1;
         title.ys[1] = 1;
         
-        title.alp_r = 2;
+        title.alp_r = 1;
         
         title.cooldown_passa--;
         title.cooldown_passa = clamp(title.cooldown_passa, 0, infinity);
@@ -70,60 +70,19 @@ _txtr.draw(title.x, title.y);
 
 title.xs[0] = lerp(title.xs[0], title.xs[1], .1);
 title.ys[0] = lerp(title.ys[0], title.ys[1], .1);
-title.alp_r = lerp(title.alp_r, 0, .15);
+title.alp_r = lerp(title.alp_r, 0, .1);
 
 
 draw_set_halign(fa_left);
 draw_set_valign(1);
-draw_set_font(fnt_font);
-scribble_anim_wave(2,.1,.06);
 
-var _alpha = 1 - title.alp_r;
-
-draw_set_alpha(_alpha);
-
-var _scale = 1.4;
+var _scale = 1.3;
 
 var _str = string("[scale, {0}][wave]Aperte [scale,1.3][rainbow][scale, {1}]Enter[scale, {0}][/rainbow] para trilhar uma nova história!", _scale, click_enter)
 
-var _x = 20;
-var _y = display_get_gui_height()-string_height_scribble(_str)*_scale;
-
-draw_set_colour(c_black);
-draw_text_scribble(_x, _y+4*_scale, _str);
-draw_set_colour(c_white);
-draw_text_scribble(_x, _y, _str);
-
-var _spr_scale = 1.6;
-
-var _spr = spr_final_pad;
-
-var _w = sprite_get_width(_spr)/2*_spr_scale;
-var _h = sprite_get_height(_spr)*_spr_scale;
-
-apply_rainbow(_spr, _time_rainbow, 0);
-draw_sprite_ext(spr_final_pad, 0, _x+_w, _y-_h, _spr_scale, _spr_scale, 0, c_white, _alpha);
-shader_reset();
-
-draw_set_colour(c_black);
-draw_text_scribble(_x+_w*2+15, _y-_h+4*1.4, "[scale, 1.4][wave]- Ação");
-draw_set_colour(c_white);
-draw_text_scribble(_x+_w*2+15, _y-_h, "[scale, 1.4][wave]- Ação");
-
-apply_rainbow(_spr, _time_rainbow, 1);
-draw_sprite_ext(spr_final_pad, 0, _x+_w, _y-_h*2-20, _spr_scale+.2, _spr_scale+.2, 0, c_white, _alpha);
-shader_reset();
-draw_sprite_ext(spr_final_pad, 0, _x+_w, _y-_h*2-20, _spr_scale, _spr_scale, 0, c_white, _alpha);
-
-draw_set_colour(c_black);
-draw_text_scribble(_x+_w*2+15, _y-_h*2-20+4*1.4, "[scale, 1.4][wave]- Final");
-draw_set_colour(c_white);
-draw_text_scribble(_x+_w*2+15, _y-_h*2-20, "[scale, 1.4][wave]- Final");
+draw_text_scribble(20, display_get_gui_height()-string_height_scribble(_str)*_scale, _str);
 
 draw_set_halign(-1);
 draw_set_valign(-1);
-draw_set_alpha(1);
-
-_time_rainbow += .01;
 
 click_enter = lerp(click_enter, _scale, .15);

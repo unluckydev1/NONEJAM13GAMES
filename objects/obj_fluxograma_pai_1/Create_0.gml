@@ -20,8 +20,6 @@ click_enter = 1;
 txt_title = "[wave]Árvore de Ações";
 txt_rtitle = "[wave][rainbow]Árvore de Ações";
 
-_time_rainbow = 0;
-
 title = {
     x : room_width/2,
     y : string_height_scribble(txt_title)*2,
