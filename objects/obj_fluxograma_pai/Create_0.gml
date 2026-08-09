@@ -1,4 +1,4 @@
-randomize();
+sCarandomize();
 
 nodes     = global.nodes.fluxo1;
 liberados = global.liberados.fluxo1;

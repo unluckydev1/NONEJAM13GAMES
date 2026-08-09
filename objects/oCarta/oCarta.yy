@@ -11,8 +11,8 @@
   "name":"oCarta",
   "overriddenProperties":[],
   "parent":{
-    "name":"Testes",
-    "path":"folders/objetos/Testes.yy",
+    "name":"Narração",
+    "path":"folders/objetos/Narração.yy",
   },
   "parentObjectId":null,
   "persistent":false,

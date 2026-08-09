@@ -26,12 +26,10 @@ var right  = x + hw;
 var bottom = y + hh + yhover + ysin;
 
 draw_set_colour(card.color);
-draw_rectangle(left, top, right, bottom, false);
+draw_sprite_ext(sCarta,0,x,y + yhover + ysin,1,1,0,c_white,1)
+//draw_rectangle(left, top, right, bottom, false);
 
 
-
-draw_set_colour(c_black);
-draw_rectangle(left, top, right, bottom, true);
 
 draw_set_colour(c_white);
 
@@ -112,4 +110,4 @@ if (pursue) {
 
 
 /// Depth
-depth = ((hovering || pursue)&&global.card_in_mouse == id) ? -999 : dep_init;
+depth = ((hovering || pursue)&&global.card_in_mouse == id) ? -9999 : dep_init;
