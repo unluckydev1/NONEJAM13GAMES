@@ -25,8 +25,8 @@ var top    = y - hh + yhover + ysin;
 var right  = x + hw;
 var bottom = y + hh + yhover + ysin;
 
-draw_set_colour(card.color);
-draw_sprite_ext(sCarta,0,x,y + yhover + ysin,1,1,0,c_white,1)
+//draw_set_colour(card.color);
+draw_sprite_ext(card.sprite,0,x,y + yhover + ysin,.25,.25,0,c_white,1)
 //draw_rectangle(left, top, right, bottom, false);
 
 

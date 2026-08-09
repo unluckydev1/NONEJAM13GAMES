@@ -63,7 +63,7 @@ global.card_db[CARD.REI] = {
     nome: "Rei",
     color: c_blue,
     tipo: TIPOS.PERSONAGEM,
-    unlocked: true
+    unlocked: true, sprite: sCarta
 };
 
 global.card_db[CARD.BARDO] = {
@@ -71,7 +71,7 @@ global.card_db[CARD.BARDO] = {
     nome: "Bardo",
     color: c_red,
     tipo: TIPOS.PERSONAGEM,
-    unlocked: true
+    unlocked: true, sprite: sCarta
 };
 
 global.card_db[CARD.SAPO] = {
@@ -79,7 +79,7 @@ global.card_db[CARD.SAPO] = {
     nome: "Sapo",
     color: c_green,
     tipo: TIPOS.PERSONAGEM,
-    unlocked: true
+    unlocked: true, sprite: sCarta,
 };
 
 global.card_db[CARD.MAGO] = {
@@ -87,7 +87,7 @@ global.card_db[CARD.MAGO] = {
     nome: "Mago",
     color: c_purple,
     tipo: TIPOS.PERSONAGEM,
-    unlocked: true
+    unlocked: true, sprite: sCarta,
 };
 
 /// SUBSTANTIVOS
@@ -97,7 +97,7 @@ global.card_db[CARD.TORRE] = {
     nome: "Torre",
     color: c_gray,
     tipo: TIPOS.SUBSTANTIVO,
-    unlocked: true
+    unlocked: true, sprite: spr_principe,
 };
 
 global.card_db[CARD.ESCURIDAO] = {
@@ -105,7 +105,7 @@ global.card_db[CARD.ESCURIDAO] = {
     nome: "Escuridão",
     color: c_black,
     tipo: TIPOS.SUBSTANTIVO,
-    unlocked: true
+    unlocked: true, sprite: sCarta
 };
 
 global.card_db[CARD.LUZ] = {
@@ -113,7 +113,7 @@ global.card_db[CARD.LUZ] = {
     nome: "Luz",
     color: c_yellow,
     tipo: TIPOS.SUBSTANTIVO,
-    unlocked: true
+    unlocked: true, sprite: sCarta
 };
 
 global.card_db[CARD.CASA] = {
@@ -121,7 +121,7 @@ global.card_db[CARD.CASA] = {
     nome: "Casa",
     color: make_color_rgb(150,100,50),
     tipo: TIPOS.SUBSTANTIVO,
-    unlocked: true
+    unlocked: true, sprite: sCarta
 };
 
 global.card_db[CARD.JANELA] = {
@@ -129,7 +129,7 @@ global.card_db[CARD.JANELA] = {
     nome: "Janela",
     color: c_aqua,
     tipo: TIPOS.SUBSTANTIVO,
-    unlocked: true
+    unlocked: true, sprite: sCarta
 };
 
 global.card_db[CARD.PORTA] = {
@@ -137,7 +137,7 @@ global.card_db[CARD.PORTA] = {
     nome: "Porta",
     color: c_yellow,
     tipo: TIPOS.SUBSTANTIVO,
-    unlocked: true
+    unlocked: true, sprite: sCarta
 };
 
 global.card_db[CARD.CAMA] = {
@@ -145,7 +145,7 @@ global.card_db[CARD.CAMA] = {
     nome: "Cama",
     color: c_fuchsia,
     tipo: TIPOS.SUBSTANTIVO,
-    unlocked: true
+    unlocked: true, sprite: sCarta
 };
 
 /// VERBOS
@@ -155,7 +155,7 @@ global.card_db[CARD.ESCALAR] = {
     nome: "Escalar",
     color: c_lime,
     tipo: TIPOS.VERBO,
-    unlocked: true
+    unlocked: true, sprite: sCarta
 };
 
 global.card_db[CARD.GRITAR] = {
@@ -163,7 +163,7 @@ global.card_db[CARD.GRITAR] = {
     nome: "Gritar",
     color: c_lime,
     tipo: TIPOS.VERBO,
-    unlocked: true
+    unlocked: true, sprite: sCarta
 };
 
 global.card_db[CARD.ENTRAR] = {
@@ -171,7 +171,7 @@ global.card_db[CARD.ENTRAR] = {
     nome: "Entrar",
     color: c_lime,
     tipo: TIPOS.VERBO,
-    unlocked: true
+    unlocked: true, sprite: sCarta
 };
 
 global.card_db[CARD.BATER] = {
@@ -179,7 +179,7 @@ global.card_db[CARD.BATER] = {
     nome: "Bater",
     color: c_lime,
     tipo: TIPOS.VERBO,
-    unlocked: true
+    unlocked: true, sprite: sCarta
 };
 
 global.card_db[CARD.ABRACAR] = {
@@ -187,7 +187,7 @@ global.card_db[CARD.ABRACAR] = {
     nome: "Abraçar",
     color: c_lime,
     tipo: TIPOS.VERBO,
-    unlocked: true
+    unlocked: true, sprite: sCarta
 };
 
 global.card_db[CARD.MATAR] = {
@@ -195,7 +195,7 @@ global.card_db[CARD.MATAR] = {
     nome: "Matar",
     color: c_lime,
     tipo: TIPOS.VERBO,
-    unlocked: true
+    unlocked: true, sprite: sCarta
 };
 
 global.card_db[CARD.ESPERAR] = {
@@ -203,7 +203,7 @@ global.card_db[CARD.ESPERAR] = {
     nome: "Esperar",
     color: c_lime,
     tipo: TIPOS.VERBO,
-    unlocked: true
+    unlocked: true, sprite: sCarta
 };
 
 /// ADJETIVOS
@@ -213,7 +213,7 @@ global.card_db[CARD.BOM] = {
     nome: "Bom",
     color: c_green,
     tipo: TIPOS.ADJETIVO,
-    unlocked: true
+    unlocked: true, sprite: sCarta
 };
 
 global.card_db[CARD.MALIGNO] = {
@@ -221,7 +221,7 @@ global.card_db[CARD.MALIGNO] = {
     nome: "Maligno",
     color: c_red,
     tipo: TIPOS.ADJETIVO,
-    unlocked: true
+    unlocked: true, sprite: sCarta
 };
 
 global.card_db[CARD.FLORESTA] = {
@@ -229,7 +229,7 @@ global.card_db[CARD.FLORESTA] = {
     nome: "Floresta",
     color: c_green,
     tipo: TIPOS.CENA,
-    unlocked: true
+    unlocked: true, sprite: sCarta
 };
 
 global.card_db[CARD.PRINCIPE] = {
@@ -237,7 +237,7 @@ global.card_db[CARD.PRINCIPE] = {
 	nome: "Príncipe",
 	color: c_blue,
 	tipo: TIPOS.PERSONAGEM,
-	unlocked: true
+	unlocked: true, sprite: sCarta
 };
 //======================================================
 // SUBSTANTIVOS
@@ -248,7 +248,7 @@ global.card_db[CARD.QUADRO] = {
 	nome: "Quadro",
 	color: make_color_rgb(120,80,40),
 	tipo: TIPOS.SUBSTANTIVO,
-	unlocked: true
+	unlocked: true, sprite: sCarta
 };
 
 global.card_db[CARD.RELOGIO] = {
@@ -256,7 +256,7 @@ global.card_db[CARD.RELOGIO] = {
 	nome: "Relógio",
 	color: c_gray,
 	tipo: TIPOS.SUBSTANTIVO,
-	unlocked: true
+	unlocked: true, sprite: sCarta
 };
 
 global.card_db[CARD.BOLA_CRISTAL] = {
@@ -264,7 +264,7 @@ global.card_db[CARD.BOLA_CRISTAL] = {
 	nome: "Bola de Cristal",
 	color: c_aqua,
 	tipo: TIPOS.SUBSTANTIVO,
-	unlocked: true
+	unlocked: true, sprite: sCarta
 };
 
 global.card_db[CARD.LENCOL] = {
@@ -272,7 +272,7 @@ global.card_db[CARD.LENCOL] = {
 	nome: "Lençol",
 	color: c_white,
 	tipo: TIPOS.SUBSTANTIVO,
-	unlocked: true
+	unlocked: true, sprite: sCarta
 };
 // Adicione a chave ao banco de dados global de cartas
 global.card_db[CARD.CHAVE] = {
@@ -280,7 +280,7 @@ global.card_db[CARD.CHAVE] = {
     nome: "Chave",
     color: c_yellow,
     tipo: TIPOS.SUBSTANTIVO,
-    unlocked: true
+    unlocked: true, sprite: sCarta
 };
 function get_card(_id) {
     return global.card_db[_id];

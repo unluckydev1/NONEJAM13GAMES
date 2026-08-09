@@ -167,7 +167,7 @@ global.node_names = {
 //Como nao da para pegar metade da tela, tenho que botar manualmente 
 var _rm_width  = 640;
 var _rm_height = 360;
-var _db   = 100;
+var _db   = 50;
 var _tree_gap = 900;   // <- distância horizontal entre os dois fluxogramas
 var _names = global.node_names;
 
@@ -273,7 +273,7 @@ global.node_settings =
 
 	// bosque (caminho da Escuridão)
 	{
-        sprite : spr_node,
+        sprite : spr_cogumelo,
         cordx  : _rm_width/2 - _db*2,
         cordy  : _rm_height/2 + _db*2,
         title  : _names.p10,
