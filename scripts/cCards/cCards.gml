@@ -79,7 +79,7 @@ global.card_db[CARD.SAPO] = {
     nome: "Sapo",
     color: c_green,
     tipo: TIPOS.PERSONAGEM,
-    unlocked: true, sprite: sCarta,
+    unlocked: true, sprite: spr_sapo,
 };
 
 global.card_db[CARD.MAGO] = {
@@ -87,7 +87,7 @@ global.card_db[CARD.MAGO] = {
     nome: "Mago",
     color: c_purple,
     tipo: TIPOS.PERSONAGEM,
-    unlocked: true, sprite: sCarta,
+    unlocked: true, sprite: spr_bruxo_verde,
 };
 
 /// SUBSTANTIVOS

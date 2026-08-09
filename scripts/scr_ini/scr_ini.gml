@@ -326,217 +326,279 @@ global.node_settings =
 global.node_setting_princesa = 
 [
     // ===================================================
-    // FLUXOGRAMA 2 - QUARTO DA PRINCESA (deslocado por _tree_gap)
+    // FLUXOGRAMA 2 - QUARTO DA PRINCESA (deslocado por _tree_gap, usando _db como base)
     // ===================================================
 
-    // ---- raiz única ----
+    // ---- raiz única (nível 0) ----
     {
-        sprite : spr_node, cordx : 460 + _tree_gap, cordy : -60,
+        sprite : spr_node,
+        cordx  : _rm_width/2 + _tree_gap,
+        cordy  : _rm_height/2 - _db*6,
         title  : _names.q0,
         conect : [_names.q1, _names.q2],
         desc   : "A história chega ao quarto da princesa, no alto da torre.",
-        imagem: spr_nula, final : false
+        imagem : spr_nula, final : false
     },
 
-    // ---- raízes ----
+    // ---- raízes (nível 1) ----
     {
-        sprite : spr_node, cordx : 250 + _tree_gap, cordy : 60,
+        sprite : spr_node,
+        cordx  : _rm_width/2 + _tree_gap - _db*3,
+        cordy  : _rm_height/2 - _db*4,
         title  : _names.q1,
         conect : [_names.q3],
         desc   : "O príncipe conseguiu chegar até a torre.",
-        imagem: spr_nula, final : false
+        imagem : spr_nula, final : false
     },
     {
-        sprite : spr_node, cordx : 670 + _tree_gap, cordy : 60,
+        sprite : spr_node,
+        cordx  : _rm_width/2 + _tree_gap + _db*3,
+        cordy  : _rm_height/2 - _db*4,
         title  : _names.q2,
         conect : [_names.q12],
         desc   : "O príncipe não sobreviveu para chegar até a torre.",
-        imagem: spr_nula, final : false
+        imagem : spr_nula, final : false
     },
 
-    // ---- com príncipe ----
+    // ---- nível 2 ----
     {
-        sprite : spr_node, cordx : 250 + _tree_gap, cordy : 170,
+        sprite : spr_node,
+        cordx  : _rm_width/2 + _tree_gap - _db*3,
+        cordy  : _rm_height/2 - _db*2,
         title  : _names.q3,
         conect : [_names.q4, _names.q5, _names.q6],
         desc   : "A princesa se questiona sobre o que fazer com seu salvador.",
-        imagem: spr_nula, final : false
+        imagem : spr_nula, final : false
     },
     {
-        sprite : spr_node, cordx : 90 + _tree_gap, cordy : 290,
-        title  : _names.q4,
-        conect : [],
-        desc   : "A princesa abraça o príncipe e descem juntos da torre.",
-        imagem: spr_nula, final : true
-    },
-    {
-        sprite : spr_node, cordx : 250 + _tree_gap, cordy : 290,
-        title  : _names.q5,
-        conect : [],
-        desc   : "A princesa confunde o príncipe com um caçador e o empurra da torre.",
-        imagem: spr_nula, final : true
-    },
-    {
-        sprite : spr_node, cordx : 410 + _tree_gap, cordy : 290,
-        title  : _names.q6,
-        conect : [_names.q7, _names.q10, _names.q11],
-        desc   : "Os dois arrombam a porta do quarto e encontram algo do outro lado.",
-        imagem: spr_nula, final : false
-    },
-    {
-        sprite : spr_node, cordx : 270 + _tree_gap, cordy : 410,
-        title  : _names.q7,
-        conect : [_names.q8, _names.q9],
-        desc   : "Um mago surge na frente dos dois.",
-        imagem: spr_nula, final : false
-    },
-    {
-        sprite : spr_node, cordx : 210 + _tree_gap, cordy : 530,
-        title  : _names.q8,
-        conect : [],
-        desc   : "O mago maligno desintegra os dois com um raio.",
-        imagem: spr_nula, final : true
-    },
-    {
-        sprite : spr_node, cordx : 330 + _tree_gap, cordy : 530,
-        title  : _names.q9,
-        conect : [],
-        desc   : "O mago bom os teletransporta de volta ao castelo.",
-        imagem: spr_nula, final : true
-    },
-    {
-        sprite : spr_node, cordx : 410 + _tree_gap, cordy : 410,
-        title  : _names.q10,
-        conect : [],
-        desc   : "O rei, pai da princesa, surge e os leva para casa em segurança.",
-        imagem: spr_nula, final : true
-    },
-    {
-        sprite : spr_node, cordx : 550 + _tree_gap, cordy : 410,
-        title  : _names.q11,
-        conect : [],
-        desc   : "Um sapo surge e suga o príncipe para dentro do estômago.",
-        imagem: spr_nula, final : true
-    },
-
-    // ---- sem príncipe ----
-    {
-        sprite : spr_node, cordx : 670 + _tree_gap, cordy : 810,
+        sprite : spr_node,
+        cordx  : _rm_width/2 + _tree_gap + _db*3,
+        cordy  : _rm_height/2 - _db*2,
         title  : _names.q12,
         conect : [_names.q14, _names.q17, _names.q18, _names.q20],
         desc   : "Sozinha na torre, a princesa se questiona sobre como sair dali.",
-        imagem: spr_nula, final : false
+        imagem : spr_nula, final : false
     },
 
-    // janela / lençol
+    // ---- nível 3 (com príncipe) ----
     {
-        sprite : spr_node, cordx : 350 + _tree_gap, cordy : 930,
+        sprite : spr_node,
+        cordx  : _rm_width/2 + _tree_gap - _db*5,
+        cordy  : _rm_height/2,
+        title  : _names.q4,
+        conect : [],
+        desc   : "A princesa abraça o príncipe e descem juntos da torre.",
+        imagem : spr_nula, final : true
+    },
+    {
+        sprite : spr_node,
+        cordx  : _rm_width/2 + _tree_gap - _db*3,
+        cordy  : _rm_height/2,
+        title  : _names.q5,
+        conect : [],
+        desc   : "A princesa confunde o príncipe com um caçador e o empurra da torre.",
+        imagem : spr_nula, final : true
+    },
+    {
+        sprite : spr_node,
+        cordx  : _rm_width/2 + _tree_gap - _db,
+        cordy  : _rm_height/2,
+        title  : _names.q6,
+        conect : [_names.q7, _names.q10, _names.q11],
+        desc   : "Os dois arrombam a porta do quarto e encontram algo do outro lado.",
+        imagem : spr_nula, final : false
+    },
+
+    // ---- nível 3 (sem príncipe) ----
+    {
+        sprite : spr_node,
+        cordx  : _rm_width/2 + _tree_gap + _db,
+        cordy  : _rm_height/2,
         title  : _names.q14,
         conect : [_names.q16, _names.q13],
         desc   : "A princesa decide pular pela janela.",
-        imagem: spr_nula, final : false
+        imagem : spr_nula, final : false
     },
     {
-        sprite : spr_node, cordx : 290 + _tree_gap, cordy : 1050,
-        title  : _names.q16,
-        conect : [],
-        desc   : "Ela não pensou em como amorteceria a queda.",
-        imagem: spr_nula, final : true
-    },
-    {
-        sprite : spr_node, cordx : 410 + _tree_gap, cordy : 1050,
-        title  : _names.q13,
-        conect : [_names.q15],
-        desc   : "A princesa já havia pego o lençol de sua cama antes.",
-        imagem: spr_nula, final : false
-    },
-    {
-        sprite : spr_node, cordx : 410 + _tree_gap, cordy : 1170,
-        title  : _names.q15,
-        conect : [],
-        desc   : "Usando o lençol como corda, ela consegue descer em segurança.",
-        imagem: spr_nula, final : true
-    },
-
-    // esperar / cama
-    {
-        sprite : spr_node, cordx : 530 + _tree_gap, cordy : 930,
+        sprite : spr_node,
+        cordx  : _rm_width/2 + _tree_gap + _db*3,
+        cordy  : _rm_height/2,
         title  : _names.q17,
         conect : [],
         desc   : "Ela espera pelo príncipe até virar apenas ossos.",
-        imagem: spr_nula, final : true
+        imagem : spr_nula, final : true
     },
     {
-        sprite : spr_node, cordx : 710 + _tree_gap, cordy : 930,
+        sprite : spr_node,
+        cordx  : _rm_width/2 + _tree_gap + _db*5,
+        cordy  : _rm_height/2,
         title  : _names.q18,
         conect : [],
         desc   : "Ao procurar algo embaixo da cama, o bicho-papão a abocanha.",
-        imagem: spr_nula, final : true
+        imagem : spr_nula, final : true
     },
-
-    // porta / chave
     {
-        sprite : spr_node, cordx : 890 + _tree_gap, cordy : 930,
+        sprite : spr_node,
+        cordx  : _rm_width/2 + _tree_gap + _db*7,
+        cordy  : _rm_height/2,
         title  : _names.q20,
         conect : [_names.q21, _names.q19],
         desc   : "A princesa se aproxima da porta trancada de seu quarto.",
-        imagem: spr_nula, final : false
+        imagem : spr_nula, final : false
+    },
+
+    // ---- nível 4 (com príncipe) ----
+    {
+        sprite : spr_node,
+        cordx  : _rm_width/2 + _tree_gap - _db*2.5,
+        cordy  : _rm_height/2 + _db*2,
+        title  : _names.q7,
+        conect : [_names.q8, _names.q9],
+        desc   : "Um mago surge na frente dos dois.",
+        imagem : spr_nula, final : false
     },
     {
-        sprite : spr_node, cordx : 820 + _tree_gap, cordy : 1050,
+        sprite : spr_node,
+        cordx  : _rm_width/2 + _tree_gap - _db*1.5,
+        cordy  : _rm_height/2 + _db*2,
+        title  : _names.q10,
+        conect : [],
+        desc   : "O rei, pai da princesa, surge e os leva para casa em segurança.",
+        imagem : spr_nula, final : true
+    },
+    {
+        sprite : spr_node,
+        cordx  : _rm_width/2 + _tree_gap - _db*0.5,
+        cordy  : _rm_height/2 + _db*2,
+        title  : _names.q11,
+        conect : [],
+        desc   : "Um sapo surge e suga o príncipe para dentro do estômago.",
+        imagem : spr_nula, final : true
+    },
+
+    // ---- nível 4 (sem príncipe) ----
+    {
+        sprite : spr_node,
+        cordx  : _rm_width/2 + _tree_gap + _db*0.5,
+        cordy  : _rm_height/2 + _db*2,
+        title  : _names.q16,
+        conect : [],
+        desc   : "Ela não pensou em como amorteceria a queda.",
+        imagem : spr_nula, final : true
+    },
+    {
+        sprite : spr_node,
+        cordx  : _rm_width/2 + _tree_gap + _db*1.5,
+        cordy  : _rm_height/2 + _db*2,
+        title  : _names.q13,
+        conect : [_names.q15],
+        desc   : "A princesa já havia pego o lençol de sua cama antes.",
+        imagem : spr_nula, final : false
+    },
+    {
+        sprite : spr_node,
+        cordx  : _rm_width/2 + _tree_gap + _db*6,
+        cordy  : _rm_height/2 + _db*2,
         title  : _names.q21,
         conect : [],
         desc   : "A porta está trancada; frustrada, ela desiste de tentar qualquer coisa.",
-        imagem: spr_nula, final : true
+        imagem : spr_nula, final : true
     },
     {
-        sprite : spr_node, cordx : 960 + _tree_gap, cordy : 1050,
+        sprite : spr_node,
+        cordx  : _rm_width/2 + _tree_gap + _db*8,
+        cordy  : _rm_height/2 + _db*2,
         title  : _names.q19,
         conect : [_names.q22],
         desc   : "A princesa já havia conseguido a chave da porta antes.",
-        imagem: spr_nula, final : false
+        imagem : spr_nula, final : false
+    },
+
+    // ---- nível 5 ----
+    {
+        sprite : spr_node,
+        cordx  : _rm_width/2 + _tree_gap - _db*3,
+        cordy  : _rm_height/2 + _db*4,
+        title  : _names.q8,
+        conect : [],
+        desc   : "O mago maligno desintegra os dois com um raio.",
+        imagem : spr_nula, final : true
     },
     {
-        sprite : spr_node, cordx : 960 + _tree_gap, cordy : 1170,
+        sprite : spr_node,
+        cordx  : _rm_width/2 + _tree_gap - _db*2,
+        cordy  : _rm_height/2 + _db*4,
+        title  : _names.q9,
+        conect : [],
+        desc   : "O mago bom os teletransporta de volta ao castelo.",
+        imagem : spr_nula, final : true
+    },
+    {
+        sprite : spr_node,
+        cordx  : _rm_width/2 + _tree_gap + _db*1.5,
+        cordy  : _rm_height/2 + _db*4,
+        title  : _names.q15,
+        conect : [],
+        desc   : "Usando o lençol como corda, ela consegue descer em segurança.",
+        imagem : spr_nula, final : true
+    },
+    {
+        sprite : spr_node,
+        cordx  : _rm_width/2 + _tree_gap + _db*8,
+        cordy  : _rm_height/2 + _db*4,
         title  : _names.q22,
         conect : [_names.q23, _names.q26, _names.q27],
         desc   : "Ela destranca e abre a porta, encontrando algo do outro lado.",
-        imagem: spr_nula, final : false
+        imagem : spr_nula, final : false
     },
+
+    // ---- nível 6 ----
     {
-        sprite : spr_node, cordx : 820 + _tree_gap, cordy : 1290,
+        sprite : spr_node,
+        cordx  : _rm_width/2 + _tree_gap + _db*7,
+        cordy  : _rm_height/2 + _db*6,
         title  : _names.q23,
         conect : [_names.q24, _names.q25],
         desc   : "Um mago surge na sua frente.",
-        imagem: spr_nula, final : false
+        imagem : spr_nula, final : false
     },
     {
-        sprite : spr_node, cordx : 760 + _tree_gap, cordy : 1410,
-        title  : _names.q24,
-        conect : [],
-        desc   : "O mago bom a resgata, resmungando da incompetência do príncipe.",
-        imagem: spr_nula, final : true
-    },
-    {
-        sprite : spr_node, cordx : 880 + _tree_gap, cordy : 1410,
-        title  : _names.q25,
-        conect : [],
-        desc   : "O mago maligno a transforma em pó com seus poderes de raio.",
-        imagem: spr_nula, final : true
-    },
-    {
-        sprite : spr_node, cordx : 960 + _tree_gap, cordy : 1290,
+        sprite : spr_node,
+        cordx  : _rm_width/2 + _tree_gap + _db*8,
+        cordy  : _rm_height/2 + _db*6,
         title  : _names.q26,
         conect : [],
         desc   : "O próprio rei surge e a leva para casa em segurança.",
-        imagem: spr_nula, final : true
+        imagem : spr_nula, final : true
     },
     {
-        sprite : spr_node, cordx : 1100 + _tree_gap, cordy : 1290,
+        sprite : spr_node,
+        cordx  : _rm_width/2 + _tree_gap + _db*9,
+        cordy  : _rm_height/2 + _db*6,
         title  : _names.q27,
         conect : [],
         desc   : "Um sapo fofo surge, mas acaba engolindo a princesa.",
-        imagem: spr_nula, final : true
+        imagem : spr_nula, final : true
+    },
+
+    // ---- nível 7 ----
+    {
+        sprite : spr_node,
+        cordx  : _rm_width/2 + _tree_gap + _db*6.5,
+        cordy  : _rm_height/2 + _db*8,
+        title  : _names.q24,
+        conect : [],
+        desc   : "O mago bom a resgata, resmungando da incompetência do príncipe.",
+        imagem : spr_nula, final : true
+    },
+    {
+        sprite : spr_node,
+        cordx  : _rm_width/2 + _tree_gap + _db*7.5,
+        cordy  : _rm_height/2 + _db*8,
+        title  : _names.q25,
+        conect : [],
+        desc   : "O mago maligno a transforma em pó com seus poderes de raio.",
+        imagem : spr_nula, final : true
     },
 ]
 	//{

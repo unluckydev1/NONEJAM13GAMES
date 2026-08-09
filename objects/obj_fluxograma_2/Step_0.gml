@@ -1,7 +1,7 @@
 puxa_mouse();
 
 //show_debug_message(string("{0}   {1}", addx[0], addy[0]),nodes,liberados)
-/*
+
 if (keyboard_check_pressed(ord("T"))){
     
     libera_node(global.node_names.q0,nodes,liberados)
@@ -25,7 +25,13 @@ if (keyboard_check_pressed(ord("T"))){
     libera_node(global.node_names.q18,nodes,liberados)
     libera_node(global.node_names.q19,nodes,liberados)
     libera_node(global.node_names.q20,nodes,liberados)
-    libera_node(global.node_names.q21,nodes,liberados)
+	libera_node(global.node_names.q21,nodes,liberados)
+	libera_node(global.node_names.q22,nodes,liberados)
+	libera_node(global.node_names.q23,nodes,liberados)
+	libera_node(global.node_names.q24,nodes,liberados)
+	libera_node(global.node_names.q25,nodes,liberados)
+	libera_node(global.node_names.q26,nodes,liberados)
+	libera_node(global.node_names.q27,nodes,liberados)
 
 }
 
