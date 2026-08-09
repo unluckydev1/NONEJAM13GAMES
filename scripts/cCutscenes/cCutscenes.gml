@@ -423,6 +423,7 @@ Cutscene_Bater_Casa = [
 // QUARTO_PRINCESA_COMPRIN
 Cutscene_Quarto_Princesa_ComPrincipe = [
     function(){start_act()},
+	function(){npc_spawn(oPrincipe,oPrincesa.x + 250,oPrincesa.y + 250,false)},
     function(){new_dialogue(Dialogo_Quarto_Princesa_ComPrincipe)},
     function(){end_cutscene()}
 ];
@@ -430,23 +431,34 @@ Cutscene_Quarto_Princesa_ComPrincipe = [
 // QUARTO_ABRACAR
 Cutscene_Quarto_Abracar = [
     function(){start_act()},
+	function(){oPrincesa.estado = "andando";move_to_speed(oPrincesa,oPrincipe.x,oPrincipe.y,global.vel_cutscene);},
+	function(){oPrincesa.estado = "parado";wait_in(1)},
     function(){new_dialogue(Dialogo_Quarto_Abracar)},
     function(){end_cutscene()}
 ];
 
-// QUARTO_MATAR
+
 Cutscene_Quarto_Matar = [
     function(){start_act()},
     function(){new_dialogue(Dialogo_Quarto_Matar)},
+	function(){oPrincesa.estado = "andando";move_to_speed(oPrincesa,oPrincipe.x,oPrincipe.y,global.vel_cutscene);},
+	function(){oPrincesa.estado = "parado";wait_in(1)},
+	function(){oPrincesa.scala_x_temp = -.05; oPrincesa.scala_y_temp = .25;},
+	function(){particle_create(oPrincipe)},
+	function(){npc_despawn(oPrincipe)},
     function(){end_cutscene()}
 ];
 
-// QUARTO_PORTA_PR
+
+
 Cutscene_Quarto_Porta_Pr = [
     function(){start_act()},
+	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,2470,1390,global.vel_cutscene);},
+    function(){oPrincipe.estado = "parado";new_dialogue(Dialogo_Quarto_Porta_So)},
     function(){new_dialogue(Dialogo_Quarto_Porta_Pr)},
     function(){end_cutscene()}
 ];
+
 
 // QUARTO_MAGO_PR
 Cutscene_Quarto_Mago_Pr = [
@@ -458,30 +470,54 @@ Cutscene_Quarto_Mago_Pr = [
 // QUARTO_MGMAL_PR
 Cutscene_Quarto_MgMal_Pr = [
     function(){start_act()},
+	function(){npc_spawn(oMagoMal,2656,1312,false)},
+	function(){wait_in(1)},
+	function(){npc_despawn(oPrincipe);},
+	function(){npc_despawn(oPrincesa);},
+	function(){npc_despawn(oMagoBom);},
     function(){new_dialogue(Dialogo_Quarto_MgMal_Pr)},
     function(){end_cutscene()}
 ];
 
+
 // QUARTO_MGBOM_PR
 Cutscene_Quarto_MgBom_Pr = [
     function(){start_act()},
+	function(){npc_spawn(oMagoBom,2656,1312,false)},
+	function(){wait_in(1)},
+	function(){npc_despawn(oPrincipe);},
+	function(){npc_despawn(oPrincesa);},
+	function(){npc_despawn(oMagoBom);},
     function(){new_dialogue(Dialogo_Quarto_MgBom_Pr)},
     function(){end_cutscene()}
 ];
 
+
+// QUARTO_REI_PR
 // QUARTO_REI_PR
 Cutscene_Quarto_Rei_Pr = [
     function(){start_act()},
+	function(){npc_spawn(oRei,2656,1312,false)},
+	function(){oPrincesa.estado = "andando";move_to_speed(oPrincesa,oRei.x,oRei.y,global.vel_cutscene);},
+	function(){oPrincesa.estado = "parado";wait_in(1)},
     function(){new_dialogue(Dialogo_Quarto_Rei_Pr)},
     function(){end_cutscene()}
 ];
 
+
+
 // QUARTO_SAPO_PR
 Cutscene_Quarto_Sapo_Pr = [
     function(){start_act()},
+	function(){start_act()},
+	function(){npc_spawn(oMagoSapo,2656,1312,false)},
+	function(){oMagoSapo.estado = "andando";move_to_speed(oMagoSapo,oPrincipe.x,oPrincipe.y,global.vel_cutscene);},
+	function(){oMagoSapo.scala_x_temp = -.05; oMagoSapo.scala_y_temp = .25; end_act()},
+	function(){npc_despawn(oPrincipe)},
     function(){new_dialogue(Dialogo_Quarto_Sapo_Pr)},
     function(){end_cutscene()}
 ];
+
 
 
 // ===============================
@@ -498,23 +534,36 @@ Cutscene_Quarto_Princesa_SemPrincipe = [
 // QUARTO_JANELA
 Cutscene_Quarto_Janela = [
     function(){start_act()},
-    function(){new_dialogue(Dialogo_Quarto_Janela)},
-    function(){end_cutscene()}
+	function(){oPrincesa.estado = "andando";move_to_speed(oPrincesa,1440,1100,global.vel_cutscene);},
+    function(){oPrincesa.estado = "parado"; new_dialogue(Dialogo_Quarto_Janela)},
+    function(){ end_cutscene()}
 ];
+
 
 // QUARTO_JANELA_MORTE
 Cutscene_Quarto_Janela_Morte = [
     function(){start_act()},
+    function(){start_act(); obj_janela.sprite_index = spr_janela_aberta_princesa},
+	function(){npc_despawn(oPrincesa)},
+	function(){wait_in(1)},
+	function(){ new_shake(10,.95) end_act()},
+	function(){wait_in(0.5)},
     function(){new_dialogue(Dialogo_Quarto_Janela_Morte)},
     function(){end_cutscene()}
 ];
 
+
 // QUARTO_JANELA_LENCOL
 Cutscene_Quarto_Janela_Lencol = [
     function(){start_act()},
+	function(){npc_despawn(obj_cortina.image_index = 1)},
+	function(){wait_in(.5)},
+	function(){npc_despawn(oPrincesa)},
+	function(){wait_in(1)},
     function(){new_dialogue(Dialogo_Quarto_Janela_Lencol)},
     function(){end_cutscene()}
 ];
+
 
 // QUARTO_ESPERAR
 Cutscene_Quarto_Esperar = [
@@ -526,16 +575,23 @@ Cutscene_Quarto_Esperar = [
 // QUARTO_CAMA
 Cutscene_Quarto_Cama = [
     function(){start_act()},
+	function(){oPrincesa.estado = "andando";move_to_speed(oPrincesa,2016,1248,global.vel_cutscene);},
+	function(){particle_create(oPrincesa);},
+	function(){npc_despawn(oPrincesa);},
     function(){new_dialogue(Dialogo_Quarto_Cama)},
     function(){end_cutscene()}
 ];
+
 
 // QUARTO_PORTA_SO
 Cutscene_Quarto_Porta_So = [
     function(){start_act()},
     function(){new_dialogue(Dialogo_Quarto_Porta_So)},
+	function(){oPrincesa.estado = "andando";move_to_speed(oPrincesa,2470.1390,global.vel_cutscene);},
+    function(){oPrincesa.estado = "parado";new_dialogue(Dialogo_Quarto_Porta_So)},
     function(){end_cutscene()}
 ];
+
 
 // QUARTO_PORTA_TRANCADA
 Cutscene_Quarto_Porta_Trancada = [
@@ -547,9 +603,11 @@ Cutscene_Quarto_Porta_Trancada = [
 // QUARTO_PORTA_CHAVE
 Cutscene_Quarto_Porta_Chave = [
     function(){start_act()},
+	function(){obj_porta.sprite_index = spr_porta_aberta_princesa},
     function(){new_dialogue(Dialogo_Quarto_Porta_Chave)},
     function(){end_cutscene()}
 ];
+
 
 // QUARTO_MAGO_SO
 Cutscene_Quarto_Mago_So = [
@@ -558,16 +616,22 @@ Cutscene_Quarto_Mago_So = [
     function(){end_cutscene()}
 ];
 
-// QUARTO_MGBOM_SO
+// QUARTO_MAGO_SO
 Cutscene_Quarto_MgBom_So = [
     function(){start_act()},
+	function(){npc_spawn(oMagoBom,2656,1312,false)},
+	function(){wait_in(1)},
+	function(){npc_despawn(oPrincesa);},
+	function(){npc_despawn(oMagoBom);},
     function(){new_dialogue(Dialogo_Quarto_MgBom_So)},
     function(){end_cutscene()}
 ];
 
-// QUARTO_MGMAL_SO
 Cutscene_Quarto_MgMal_So = [
     function(){start_act()},
+	function(){npc_spawn(oMagoMal,2656,1312,false)},
+	function(){wait_in(1)},
+	function(){npc_despawn(oPrincesa);},
     function(){new_dialogue(Dialogo_Quarto_MgMal_So)},
     function(){end_cutscene()}
 ];
@@ -575,16 +639,25 @@ Cutscene_Quarto_MgMal_So = [
 // QUARTO_REI_SO
 Cutscene_Quarto_Rei_So = [
     function(){start_act()},
+	function(){npc_spawn(oRei,2656,1312,false)},
+	function(){oPrincesa.estado = "andando";move_to_speed(oPrincesa,oRei.x,oRei.y,global.vel_cutscene);},
+	function(){oPrincesa.estado = "parado";wait_in(1)},
     function(){new_dialogue(Dialogo_Quarto_Rei_So)},
     function(){end_cutscene()}
 ];
 
+
 // QUARTO_SAPO_SO
 Cutscene_Quarto_Sapo_So = [
     function(){start_act()},
+	function(){npc_spawn(oMagoSapo,2656,1312,false)},
+	function(){oMagoSapo.estado = "andando";move_to_speed(oMagoSapo,oPrincesa.x,oPrincesa.y,global.vel_cutscene);},
+	function(){oMagoSapo.scala_x_temp = -.05; oMagoSapo.scala_y_temp = .25; end_act()},
+	function(){npc_despawn(oPrincesa)},
     function(){new_dialogue(Dialogo_Quarto_Sapo_So)},
     function(){end_cutscene()}
 ];
+
 
 global.cutscenes = [
 

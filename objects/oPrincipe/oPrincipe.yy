@@ -39,8 +39,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sIdosoPlace",
-    "path":"sprites/sIdosoPlace/sIdosoPlace.yy",
+    "name":"spr_principe_",
+    "path":"sprites/spr_principe_/spr_principe_.yy",
   },
   "spriteMaskId":null,
   "visible":true,

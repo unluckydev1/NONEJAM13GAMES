@@ -1,6 +1,6 @@
 {
   "$GMObject":"",
-  "%Name":"oMagoSapo",
+  "%Name":"oRei",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
@@ -11,7 +11,7 @@
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oMagoSapo",
+  "name":"oRei",
   "overriddenProperties":[],
   "parent":{
     "name":"Ingame",
@@ -39,8 +39,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_sapo_sem_hat",
-    "path":"sprites/spr_sapo_sem_hat/spr_sapo_sem_hat.yy",
+    "name":"spr_rei_",
+    "path":"sprites/spr_rei_/spr_rei_.yy",
   },
   "spriteMaskId":null,
   "visible":true,

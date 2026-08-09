@@ -39,8 +39,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sIdosoPlace",
-    "path":"sprites/sIdosoPlace/sIdosoPlace.yy",
+    "name":"spr_mago_mal",
+    "path":"sprites/spr_mago_mal/spr_mago_mal.yy",
   },
   "spriteMaskId":null,
   "visible":true,
