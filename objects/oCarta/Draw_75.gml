@@ -25,11 +25,31 @@ var top    = y - hh + yhover + ysin;
 var right  = x + hw;
 var bottom = y + hh + yhover + ysin;
 
+var _scale = .25;
+
+var _x, _y, _backw, _backh, _backxs, _backys, _w, _h, _add;
+
+_w = sprite_get_width(card.sprite)*_scale;
+_h = sprite_get_height(card.sprite)*_scale;
+
+_x = x;
+_y = y + yhover + ysin;
+
+_add = 6;
+
+_backw = sprite_get_width(spr_player);
+_backh = sprite_get_height(spr_player);
+
+_backxs = (_w+_add)/_backw;
+_backys = (_h+_add)/_backw;
+
 //draw_set_colour(card.color);
-draw_sprite_ext(card.sprite,0,x,y + yhover + ysin,.25,.25,0,c_white,1)
+shader_set(sh_multi_color);
+if (outrainbow) apply_rainbow(spr_player, _time, 0);
+draw_sprite_ext(spr_player, 0, _x, _y, _backxs, _backys, 0, c_black, 1);
+shader_reset();
+draw_sprite_ext(card.sprite,0,_x,_y,_scale,_scale,0,c_white,1)
 //draw_rectangle(left, top, right, bottom, false);
-
-
 
 draw_set_colour(c_white);
 

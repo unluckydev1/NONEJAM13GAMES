@@ -1,3 +1,5 @@
+inicia_rainbow();
+
 pursue = false
 card = get_card(CARD.REI)
 subindo = 100
@@ -9,3 +11,5 @@ dep_init = depth
 xspd = 0
 angle = 0
 atraso = 0
+
+outrainbow = true;

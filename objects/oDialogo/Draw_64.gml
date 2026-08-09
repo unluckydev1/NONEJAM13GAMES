@@ -169,7 +169,7 @@ draw_set_halign(-1)
 
 draw_set_color(#423128)
 
-var _scale =  100/string_width(text[page].speaker) + .1
+var _scale =  100/string_width(text[page].speaker) + .15
 draw_text_transformed(textbox_x + borderx + 5, textbox_y + bordery - 52,text[page].speaker,_scale,_scale,0)
 //draw_circle(textbox_x + borderx + 10, textbox_y + bordery - 60,32,0)
 draw_set_color(c_white)

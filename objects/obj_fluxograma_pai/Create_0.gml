@@ -5,21 +5,7 @@ liberados = global.liberados.fluxo1;
 
 #region Shader Rainbow
 
-_uniUV         = shader_get_uniform(sh_rainbow, "u_uv");
-_uniTime       = shader_get_uniform(sh_rainbow, "u_time");
-_uniSpeed      = shader_get_uniform(sh_rainbow, "u_speed");
-_uniSection    = shader_get_uniform(sh_rainbow, "u_section");
-_uniSaturation = shader_get_uniform(sh_rainbow, "u_saturation"); 
-_uniBrightness = shader_get_uniform(sh_rainbow, "u_brightness");
-_uniMix        = shader_get_uniform(sh_rainbow, "u_mix");
-_uniMultiColor = shader_get_uniform(sh_rainbow, "u_multicolor");
-_uniAlpha      = shader_get_uniform(sh_rainbow, "u_alpha");
-
-_speed = 1.0;
-_section = 0.5;
-_saturation = 0.7;
-_brightness = 0.8;
-_mix = 0.5;
+inicia_rainbow();
 
 #endregion
 
@@ -199,21 +185,28 @@ draw_lines = function(_i)
                 }
             }
         }
-        
-
             
         var _cor = make_colour_rgb(_n1.linha[i].cores_corda[0], _n1.linha[i].cores_corda[1], _n1.linha[i].cores_corda[2]);
         
         var _offy = (_n[_ind].final) ? 0 : _n[_ind].offy.r
         
+        var _p1 = _n1.x+addx[0];
+        var _p2 = _n1.y+_n1.offy.r+addy[0];
+        var _p3 = _n1.linha[i].x+addx[0];
+        var _p4 = _n1.linha[i].y+_offy+addy[0];
+        
         draw_set_colour(c_black);
-    	draw_line_width(_n1.x+addx[0], _n1.y+_n1.offy.r+2+addy[0], _n1.linha[i].x+addx[0], _n1.linha[i].y+_offy+2+addy[0], 3);
+    	draw_line_width(_p1, _p2+2, _p3, _p4+2, 3);
+        
         draw_set_colour(c_white);
-        draw_line_width(_n1.x+addx[0], _n1.y+_n1.offy.r+addy[0], _n1.linha[i].x+addx[0], _n1.linha[i].y+_offy+addy[0], 3);
+        draw_line_width(_p1, _p2, _p3, _p4, 3);
+        
         if (nodes[_ind].info.nivel > 0) _n1.linha[i].alp_rainbow = lerp(_n1.linha[i].alp_rainbow, 1, .05);
+        draw_set_alpha(_n1.linha[i].alp_rainbow);      
+        
         draw_set_colour(_cor)
-        draw_set_alpha(_n1.linha[i].alp_rainbow);    
-    	draw_line_width(_n1.x+addx[0], _n1.y+_n1.offy.r+addy[0], _n1.linha[i].x+addx[0], _n1.linha[i].y+_offy+addy[0], 3);
+    	draw_line_width(_p1, _p2, _p3, _p4, 3);
+        
         draw_set_alpha(1);    
         draw_set_colour(c_white);
         
@@ -257,24 +250,9 @@ desenha_nodes = function()
         var _ry = _n.y+_n.offy.r+addy[0];
         
         if (_n.can or _n.final){
-            shader_set(sh_rainbow);
-            var uv = sprite_get_uvs(_n.spr, 0);
-            shader_set_uniform_f(_uniUV, uv[0], uv[2]);
-            shader_set_uniform_f(_uniSpeed, _speed);
-            shader_set_uniform_f(_uniTime, _n._time);
-            shader_set_uniform_f(_uniSaturation, _saturation);
-            shader_set_uniform_f(_uniBrightness, _brightness);
-            shader_set_uniform_f(_uniSection, _section);
-            shader_set_uniform_f(_uniMix, _mix);   
-            shader_set_uniform_f(_uniAlpha, 1);   
+            var _colores = (_n.final) ? 1 : 0;
             
-            if (_n.final){
-                shader_set_uniform_f(_uniMultiColor, 1);
-            }else{
-                shader_set_uniform_f(_uniMultiColor, 0);
-            }
-            
-            _n._time += 1 / game_get_speed(gamespeed_fps);
+            _n._time = apply_rainbow(_n.spr, _n._time, _colores);
         }
         
         var _cor = c_white;
@@ -448,21 +426,11 @@ desenha_nodes = function()
             
            draw_sprite_ext(info_spr, 0, _x, _y+1, _n.info.xs, _n.info.ys, 0, c_black, _n.info.alp[0]);
             if (_n.final){
-                shader_set(sh_rainbow);
-                var uv = sprite_get_uvs(_n.spr, 0);
-                shader_set_uniform_f(_uniUV, uv[0], uv[2]);
-                shader_set_uniform_f(_uniSpeed, _speed);
-                shader_set_uniform_f(_uniTime, _n._time);
-                shader_set_uniform_f(_uniSaturation, _saturation);
-                shader_set_uniform_f(_uniBrightness, _brightness);
-                shader_set_uniform_f(_uniSection, _section);
-                shader_set_uniform_f(_uniMix, _mix);   
-                shader_set_uniform_f(_uniAlpha, .75);   
-                
-                shader_set_uniform_f(_uniMultiColor, 0);
+
+                apply_rainbow(_n.spr, _n._time);
             } 
             
-           draw_sprite_ext(info_spr, j, _x, _y, _n.info.xs, _n.info.ys, 0, c_white, _n.info.alp[0]);
+            draw_sprite_ext(info_spr, j, _x, _y, _n.info.xs, _n.info.ys, 0, c_white, _n.info.alp[0]); 
             shader_reset();
             
             draw_set_halign(1);

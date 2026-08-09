@@ -90,6 +90,49 @@ function draw_squash()
 }
 
 
+function inicia_rainbow()
+{
+    _uniUV         = shader_get_uniform(sh_rainbow, "u_uv");
+    _uniTime       = shader_get_uniform(sh_rainbow, "u_time");
+    _uniSpeed      = shader_get_uniform(sh_rainbow, "u_speed");
+    _uniSection    = shader_get_uniform(sh_rainbow, "u_section");
+    _uniSaturation = shader_get_uniform(sh_rainbow, "u_saturation"); 
+    _uniBrightness = shader_get_uniform(sh_rainbow, "u_brightness");
+    _uniMix        = shader_get_uniform(sh_rainbow, "u_mix");
+    _uniMultiColor = shader_get_uniform(sh_rainbow, "u_multicolor");
+    _uniAlpha      = shader_get_uniform(sh_rainbow, "u_alpha");
+    
+    _speed = 1.0;
+    _section = 0.5;
+    _saturation = 0.7;
+    _brightness = 0.8;
+    _mix = 0.5;
+    
+    _time = 0;
+}
+
+function apply_rainbow(_spr, _time, _multi = 0)
+{
+    shader_set(sh_rainbow);
+    var uv = sprite_get_uvs(_spr, 0);
+    shader_set_uniform_f(_uniUV, uv[0], uv[2]);
+    shader_set_uniform_f(_uniSpeed, _speed);
+    shader_set_uniform_f(_uniTime, _time);
+    shader_set_uniform_f(_uniSaturation, _saturation);
+    shader_set_uniform_f(_uniBrightness, _brightness);
+    shader_set_uniform_f(_uniSection, _section);
+    shader_set_uniform_f(_uniMix, _mix);   
+    shader_set_uniform_f(_uniAlpha, 1);   
+    
+    shader_set_uniform_f(_uniMultiColor, _multi);
+    
+    var _tempos = _time;
+    
+    _tempos += 1 / game_get_speed(gamespeed_fps);
+    
+    return _tempos;
+}
+
 #endregion
 
 #region Others
