@@ -145,7 +145,7 @@ global.card_db[CARD.CAMA] = {
     nome: "Cama",
     color: c_fuchsia,
     tipo: TIPOS.SUBSTANTIVO,
-    unlocked: true, sprite: sCarta
+    unlocked: true, sprite: spr_carta_cama
 };
 
 /// VERBOS
@@ -195,7 +195,7 @@ global.card_db[CARD.MATAR] = {
     nome: "Matar",
     color: c_lime,
     tipo: TIPOS.VERBO,
-    unlocked: true, sprite: sCarta
+    unlocked: true, sprite: spr_carta_matar
 };
 
 global.card_db[CARD.ESPERAR] = {
@@ -203,7 +203,7 @@ global.card_db[CARD.ESPERAR] = {
     nome: "Esperar",
     color: c_lime,
     tipo: TIPOS.VERBO,
-    unlocked: true, sprite: sCarta
+    unlocked: true, sprite: spr_carta_esperar
 };
 
 /// ADJETIVOS
@@ -229,7 +229,7 @@ global.card_db[CARD.FLORESTA] = {
     nome: "Floresta",
     color: c_green,
     tipo: TIPOS.CENA,
-    unlocked: true, sprite: sCarta
+    unlocked: true, sprite: spr_carta_floresta
 };
 
 global.card_db[CARD.PRINCIPE] = {

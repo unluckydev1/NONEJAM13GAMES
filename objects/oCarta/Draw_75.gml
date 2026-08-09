@@ -52,9 +52,10 @@ draw_sprite_ext(card.sprite,0,_x,_y,_scale,_scale,0,c_white,1)
 //draw_rectangle(left, top, right, bottom, false);
 
 draw_set_colour(c_white);
+draw_set_halign(fa_center)
 
-draw_text(x,y + yhover - 60,card.nome)
-
+draw_text(x,y + yhover - 30 - sprite_get_height(sCarta)/8,card.nome)
+draw_set_halign(-1)
 // Destroi se a carta ja tiver sido selecionada
 
 if (global.card_in_mouse == -1){
