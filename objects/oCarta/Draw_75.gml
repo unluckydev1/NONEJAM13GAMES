@@ -87,8 +87,6 @@ if (global.card_in_mouse == -1){
 	y += 5
 	if y > guih + 200 instance_destroy()
 	exit;
-	
-
 }
 
 /// Animação de entrada

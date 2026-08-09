@@ -219,10 +219,10 @@ function npc_despawn(obj){
  
 }
 
-function play_cutscene_sound(index,priority,loop,gain,offset){
-	if !start {audio_play_sound(index,priority,loop,gain,offset); start = true}
-	if !audio_is_playing(index) end_act()
-}
+//function play_cutscene_sound(index,priority,loop,gain,offset){
+	//if !start {audio_play_sound(index,priority,loop,gain,offset); start = true}
+	//if !audio_is_playing(index) end_act()
+//}
 // ===============================
 // CAPÍTULO 1 - A PRINCESA
 // ===============================
