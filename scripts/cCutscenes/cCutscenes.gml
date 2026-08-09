@@ -218,6 +218,11 @@ function npc_despawn(obj){
 	if !instance_exists(obj){ end_act() }else if obj.despawn = false{ obj.despawn = true obj.alarm[0] = 90 }
  
 }
+
+function play_cutscene_sound(index,priority,loop,gain,offset){
+	if !start {audio_play_sound(index,priority,loop,gain,offset); start = true}
+	if !audio_is_playing(index) end_act()
+}
 // ===============================
 // CAPÍTULO 1 - A PRINCESA
 // ===============================
@@ -262,7 +267,7 @@ Cutscene_Caminho_Escuridao = [
     function(){start_act()},
 	//function(){move_add(oIdoso,-300,300,2); oIdoso.estado = "andando"},
 	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,3331,-66,global.vel_cutscene);},
-	function(){ room_change(Room1_1);},
+	function(){ room_change(rm_bosque);},
     function(){new_dialogue(Dialogo_Escuridao)},
     function(){end_cutscene()}
 ];
@@ -363,7 +368,11 @@ Cutscene_Gritar_Princesa = [
 // CAP1_LUZ_FLORESTA
 Cutscene_Luz_Floresta = [
     function(){start_act()},
+	function(){oBrilho.destroy = true end_act()},
+	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,oBrilho.x,oBrilho.y,global.vel_cutscene);},
+	function(){instance_destroy(obj_moita);particle_create(oPrincipe) npc_despawn(oPrincipe)},
     function(){new_dialogue(Dialogo_Luz)},
+	function(){room_change(rm_quarto_princesa)},
     function(){end_cutscene()}
 ];
 
@@ -371,6 +380,11 @@ Cutscene_Luz_Floresta = [
 // CAP1_CASA_MAGO
 Cutscene_Casa_Mago = [
     function(){start_act()},
+	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,1570,1100,global.vel_cutscene);},
+	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,1430,890,global.vel_cutscene);},
+	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,1150,770,global.vel_cutscene);},
+	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,900,900,global.vel_cutscene);},
+	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,865,865,global.vel_cutscene);},
     function(){new_dialogue(Dialogo_Casa)},
     function(){end_cutscene()}
 ];
@@ -379,7 +393,13 @@ Cutscene_Casa_Mago = [
 // CAP1_ENTRAR_CASA
 Cutscene_Entrar_Casa = [
     function(){start_act()},
+	function(){obj_porta_casa.sprite_index = spr_casa_aberta; end_act()},
+	function(){npc_despawn(oPrincipe)},
+	function(){wait_in(1)},
+	function(){obj_porta_casa.scalax= 1.5;  particle_create(obj_porta_casa) new_shake(10,.95)},
+	function(){wait_in(1)},
     function(){new_dialogue(Dialogo_Abrir)},
+	function(){room_change(rm_quarto_princesa)},
     function(){end_cutscene()}
 ];
 
@@ -388,6 +408,11 @@ Cutscene_Entrar_Casa = [
 Cutscene_Bater_Casa = [
     function(){start_act()},
     function(){new_dialogue(Dialogo_Bater)},
+	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,1120,700,global.vel_cutscene);},
+	function(){obj_porta_casa.sprite_index = spr_casa_aberta npc_spawn(oMagoBom,865,865,false)},
+	function(){wait_in(1)},
+	function(){npc_despawn(oPrincipe)},
+	function(){room_change(rm_quarto_princesa)},
     function(){end_cutscene()}
 ];
 // ===============================

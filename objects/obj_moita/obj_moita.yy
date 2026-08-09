@@ -1,12 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_porta",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_moita",
+  "eventList":[],
   "managed":true,
-  "name":"obj_porta",
+  "name":"obj_moita",
   "overriddenProperties":[],
   "parent":{
     "name":"Ingame",
@@ -31,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_porta_fechada",
-    "path":"sprites/spr_porta_fechada/spr_porta_fechada.yy",
+    "name":"spr_monte_folhas",
+    "path":"sprites/spr_monte_folhas/spr_monte_folhas.yy",
   },
   "spriteMaskId":null,
   "visible":true,

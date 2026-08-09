@@ -1,1 +1,0 @@
-if aberta == true sprite_index = porta_aberta
