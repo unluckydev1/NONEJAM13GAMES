@@ -1,6 +1,8 @@
 // Inherit the parent event
 event_inherited();
 
+desativa_mouse = true;
+
 nodes = global.nodes.fluxo2;
 liberados = global.liberados.fluxo2;
 //puxa_tudo(global.node_setting_princesa, nodes, liberados)

@@ -24,7 +24,9 @@ title = {
     y : string_height_scribble(txt_title)*2,
     ny : string_height_scribble(txt_title),
     xs : [.4, .4],
-    ys : [.4, .4]
+    ys : [.4, .4],
+    
+    states : "title"
 }
 
 upd_mousex = function() {return mouse_x / escala};
@@ -60,10 +62,14 @@ nodes[0].alp = 1;
 nodes[0].can = true;
 nodes[0].apear = true; //Faz parte da animacao
 
+desativa_mouse = false;
+
 #region Funcoes
 
 puxa_mouse = function()
 {
+    if (desativa_mouse) return;
+    
     var _multi = 1.5;
     
     var _kr = keyboard_check(ord("D"));
@@ -116,6 +122,10 @@ puxa_mouse = function()
         
         escala += _add*.1;
         escala = clamp(escala, 1, 2);
+        
+        if (instance_exists(obj_fluxograma_2)){
+            obj_fluxograma_2.escala = escala;
+        }
         
         var _depois_mx = upd_mousex()-addx[0];
         var _depois_my = upd_mousey()-addy[0]; 

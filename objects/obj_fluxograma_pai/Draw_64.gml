@@ -6,7 +6,15 @@ scribble_anim_wave(2,.1,.05);
 
 var _txt = scribble(txt_title);
 
-title.ny = string_height_scribble(txt_title)/title.ys[0];
+switch (title.states) {
+	case "title":
+        title.ny = string_height_scribble(txt_title)/title.ys[0];
+    break;
+
+    case "grande":
+        title.ny = room_height/2;
+    break;        
+}
 
 _txt.starting_format("fnt_menu2_sombra", "c_white");
 _txt.align(1, 1);
@@ -14,6 +22,7 @@ _txt.transform(title.xs[0], title.ys[0], 0);
 _txt.draw(title.x, title.y);
 
 title.y = lerp(title.y, title.ny, .15);
+
 
 draw_set_halign(fa_left);
 draw_set_valign(1);
