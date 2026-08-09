@@ -13,7 +13,7 @@ frames = [[spr_lens, 0], [spr_unlucky, 0], [spr_gab, 0], [spr_pallerma, 0]];
 spd = 5;
 
 txt = {
-    escrita : string("[#EDB966]Feito por:\n\n\n[wave][#6F278A]Lens (Programador e Roterista)\n[/c][spr_lens, {0}]\n\n[#259451]Unlucky (Programador)\n[/c][spr_unlucky, {1}]\n\n[#4F62BD]xGab (Programador)\n[/c][spr_gab, {2}]\n\n[#C52589]Pallerma (Artista e Musico)\n[/c][spr_pallerma, {3}]", 
+    escrita : string("[#EDB966]Feito por:\n\n\n[wave][#6F278A]Lens (Programador, Roterista e Artista)\n[/c][spr_lens, {0}]\n\n[#259451]Unlucky (Programador e Artista)\n[/c][spr_unlucky, {1}]\n\n[#4F62BD]xGab (Programador)\n[/c][spr_gab, {2}]\n\n[#C52589]Pallerma (Artista e Musico)\n[/c][spr_pallerma, {3}]", 
     frames[0][1], frames[1][1], frames[2][1], frames[3][1]),
     
     addy    : 0,
