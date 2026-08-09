@@ -216,10 +216,69 @@ draw_lines = function(_i)
     }
 }
 
+draw_pseudo_line = function(_i)
+{
+    if (nodes[_i].conect_oth == noone) exit;
+        
+    var _n     = nodes[_i];
+    var _nline = _n.linha_cother;
+    var _other = _nline.ot.nodes[0];
+    
+    var _dirlengn = point_direction(_n.x, _n.y + _n.offy.r, _other.x, _other.x+_other.offy.r);
+    
+    var _x = _n.x + lengthdir_x(_n.offy.r, _dirlengn);
+    var _y = _n.y + lengthdir_y(_n.offy.r, _dirlengn);
+    
+    var _dirlengo = point_direction(_x, _y, _other.x, _other.x+_other.offy.r);
+    
+    var _otherx = _other.x + lengthdir_x(_other.offy.r, _dirlengo);
+    var _othery = _other.y + lengthdir_y(_other.offy.r, _dirlengo);
+    
+    _nline.x[0] = _x;
+    _nline.y[0] = _y;
+    
+    if (_n.apear){
+        _nline.nx = _otherx;
+        _nline.ny = _othery;
+    }else{
+        _nline.nx = _x;
+        _nline.ny = _y;
+    }
+    
+    var _spr = spr_corda_other;
+    var _w = sprite_get_width(_spr);
+    var _h = sprite_get_height(_spr);
+    
+    var _p1, _p2, _p3, _p4;
+    
+    _p1 = _nline.x[0];
+    _p2 = _nline.y[0];
+    _p3 = _nline.x[1];
+    _p4 = _nline.y[1];
+    
+    var _dir = point_direction(_p1, _p2, _p3, _p4);
+    var _dist = point_distance(_p1, _p2, _p3, _p4);
+    
+    var _xs = _dist/_w;
+    var _ys = 1;
+    
+    draw_sprite_ext(_spr, 0, _nline.x[0]+lengthdir_x(3, _dir)+addx[0], _nline.y[0]+lengthdir_y(3, _dir)+addy[0], _xs, 1, _dir, c_black, 1);
+    draw_sprite_ext(_spr, 0, _nline.x[0]+addx[0], _nline.y[0]+addy[0], _xs, 1, _dir, c_white, 1);
+    
+    if (point_distance(_nline.x[1],_nline.y[1], _nline.nx, _nline.ny) > 3){
+        _nline.x[1] = lerp(_nline.x[1], _nline.nx, .1);
+        _nline.y[1] = lerp(_nline.y[1], _nline.ny, .1);
+    }else{
+        _nline.x[1] = _nline.nx;
+        _nline.y[1] = _nline.ny;
+    }
+}
+
 desenha_nodes = function()
 {
     for (var i = 0; i < array_length(nodes); i++) {
         draw_lines(i);        
+        draw_pseudo_line(i);
     }
     
     for (var i = 0; i < array_length(nodes); i++) {

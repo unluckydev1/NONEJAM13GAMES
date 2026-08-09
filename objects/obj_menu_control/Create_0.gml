@@ -42,7 +42,9 @@ desenha_creditos = function()
         
     	var _vel = sprite_get_speed(_frame[0]);
         
-        var _addspd = _vel/game_get_speed(gamespeed_fps);
+    	var _qnt = sprite_get_number(_frame[0]);
+        
+        var _addspd = _qnt/game_get_speed(gamespeed_fps);
         
         _frame[1] += _addspd;
         
