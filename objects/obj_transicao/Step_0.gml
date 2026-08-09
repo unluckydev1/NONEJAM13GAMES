@@ -20,7 +20,9 @@ if (indo){
 }else{
     
     img_ini -= img_spd;
-                    if(!toca){
+
+    if(img_ini <= 2.5)
+            if(!toca){
                 toca = true
                 audio_play_sound(sfxTransVai, 0, 0, 1, 0, .7)
             }
