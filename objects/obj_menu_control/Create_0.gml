@@ -13,7 +13,7 @@ frames = [[spr_lens, 0], [spr_unlucky, 0], [spr_gab, 0], [spr_pallerma, 0]];
 spd = 5;
 
 txt = {
-    escrita : string("[#EDB966]Feito por:\n\n\nLens (Programador e Roterista)\n[spr_lens, {0}]\n\nnUnlucky (Programador)\n[spr_unlucky, {1}]\n\nxGab (Programador)\n[spr_gab, {2}]\n\nPallerma (Artista e Musico)\n[spr_pallerma, {3}]", 
+    escrita : string("[#EDB966]Feito por:\n\n\n[wave][#6F278A]Lens (Programador e Roterista)\n[/c][spr_lens, {0}]\n\n[#259451]Unlucky (Programador)\n[/c][spr_unlucky, {1}]\n\n[#4F62BD]xGab (Programador)\n[/c][spr_gab, {2}]\n\n[#C52589]Pallerma (Artista e Musico)\n[/c][spr_pallerma, {3}]", 
     frames[0][1], frames[1][1], frames[2][1], frames[3][1]),
     
     addy    : 0,
@@ -23,6 +23,8 @@ escala = 1;
 
 desenha_creditos = function()
 {
+    scribble_anim_wave(5, .4, .01);
+    
     draw_set_colour(#32242D);
     draw_set_font(fnt_menu2);
     draw_set_alpha(alpha.o);
@@ -67,8 +69,10 @@ desenha_creditos = function()
     
     alpha.o = lerp(alpha.o, alpha.n, .05);
     
-    txt.escrita = string("[#EDB966]Feito por:\n\n\n[#6F278A]Lens (Programador e Roterista)\n[/c][spr_lens, {0}]\n\n[#259451]Unlucky (Programador)\n[/c][spr_unlucky, {1}]\n\n[#4F62BD]xGab (Programador)\n[/c][spr_gab, {2}]\n\n[#C52589]Pallerma (Artista e Musico)\n[/c][spr_pallerma, {3}]", 
+    txt.escrita = string("[#EDB966]Feito por:\n\n\n[wave][#6F278A]Lens (Programador e Roterista)\n[/c][spr_lens, {0}]\n\n[#259451]Unlucky (Programador)\n[/c][spr_unlucky, {1}]\n\n[#4F62BD]xGab (Programador)\n[/c][spr_gab, {2}]\n\n[#C52589]Pallerma (Artista e Musico)\n[/c][spr_pallerma, {3}]", 
     frames[0][1], frames[1][1], frames[2][1], frames[3][1]);
+    
+    scribble_anim_wave(1,.1,.1);
 }
 
 escurece_tela = function()
@@ -92,7 +96,7 @@ aparece_letras = function()
     
     draw_set_font(fnt_menu2);
     
-    if (txt.addy >= room_height+((string_height_scribble(txt.escrita))*escala)){
+    if (txt.addy >= room_height+((string_height_scribble(txt.escrita)+10)*escala)){
         alpha.n = 0;
         
         if (alpha.o <= .05) {
