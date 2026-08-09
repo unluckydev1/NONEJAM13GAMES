@@ -111,13 +111,6 @@ Dialogo_Floresta = [
 // ===============================
 
 Dialogo_Torre = [
-
-    Texto(
-        "Miguel",
-        spr_text_box_idoso,
-        "Pois estava com MUITA pressa, e se demorasse demais para resgatar a princesa, sabe lá Deus o que poderia acontecer!"
-    ),
-
     Texto(
         "Miguel",
         spr_text_box_idoso,
@@ -855,7 +848,7 @@ Dialogo_Quarto_Cama = [
     Texto(
         "Miguel",
         spr_text_box_idoso,
-        "O bixo papão abocanhou ela… Bem, agora ela não vai mais se preocupar em sair daquela torre…",
+        "O bixo papão abocanhou ela... Bem, agora ela não vai mais se preocupar em sair daquela torre...",
         noone,
         function(){
             transicao(rm_fluxograma);
@@ -867,7 +860,7 @@ Dialogo_Quarto_Porta_So = [
     Texto(
         "Miguel",
         spr_text_box_idoso,
-        "A porta de seu quarto. Embora a porta sempre estivesse ali para ser aberta, a princesa nunca ousou abrir ela, pois tinha muito medo…",
+        "A porta de seu quarto. Embora a porta sempre estivesse ali para ser aberta, a princesa nunca ousou abrir ela, pois tinha muito medo...",
         noone,
         function(){
             // CHECAGEM: Substitua 'global.tem_chave' pela sua variável/lógica de fato
@@ -886,12 +879,12 @@ Dialogo_Quarto_Porta_Trancada = [
     Texto(
         "Miguel",
         spr_text_box_idoso,
-        "A princesa então se aproximou da porta, e colocou a mão na maçaneta… A porta estava trancada."
+        "A princesa então se aproximou da porta, e colocou a mão na maçaneta... A porta estava trancada."
     ),
     Texto(
         "Miguel",
         spr_text_box_idoso,
-        "A princesa se frustrou por ter tentado e falhado que nunca mais tentou fazer nada, e ficou sentada no cantinho do seu quarto por toda a eternidade…",
+        "A princesa se frustrou por ter tentado e falhado, que nunca mais tentou fazer nada, e ficou sentada no cantinho do seu quarto por toda a eternidade...",
         noone,
         function(){
             transicao(rm_fluxograma);
@@ -908,7 +901,7 @@ Dialogo_Quarto_Porta_Chave = [
     Texto(
         "Miguel",
         spr_text_box_idoso,
-        "Mas acabou não sendo muito agradável o que encontrou do outro lado…"
+        "Mas acabou não sendo muito agradável o que encontrou do outro lado..."
     ),
     Texto(
         "Miguel",
@@ -968,7 +961,7 @@ Dialogo_Quarto_MgBom_So = [
     Texto(
         "Miguel",
         spr_text_box_idoso,
-        "Bom! Que a tiraria dali em pouco instantes! E ainda resmungou da incompetência do principe…",
+        "Bom! Que a tiraria dali em pouco instantes! E ainda resmungou da incompetência do principe...",
         noone,
         function(){
             transicao(rm_fluxograma);
@@ -1009,7 +1002,7 @@ Dialogo_Quarto_Sapo_So = [
     Texto(
         "Miguel",
         spr_text_box_idoso,
-        "Quando a princesa abaixou-se para fazer carinho no sapo, ele acaba engolindo a princesa…",
+        "Quando a princesa abaixou-se para fazer carinho no sapo, ele acaba engolindo a princesa...",
         noone,
         function(){
             transicao(rm_fluxograma);

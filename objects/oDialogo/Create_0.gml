@@ -1,3 +1,4 @@
+appear = true
 largura_encaixe = 0 
 alp = 0
 global.reading = true

@@ -1,9 +1,21 @@
 
+var accept_key = keyboard_check_pressed(vk_space)
+
+if appear == true{
 draw_set_alpha(alp)
 alp = lerp(alp,1,.1)
+}else{
+accept_key = noone
+draw_set_alpha(alp)
+alp = lerp(alp,0,.1)
+}
+
+if keyboard_check_pressed(ord("T")){
+	appear ^= true
+}
 scribble_font_set_default("fnt_1")
 
-var accept_key = keyboard_check_pressed(vk_space)
+
 text_to_draw = string(text[page].text)
 show_debug_message(text_to_draw)
 var textbox_x = 128

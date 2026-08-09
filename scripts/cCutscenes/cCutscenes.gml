@@ -1,4 +1,8 @@
-
+function particle_create(obj){
+	repeat (10) {
+		instance_create_layer(obj.x,obj.y - 32, "Particulas", oParticle)
+	}
+}
 function cutscene_trigger(_cutscene){
     with(oCutscene){
     oCutscene.cutscene = global.cutscenes[_cutscene]
@@ -61,13 +65,18 @@ function move_add(obj,_x,_y,time,curve_type = linearmove){
         
         start = true
     }
+	var _par = false
+	if keyboard_check_pressed(vk_space){
+		timer = time
+		_par = true
+	}
     timer += delta_time /  1000000;
     var _pos = animcurve_channel_evaluate(anim, timer / time)
     
     obj.x = startx + distx*_pos
     obj.y = starty + disty*_pos
     show_debug_message(timer)
-    
+    if (_par) particle_create(obj)
     if (timer > time)
     {
         end_act();
@@ -101,13 +110,54 @@ function move_to(obj,_x,_y,time,curve_type = linearmove){
         
         start = true
     }
+	var _par = false
+	if keyboard_check_pressed(vk_space){
+		timer = time
+		_par = true
+	}
     timer += delta_time /  1000000;
     var _pos = animcurve_channel_evaluate(anim, timer / time)
     
     obj.x = startx + distx*_pos
     obj.y = starty + disty*_pos
+	if (_par) particle_create(obj)
     show_debug_message(timer)
     if (timer > time)
+    {
+        end_act();
+    }
+    }    
+}
+function move_to_speed(obj, _x, _y, _speed, curve_type = linearmove){
+    
+    with(oCutscene){
+    if (!start)
+    {
+        startx = obj.x
+        starty = obj.y
+        distx = _x - startx
+        disty = _y - starty
+        
+        // calcula a distância e converte velocidade -> duração
+        var _dist = point_distance(startx, starty, _x, _y)
+        dur = _dist / _speed   // _speed em pixels/segundo
+        
+        anim = animcurve_get_channel(curve_type, 0)
+        timer = 0
+        start = true
+    }
+	var _par = false
+    if keyboard_check_pressed(vk_space){
+		timer = dur
+		_par = true
+	}
+    timer += delta_time / 1000000
+    var _pos = animcurve_channel_evaluate(anim, timer / dur)
+    
+    obj.x = startx + distx * _pos
+    obj.y = starty + disty * _pos
+    if (_par) particle_create(obj)
+    if (timer > dur)
     {
         end_act();
     }
@@ -122,10 +172,20 @@ function new_dialogue(text){
     }
     if !global.reading{
         end_act()
+		show_message("oi")
     }
     }
 }
-
+function room_change(_room){
+	with(oCutscene){
+		if start = false{transicao(_room); start = true}
+		if (room = _room){
+			timer += delta_time / 1000000
+			if timer > 2 end_act()
+			
+		}
+	}
+}
 // ===============================
 // CAPÍTULO 1 - A PRINCESA
 // ===============================
@@ -141,14 +201,23 @@ cutscene_teste = [
 // CAP1_FLORESTA_INICIO
 Cutscene_Floresta_Inicio = [
     function(){start_act()},
-    function(){new_dialogue(Dialogo_Floresta)},
-    function(){end_cutscene()}
+	function(){oPrincipe.estado = "andando";  move_to_speed(oPrincipe,1194,1671,200); },
+	function(){move_to_speed(oPrincipe,1537,1501,250);},
+	function(){move_to_speed(oPrincipe,1187,1278,250);},
+	function(){move_to_speed(oPrincipe,1754,924,250);},
+	function(){;oPrincipe.estado = "parado";new_dialogue(Dialogo_Floresta)},
+    function(){end_cutscene()},
+    
+
 ];
 
 
 // CAP1_CAMINHO_TORRE
 Cutscene_Caminho_Torre = [
-    function(){start_act(); room_goto(Room1_1);},
+	
+    function(){start_act();},
+	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,281,44,200);},
+	function(){ room_change(Room1_1);},
 	//function(){move_add(oIdoso,-300,-300,2); oIdoso.estado = "andando"},
     function(){ new_dialogue(Dialogo_Torre);},
     function(){end_cutscene()},
@@ -159,7 +228,9 @@ Cutscene_Caminho_Torre = [
 Cutscene_Caminho_Escuridao = [
     function(){start_act()},
 	//function(){move_add(oIdoso,-300,300,2); oIdoso.estado = "andando"},
-    function(){ new_dialogue(Dialogo_Escuridao)},
+	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,3331,-66,200);},
+	function(){ room_change(Room1_1);},
+    function(){new_dialogue(Dialogo_Escuridao)},
     function(){end_cutscene()}
 ];
 

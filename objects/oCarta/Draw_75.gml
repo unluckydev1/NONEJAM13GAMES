@@ -46,13 +46,10 @@ _backys = (_h+_add)/_backw;
 //draw_set_colour(card.color);
 shader_set(sh_multi_color);
 if (outrainbow) apply_rainbow(spr_player, _time, 0);
-draw_sprite_ext(spr_player, 0, _x, _y, _backxs, _backys, angle, c_black, 1);
+draw_sprite_ext(spr_player, 0, _x, _y, _backxs, _backys, angle, c_black, oDialogo.alp);
 shader_reset();
-draw_sprite_ext(card.sprite,0,_x,_y,_scale,_scale,angle,c_white,1)
+draw_sprite_ext(card.sprite,0,_x,_y,_scale,_scale,angle,c_white,oDialogo.alp)
 //draw_rectangle(left, top, right, bottom, false);
-
-draw_set_colour(c_white);
-draw_set_halign(fa_center);
 
 draw_set_colour(c_white);
 draw_set_halign(fa_center);
@@ -74,12 +71,14 @@ var _stx = _tx + lengthdir_x(_shadow_dist, _shadow_dir);
 var _sty = _ty + lengthdir_y(_shadow_dist, _shadow_dir);
 
 if (outrainbow) apply_rainbow(spr_player, _time, 0);
+draw_set_alpha(oDialogo.alp)
 draw_text_transformed(_stx, _sty, card.nome, 1, 1, angle);
 shader_reset();
 
 draw_set_colour(c_black);
-draw_text_transformed(_tx, _ty, card.nome, 1, 1, angle);
 
+draw_text_transformed(_tx, _ty, card.nome, 1, 1, angle);
+draw_set_alpha(1)
 draw_set_colour(c_white);
 draw_set_halign(-1);
 // Destroi se a carta ja tiver sido selecionada
@@ -111,7 +110,7 @@ var hovering = point_in_rectangle(
 	x - hw, y - hh,
 	x + hw, y + hh
 );
-
+if oDialogo.alp < .95 {hovering = false; pursue = false; global.card_in_mouse = noone;}
 
 /// Hover
 if (hovering) {
