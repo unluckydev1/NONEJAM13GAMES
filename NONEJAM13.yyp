@@ -158,6 +158,7 @@
     {"id":{"name":"oNpcBardo","path":"objects/oNpcBardo/oNpcBardo.yy",},},
     {"id":{"name":"oNpcRei","path":"objects/oNpcRei/oNpcRei.yy",},},
     {"id":{"name":"oNpcSapo","path":"objects/oNpcSapo/oNpcSapo.yy",},},
+    {"id":{"name":"oParticle_gui","path":"objects/oParticle_gui/oParticle_gui.yy",},},
     {"id":{"name":"oParticle","path":"objects/oParticle/oParticle.yy",},},
     {"id":{"name":"oPlayerPlataform","path":"objects/oPlayerPlataform/oPlayerPlataform.yy",},},
     {"id":{"name":"oPlayerTopDown","path":"objects/oPlayerTopDown/oPlayerTopDown.yy",},},
