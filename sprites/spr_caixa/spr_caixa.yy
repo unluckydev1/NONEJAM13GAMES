@@ -14,13 +14,13 @@
   "frames":[
     {"$GMSpriteFrame":"v1","%Name":"f011ed1a-4253-4f03-892a-ce9b8c3056f4","name":"f011ed1a-4253-4f03-892a-ce9b8c3056f4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"f052a278-f1b5-45de-b9da-565aacd7e8c0","name":"f052a278-f1b5-45de-b9da-565aacd7e8c0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"aaa21bcb-b554-40c9-be6d-190179e19e28","name":"aaa21bcb-b554-40c9-be6d-190179e19e28","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":24,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"200c9c08-ae6d-48f2-ad23-67d871df6bcb","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"200c9c08-ae6d-48f2-ad23-67d871df6bcb","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"4f1c21ea-481c-4b58-9456-e3dbfe0f622e","blendMode":0,"displayName":"default","isLocked":false,"name":"4f1c21ea-481c-4b58-9456-e3dbfe0f622e","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_caixa",
@@ -70,7 +70,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":3.0,
+    "length":2.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -95,9 +95,6 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"f052a278-f1b5-45de-b9da-565aacd7e8c0","path":"sprites/spr_caixa/spr_caixa.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"29505656-beda-4602-8e11-0b39021c04f6","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"aaa21bcb-b554-40c9-be6d-190179e19e28","path":"sprites/spr_caixa/spr_caixa.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"b4bb0d9d-6ce4-4f3a-a108-0e377216f342","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

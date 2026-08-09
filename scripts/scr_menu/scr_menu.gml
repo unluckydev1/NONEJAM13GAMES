@@ -2,6 +2,8 @@ scribble_font_bake_shadow("fnt_menu2", "fnt_menu2_sombra", 0, 8, c_black, 1, 3, 
 
 function transicao(_destino)
 {
+    if (instance_exists(obj_transicao)) return;
+    
     var _trans = instance_create_depth(0, 0, -9999, obj_transicao);
     
     _trans.destino = _destino;

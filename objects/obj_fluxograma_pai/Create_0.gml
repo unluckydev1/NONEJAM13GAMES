@@ -141,7 +141,7 @@ draw_lines = function(_i)
         
         if (_n1.final) continue;
         
-        if (_n1.can){
+        if (_n1.can and !instance_exists(obj_transicao)){
             _n1.linha[i].x = lerp(_n1.linha[i].x, _n[_ind].x, .15);
             _n1.linha[i].y = lerp(_n1.linha[i].y, _n[_ind].y+_n[_ind].offy.r, .15);
             
@@ -218,7 +218,7 @@ draw_lines = function(_i)
 
 draw_pseudo_line = function(_i)
 {
-    if (nodes[_i].conect_oth == noone) exit;
+    if (nodes[_i].conect_oth == noone or !nodes[_i].can) exit;
         
     var _n     = nodes[_i];
     var _nline = _n.linha_cother;
@@ -310,8 +310,9 @@ desenha_nodes = function()
         
         if (_n.can or _n.final){
             var _colores = (_n.final) ? 1 : 0;
+            var _alpha = (_n.final) ? 1 : 1;
             
-            _n._time = apply_rainbow(_n.spr, _n._time, _colores);
+            _n._time = apply_rainbow(_n.spr, _n._time, _colores, _alpha);
         }
         
         var _cor = c_white;
@@ -403,10 +404,12 @@ desenha_nodes = function()
                 //_n.nys = 1;
             //}
             //
+            
             at = i;
             lastat = at;
         }else{
             if (at == i){
+                
                 _n.nxs = 1;
                 _n.nys = 1;
                 
@@ -455,8 +458,8 @@ desenha_nodes = function()
         draw_set_halign(1);
         draw_set_valign(1);
         draw_set_font(fnt_font);
-        var _realw = sprite_get_width(spr_caixa);
-        var _realh = sprite_get_height(spr_caixa);
+        var _realw = sprite_get_width(info_spr);
+        var _realh = sprite_get_height(info_spr);
         
         var _name_w = string_width(_n.id)+9;
         
@@ -510,18 +513,22 @@ desenha_nodes = function()
                 
                 var _yy = _top;
             
-            var _w = sprite_get_width(spr_caixa)*_n.info.xs;
+            var _w = sprite_get_width(info_spr)*_n.info.xs;
             
             //show_message(string("{0}   {1}   {2}",  _n.info.xs, _n.info.xsmax, _n.info.xs/_n.info.xsmax))
             
             //Escreve o titulo
+            draw_set_colour(#FDFDEF);
             draw_text_transformed(_x, _yy, _n.id, _divxs, _divys, 0);
+            draw_set_colour(c_white);
             
             _yy += string_height(_n.id)/4 + 8;
             
             draw_set_valign(-1);
             if (_n.can){
+                draw_set_colour(#4C4139);
                 draw_text_ext_transformed(_x, _yy, _txt, _sep, _maxw, _divxs, _divys, 0);
+                draw_set_colour(c_white);
                 
                 //Colocando a imagem para baixo e evitando que de o bug de voar
                 _yy += (_imgh/2+_str_h)*_divys;

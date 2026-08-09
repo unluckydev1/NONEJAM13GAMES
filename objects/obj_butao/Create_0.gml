@@ -32,6 +32,8 @@ desenha = function()
 
 mouse_cima = function()
 {
+    if (instance_exists(obj_transicao)) exit;
+    
     if (position_meeting(mouse_x, mouse_y, id)){
         if (!entra){
             xscale[0] = 1.1;

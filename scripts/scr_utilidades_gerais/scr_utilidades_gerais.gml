@@ -111,7 +111,7 @@ function inicia_rainbow()
     _time = 0;
 }
 
-function apply_rainbow(_spr, _time, _multi = 0)
+function apply_rainbow(_spr, _time, _multi = 0, _alpha = 1)
 {
     shader_set(sh_rainbow);
     var uv = sprite_get_uvs(_spr, 0);
@@ -122,7 +122,7 @@ function apply_rainbow(_spr, _time, _multi = 0)
     shader_set_uniform_f(_uniBrightness, _brightness);
     shader_set_uniform_f(_uniSection, _section);
     shader_set_uniform_f(_uniMix, _mix);   
-    shader_set_uniform_f(_uniAlpha, 1);   
+    shader_set_uniform_f(_uniAlpha, _alpha);   
     
     shader_set_uniform_f(_uniMultiColor, _multi);
     

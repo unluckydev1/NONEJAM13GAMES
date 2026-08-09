@@ -160,7 +160,6 @@ Cutscene_Caminho_Escuridao = [
     function(){start_act()},
 	//function(){move_add(oIdoso,-300,300,2); oIdoso.estado = "andando"},
     function(){ new_dialogue(Dialogo_Escuridao)},
-    function(){end_cutscene()},
     function(){end_cutscene()}
 ];
 

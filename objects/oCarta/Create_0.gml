@@ -12,4 +12,8 @@ xspd = 0
 angle = 0
 atraso = 0
 
+antx = x;
+anty = y;
+nangle = angle;
+
 outrainbow = true;

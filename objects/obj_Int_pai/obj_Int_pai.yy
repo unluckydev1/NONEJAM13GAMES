@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Ingame",
-    "path":"folders/Sprites/Ingame.yy",
+    "path":"folders/objetos/Ingame.yy",
   },
   "parentObjectId":null,
   "persistent":false,

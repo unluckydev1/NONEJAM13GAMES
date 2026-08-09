@@ -1,4 +1,4 @@
-//surface_resize(application_surface, 896, 504);
+//surface_resize(application_surface, 1920, 1080);
 
 global.nodes = {
     fluxo1 : [],
@@ -246,7 +246,7 @@ global.node_settings =
         conect : [],
         desc   : "O principe sobe a torre com ajuda do mago.",
         imagem: spr_nula,
-        final: true,
+        final: false,
 		
 		conect_other : obj_fluxograma_2
 	},
@@ -325,8 +325,6 @@ global.node_settings =
         desc   : "O principe encontra uma casa engraçada no bosque.",
         imagem: spr_nula,
         final: false,
-        
-        conect_other : obj_fluxograma_2
 	},
     {
         sprite : spr_campainha,
