@@ -114,17 +114,27 @@ if oDialogo.alp < .95 {hovering = false; pursue = false; global.card_in_mouse = 
 
 /// Hover
 if (hovering) {
-	if (global.card_in_mouse == noone)
+	if (global.card_in_mouse == noone){
 		global.card_in_mouse = id;
+        select = true
+    }
 
 	if (global.card_in_mouse == id) {
-
+        if(select){
+            select = false 
+            audio_play_sound(sfxSelect,0,0)
+        }
 		yhover = mouse_check_button(mb_left)
 			? 0
 			: lerp(yhover, -50, .2);
 
-		if (mouse_check_button(mb_left))
+		if (mouse_check_button(mb_left)){
 			pursue = true;
+            if(toca){
+                toca = false
+                audio_play_sound(sfxCartaPega,0,0, 1, 0, 1.5)
+            }
+        }
 	}
 
 } else {
@@ -144,8 +154,13 @@ if (pursue) {
 	y = lerp(y, my, .3);
 
 
-	if (mouse_check_button_released(mb_left))
+	if (mouse_check_button_released(mb_left)){
+            if(!toca){
+                toca = true
+                audio_play_sound(sfxCartaSolta,0,0)
+            }
 		pursue = false;
+    }
 
 } else {
 

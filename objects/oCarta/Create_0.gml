@@ -17,3 +17,6 @@ anty = y;
 nangle = angle;
 
 outrainbow = true;
+
+toca = true
+select = 0

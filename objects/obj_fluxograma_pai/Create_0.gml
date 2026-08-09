@@ -365,7 +365,10 @@ desenha_nodes = function()
         #region MouseClick
         
         if (point_in_rectangle(upd_mousex(), upd_mousey(), _rx-_n.w/2, _n.y-_n.h/2+addy[0], _rx+_n.w/2, _n.y+_n.h/2+addy[0]) and !sm){
+            
             if (at != i){
+                audio_play_sound(sfxEntra, 0,0)
+                audio_play_sound(sfxWoosh, 0,0, 1, .2, 1.3)
                 _n.xs  = .7;
                 _n.ys  = .7;
                 //_n.ang = choose(-20, 20);

@@ -6,7 +6,7 @@ angle  = 0;
 entra = false;
 
 multi = 1;
-
+toca = false
 sprite_index = sprite;
 
 action = noone;
@@ -32,9 +32,14 @@ desenha = function()
 
 mouse_cima = function()
 {
+
     if (instance_exists(obj_transicao)) exit;
     
     if (position_meeting(mouse_x, mouse_y, id)){
+        if(!toca){
+            toca = true 
+            audio_play_sound(sfxEntra, 0, 0)
+        }
         if (!entra){
             xscale[0] = 1.1;
             yscale[0] = .9;
@@ -65,7 +70,7 @@ mouse_cima = function()
         entra = true;
     }else{
         entra = false;
-        
+        toca = false
         xscale[1] = 1;
         yscale[1] = 1;
     }
