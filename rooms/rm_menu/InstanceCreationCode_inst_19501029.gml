@@ -4,5 +4,6 @@ action = function()
         with (obj_menu_control) {
         	creditos = escurece_tela;
         }
+        audio_play_sound(sfxcreditos,0, 0)
     }
 }

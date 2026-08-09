@@ -1,5 +1,12 @@
 puxa_mouse();
 
+var _parent = object_get_parent(object_index);
+
+if (_parent > 0){
+    addx = _parent.addx;
+    addy = _parent.addy;
+}
+
 //show_debug_message(string("{0}   {1}", addx[0], addy[0]),nodes,liberados)
 
 if (keyboard_check_pressed(ord("T"))){
