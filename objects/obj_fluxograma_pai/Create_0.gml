@@ -15,6 +15,18 @@ escala = 1;
 
 shake = [0, 0];
 
+click_enter = 1;
+
+txt_title = "[wave]Árvore de Ações";
+
+title = {
+    x : room_width/2,
+    y : string_height_scribble(txt_title)*2,
+    ny : string_height_scribble(txt_title),
+    xs : [.4, .4],
+    ys : [.4, .4]
+}
+
 upd_mousex = function() {return mouse_x / escala};
 upd_mousey = function() {return mouse_y / escala};
 

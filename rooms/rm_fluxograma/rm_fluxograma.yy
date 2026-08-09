@@ -1,7 +1,7 @@
 {
   "$GMRoom":"v1",
   "%Name":"rm_fluxograma",
-  "creationCodeFile":"",
+  "creationCodeFile":"rooms/rm_fluxograma/RoomCreationCode.gml",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,
