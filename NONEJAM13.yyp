@@ -355,6 +355,7 @@
     {"id":{"name":"spr_bg_3","path":"sprites/spr_bg_3/spr_bg_3.yy",},},
     {"id":{"name":"spr_bg_4","path":"sprites/spr_bg_4/spr_bg_4.yy",},},
     {"id":{"name":"spr_bg_5","path":"sprites/spr_bg_5/spr_bg_5.yy",},},
+    {"id":{"name":"spr_branca","path":"sprites/spr_branca/spr_branca.yy",},},
     {"id":{"name":"spr_cadeado","path":"sprites/spr_cadeado/spr_cadeado.yy",},},
     {"id":{"name":"spr_caixa","path":"sprites/spr_caixa/spr_caixa.yy",},},
     {"id":{"name":"spr_cogumelo","path":"sprites/spr_cogumelo/spr_cogumelo.yy",},},
@@ -390,9 +391,9 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"roomId":{"name":"rm_fluxograma","path":"rooms/rm_fluxograma/rm_fluxograma.yy",},},
     {"roomId":{"name":"rm_main","path":"rooms/rm_main/rm_main.yy",},},
+    {"roomId":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"roomId":{"name":"Room1_1","path":"rooms/Room1_1/Room1_1.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"rm_splash","path":"rooms/rm_splash/rm_splash.yy",},},

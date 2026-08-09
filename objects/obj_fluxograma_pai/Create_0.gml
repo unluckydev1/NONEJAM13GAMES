@@ -185,21 +185,28 @@ draw_lines = function(_i)
                 }
             }
         }
-        
-
             
         var _cor = make_colour_rgb(_n1.linha[i].cores_corda[0], _n1.linha[i].cores_corda[1], _n1.linha[i].cores_corda[2]);
         
         var _offy = (_n[_ind].final) ? 0 : _n[_ind].offy.r
         
+        var _p1 = _n1.x+addx[0];
+        var _p2 = _n1.y+_n1.offy.r+addy[0];
+        var _p3 = _n1.linha[i].x+addx[0];
+        var _p4 = _n1.linha[i].y+_offy+addy[0];
+        
         draw_set_colour(c_black);
-    	draw_line_width(_n1.x+addx[0], _n1.y+_n1.offy.r+2+addy[0], _n1.linha[i].x+addx[0], _n1.linha[i].y+_offy+2+addy[0], 3);
+    	draw_line_width(_p1, _p2+2, _p3, _p4+2, 3);
+        
         draw_set_colour(c_white);
-        draw_line_width(_n1.x+addx[0], _n1.y+_n1.offy.r+addy[0], _n1.linha[i].x+addx[0], _n1.linha[i].y+_offy+addy[0], 3);
+        draw_line_width(_p1, _p2, _p3, _p4, 3);
+        
         if (nodes[_ind].info.nivel > 0) _n1.linha[i].alp_rainbow = lerp(_n1.linha[i].alp_rainbow, 1, .05);
+        draw_set_alpha(_n1.linha[i].alp_rainbow);      
+        
         draw_set_colour(_cor)
-        draw_set_alpha(_n1.linha[i].alp_rainbow);    
-    	draw_line_width(_n1.x+addx[0], _n1.y+_n1.offy.r+addy[0], _n1.linha[i].x+addx[0], _n1.linha[i].y+_offy+addy[0], 3);
+    	draw_line_width(_p1, _p2, _p3, _p4, 3);
+        
         draw_set_alpha(1);    
         draw_set_colour(c_white);
         
