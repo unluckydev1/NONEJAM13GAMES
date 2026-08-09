@@ -18,9 +18,10 @@ select = 0
 ///Create
 typist = scribble_typist();
 typist.ease(SCRIBBLE_EASE.EXPO, 0, -12, 0, 0, 360, .5)
-typist.in(0.5, 2);
-
-
+typist.in(0.37, 2);
+typist.sound_per_char(sfxDialogo, 1,1, " ")
+typist.character_delay_add(",", .2)
+typist.character_delay_add(".", .2)
 text_to_draw = 0
 page = 0
 page_number = 0

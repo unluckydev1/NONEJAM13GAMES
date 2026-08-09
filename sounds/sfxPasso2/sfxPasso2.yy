@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"snd_menu_jogo",
+  "%Name":"sfxPasso2",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,17 +10,17 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":23.460363,
+  "duration":0.32759637,
   "exportDir":"",
-  "name":"snd_menu_jogo",
+  "name":"sfxPasso2",
   "parent":{
-    "name":"Sons",
-    "path":"folders/Sons.yy",
+    "name":"Walk",
+    "path":"folders/Sons/Cutscenes/Walk.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_menu_jogo.ogg",
-  "volume":0.48,
+  "soundFile":"sfxPasso2.mp3",
+  "volume":1.0,
 }

@@ -9,7 +9,12 @@ function cutscene_trigger(_cutscene){
     oCutscene.cutscene = global.cutscenes[_cutscene]
     }
 }
-
+function play_cutscene_sound(index,priority,loop,gain,offset, pitch = 1){
+    with(oCutscene){
+         if !start {audio_play_sound(index,priority,loop,gain,offset, pitch); start = true}
+         end_act()
+    }
+}
 function start_act(){ 
     with(oCutscene){
         global.cutscene = true;
@@ -162,9 +167,12 @@ function move_to(obj,_x,_y,time,curve_type = linearmove){
     var _intervalo = 0.25
     var _tick_atual = floor(timer / _intervalo)
     if (_tick_atual != tick_anterior)
-    {
+    {   
+        pitch = random_range(0.9, 1)
+        passo_atual = choose(sfxPasso2, sfxPasso3, sfxPasso4, sfxPasso5)
         tick_anterior = _tick_atual
         instance_create_depth(obj.x, obj.y, obj.depth, oPum)
+        audio_play_sound(passo_atual, 0, 0, 1, 0, pitch)
     }
     
     obj.x = startx + distx * _pos
@@ -208,6 +216,7 @@ function npc_spawn(obj, _x, _y, _start = true){
 function npc_despawn(obj){
 	
 	if !instance_exists(obj){ end_act() }else if obj.despawn = false{ obj.despawn = true obj.alarm[0] = 90 }
+ 
 }
 // ===============================
 // CAPÍTULO 1 - A PRINCESA
@@ -286,6 +295,7 @@ Cutscene_Torre_Janela = [
 Cutscene_Mago_Mal = [
     function(){start_act()},
 	function(){npc_spawn(oMagoMal,185,1385,false)},
+    function(){play_cutscene_sound(sfxMagoMal, 0, 0, 2, 0, 1.5)},
     function(){new_dialogue(dialogo_Porta_MgMal)},
 	function(){npc_despawn(oPrincipe)},
 	function(){room_change(rm_quarto_princesa)},
@@ -297,6 +307,7 @@ Cutscene_Mago_Mal = [
 Cutscene_Mago_Bom = [
     function(){start_act()},
 	function(){npc_spawn(oMagoBom,185,1385,false)},
+  	function(){play_cutscene_sound(sfx_harpa_mago_aparece, 0, 0, 2, 0)},
     function(){new_dialogue(dialogo_Porta_MgBom)},
 	function(){particle_create(oPrincipe)},
 	function(){npc_despawn(oPrincipe)},
@@ -307,8 +318,11 @@ Cutscene_Mago_Bom = [
 Cutscene_Mago_Sapo = [
 	function(){start_act()},
 	function(){npc_spawn(oMagoSapo,185,1385,false)},
+    function(){play_cutscene_sound(sfxMagoSapo, 0, 0, 2, 0)},
 	function(){oMagoSapo.estado = "andando";move_to_speed(oMagoSapo,oPrincipe.x,oPrincipe.y,global.vel_cutscene);},
 	function(){oMagoSapo.scala_x_temp = -.05; oMagoSapo.scala_y_temp = .25; end_act()},
+    
+    function(){play_cutscene_sound(sfxMordida, 0, 0, 2, 0)},
 	function(){npc_despawn(oPrincipe)},
 	function(){new_dialogue(dialogo_Porta_MgSapo)},
 	function(){room_change(rm_quarto_princesa)},
@@ -325,7 +339,8 @@ Cutscene_Escalar_Torre = [
 	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,1200,880,global.vel_cutscene/6);},
 	function(){wait_in(.5)},
 	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,1200,1380,global.vel_cutscene*4);},
-	function(){particle_create(oPrincipe)},
+	function(){play_cutscene_sound(sfxTuc, 0, 0, 2, 2.10)},
+    function(){particle_create(oPrincipe)},
 	function(){particle_create(oPrincipe)},
 	function(){npc_despawn(oPrincipe)},
     function(){new_dialogue(Dialogo_Cair)},
@@ -337,6 +352,7 @@ Cutscene_Escalar_Torre = [
 // CAP1_GRITAR_PRINCESA
 Cutscene_Gritar_Princesa = [
     function(){start_act()},
+   	function(){play_cutscene_sound(sfxJogaCorda, 0, 0, 2, 0, 1.5)},
 	function(){obj_lencol.abrir = true; wait_in(3)},
     function(){new_dialogue(Dialogo_Gritar)},
 	function(){room_change(rm_quarto_princesa)},

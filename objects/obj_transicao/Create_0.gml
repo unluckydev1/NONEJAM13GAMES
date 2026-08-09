@@ -10,3 +10,5 @@ img_num = sprite_get_number(spr_quadradin)-1;
 //Indo
 destino = noone;
 indo = true;
+
+toca = true
