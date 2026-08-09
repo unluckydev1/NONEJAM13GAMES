@@ -6,8 +6,8 @@
   "name":"obj_Int_pai",
   "overriddenProperties":[],
   "parent":{
-    "name":"NONEJAM13",
-    "path":"NONEJAM13.yyp",
+    "name":"Ingame",
+    "path":"folders/Sprites/Ingame.yy",
   },
   "parentObjectId":null,
   "persistent":false,

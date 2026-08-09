@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"NONEJAM13",
-    "path":"NONEJAM13.yyp",
+    "name":"Ingame",
+    "path":"folders/Sprites/Ingame.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

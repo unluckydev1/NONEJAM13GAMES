@@ -9,11 +9,12 @@ alpha = {
     n : 0,
 };
 
-frames = [0, 0, 0, 0];
+frames = [[spr_lens, 0], [spr_unlucky, 0], [spr_gab, 0], [spr_pallerma, 0]];
+spd = 5;
 
 txt = {
-    escrita : string("Feito por:\n\n\nLens (Programador e Roterista)\n[spr_coin, {0}]\nUnlucky (Programador)\n[spr_coin, {1}]\nxGab (Programador)\n[spr_coin, {2}]\nPallerma (Artista)\n[spr_coin, {3}]", 
-    frames[0], frames[1], frames[2], frames[3]),
+    escrita : string("[#EDB966]Feito por:\n\n\nLens (Programador e Roterista)\n[spr_lens, {0}]\n\nnUnlucky (Programador)\n[spr_unlucky, {1}]\n\nxGab (Programador)\n[spr_gab, {2}]\n\nPallerma (Artista e Musico)\n[spr_pallerma, {3}]", 
+    frames[0][1], frames[1][1], frames[2][1], frames[3][1]),
     
     addy    : 0,
 }
@@ -33,6 +34,21 @@ desenha_creditos = function()
     
     draw_set_halign(1);
     
+    //Fazer os negocio aumenta os frames
+    for (var i = 0; i < array_length(frames); i++) {
+        var _frame = frames[i];
+        
+    	var _vel = sprite_get_speed(_frame[0]);
+        
+        var _addspd = _vel/game_get_speed(gamespeed_fps);
+        
+        _frame[1] += _addspd;
+        
+        if (_frame[1] + _addspd >= _vel){
+            _frame[1] = 0;
+        }
+    }
+    
     //draw_set_colour(c_black);
     //draw_text_transformed(room_width/2, room_height-txt.addy+(5*escala), txt.escrita, escala, escala, 0);
     //draw_set_colour(c_white);
@@ -40,10 +56,9 @@ desenha_creditos = function()
     
     var _txt = scribble(txt.escrita);
     
-    _txt.gradient(#FF87BA, 1.4);
+    _txt.gradient(#FF87BA, .5);
     _txt.starting_format("fnt_menu2_sombra", "c_white");
     _txt.align(1, 0);
-    _txt.blend(#EDB966, 1);
     _txt.transform(escala, escala, 0);
     _txt.draw(room_width/2, room_height-txt.addy);
     
@@ -51,6 +66,9 @@ desenha_creditos = function()
     draw_set_halign(-1);
     
     alpha.o = lerp(alpha.o, alpha.n, .05);
+    
+    txt.escrita = string("[#EDB966]Feito por:\n\n\n[#6F278A]Lens (Programador e Roterista)\n[/c][spr_lens, {0}]\n\n[#259451]Unlucky (Programador)\n[/c][spr_unlucky, {1}]\n\n[#4F62BD]xGab (Programador)\n[/c][spr_gab, {2}]\n\n[#C52589]Pallerma (Artista e Musico)\n[/c][spr_pallerma, {3}]", 
+    frames[0][1], frames[1][1], frames[2][1], frames[3][1]);
 }
 
 escurece_tela = function()
@@ -67,7 +85,7 @@ aparece_letras = function()
     txt.addy += vel_addy;
     
     if (keyboard_check(vk_space)){
-        vel_addy = lerp(vel_addy, 8, .15);
+        vel_addy = lerp(vel_addy, 10, .15);
     }else{
         vel_addy = lerp(vel_addy, 4, .15);
     }
