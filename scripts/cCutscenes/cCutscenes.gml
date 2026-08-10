@@ -602,7 +602,7 @@ Cutscene_Quarto_Porta_Trancada = [
 // QUARTO_PORTA_CHAVE
 Cutscene_Quarto_Porta_Chave = [
     function(){start_act()},
-	function(){obj_porta.sprite_index = spr_porta_aberta_princesa},
+	function(){obj_porta.sprite_index = spr_porta_aberta_princesa end_act()},
     function(){new_dialogue(Dialogo_Quarto_Porta_Chave)},
     function(){end_cutscene()}
 ];
