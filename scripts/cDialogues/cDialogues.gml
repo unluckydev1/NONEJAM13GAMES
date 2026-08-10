@@ -774,6 +774,7 @@ Dialogo_Quarto_Janela = [
             // CHECAGEM: Substitua 'global.tem_lencol' pela sua variável/lógica de fato
             if (oCutscene.has_lencol == true) {
                 global.cutscene_query = CUTSCENE.CUT_QUARTO_JANELA_LENCOL;
+				 libera_node(global.node_names.q13, global.nodes.fluxo2, global.liberados.fluxo2);
                 libera_node(global.node_names.q15, global.nodes.fluxo2, global.liberados.fluxo2);
             } else {
                 global.cutscene_query = CUTSCENE.CUT_QUARTO_JANELA_MORTE;
@@ -866,7 +867,8 @@ Dialogo_Quarto_Porta_So = [
             // CHECAGEM: Substitua 'global.tem_chave' pela sua variável/lógica de fato
             if (oCutscene.has_key == true) {
                 global.cutscene_query = CUTSCENE.CUT_QUARTO_PORTA_CHAVE;
-                libera_node(global.node_names.q22, global.nodes.fluxo2, global.liberados.fluxo2);
+                libera_node(global.node_names.q19, global.nodes.fluxo2, global.liberados.fluxo2);
+				libera_node(global.node_names.q22, global.nodes.fluxo2, global.liberados.fluxo2);
             } else {
                 global.cutscene_query = CUTSCENE.CUT_QUARTO_PORTA_TRANCADA;
                 libera_node(global.node_names.q21, global.nodes.fluxo2, global.liberados.fluxo2);

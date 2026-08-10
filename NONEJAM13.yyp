@@ -539,6 +539,8 @@
     {"id":{"name":"spr_portrait","path":"sprites/spr_portrait/spr_portrait.yy",},},
     {"id":{"name":"spr_princesa","path":"sprites/spr_princesa/spr_princesa.yy",},},
     {"id":{"name":"spr_principe_","path":"sprites/spr_principe_/spr_principe_.yy",},},
+    {"id":{"name":"spr_principe_costa","path":"sprites/spr_principe_costa/spr_principe_costa.yy",},},
+    {"id":{"name":"spr_principe_lado","path":"sprites/spr_principe_lado/spr_principe_lado.yy",},},
     {"id":{"name":"spr_principe_morto","path":"sprites/spr_principe_morto/spr_principe_morto.yy",},},
     {"id":{"name":"spr_principe","path":"sprites/spr_principe/spr_principe.yy",},},
     {"id":{"name":"spr_quadradin","path":"sprites/spr_quadradin/spr_quadradin.yy",},},
@@ -574,8 +576,8 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
-    {"roomId":{"name":"rm_quarto_princesa","path":"rooms/rm_quarto_princesa/rm_quarto_princesa.yy",},},
     {"roomId":{"name":"rm_fluxograma","path":"rooms/rm_fluxograma/rm_fluxograma.yy",},},
+    {"roomId":{"name":"rm_quarto_princesa","path":"rooms/rm_quarto_princesa/rm_quarto_princesa.yy",},},
     {"roomId":{"name":"rm_main","path":"rooms/rm_main/rm_main.yy",},},
     {"roomId":{"name":"Room1_1","path":"rooms/Room1_1/Room1_1.yy",},},
     {"roomId":{"name":"rm_splash","path":"rooms/rm_splash/rm_splash.yy",},},
