@@ -543,8 +543,10 @@ Cutscene_Quarto_Janela = [
 Cutscene_Quarto_Janela_Morte = [
     function(){start_act()},
     function(){start_act(); obj_janela.sprite_index = spr_janela_aberta_princesa},
+    function(){play_cutscene_sound(sfxJanelaOpen, 0, 0, 2)},
 	function(){npc_despawn(oPrincesa)},
 	function(){wait_in(1)},
+    function(){play_cutscene_sound(sfxTuc, 0, 0, 2, 2.1)},
 	function(){ new_shake(10,.95) end_act()},
 	function(){wait_in(0.5)},
     function(){new_dialogue(Dialogo_Quarto_Janela_Morte)},

@@ -369,6 +369,7 @@
     {"id":{"name":"sfxEntra","path":"sounds/sfxEntra/sfxEntra.yy",},},
     {"id":{"name":"sfxImpactoCarta1","path":"sounds/sfxImpactoCarta1/sfxImpactoCarta1.yy",},},
     {"id":{"name":"sfxImpactoCarta2","path":"sounds/sfxImpactoCarta2/sfxImpactoCarta2.yy",},},
+    {"id":{"name":"sfxJanelaOpen","path":"sounds/sfxJanelaOpen/sfxJanelaOpen.yy",},},
     {"id":{"name":"sfxJogaCorda","path":"sounds/sfxJogaCorda/sfxJogaCorda.yy",},},
     {"id":{"name":"sfxMagoMal","path":"sounds/sfxMagoMal/sfxMagoMal.yy",},},
     {"id":{"name":"sfxMagoSapo","path":"sounds/sfxMagoSapo/sfxMagoSapo.yy",},},
