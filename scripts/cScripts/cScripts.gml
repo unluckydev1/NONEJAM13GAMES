@@ -30,7 +30,7 @@ function exclui_do_control(_val)
             if (_valor != -1) array_delete(itens, _valor, 1);
         }
     }else{
-        show_message("Obj controla itens, nao existe :D");
+        //show_message("Obj controla itens, nao existe :D");
     }
 }
 

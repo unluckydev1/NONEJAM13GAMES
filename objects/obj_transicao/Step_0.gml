@@ -1,5 +1,5 @@
 if (destino == noone){ 
-    show_message("Destino deu noone"); 
+    //show_message("Destino deu noone"); 
     exit;
 }
 
