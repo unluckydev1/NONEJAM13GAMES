@@ -440,12 +440,12 @@ Cutscene_Quarto_Abracar = [
 
 Cutscene_Quarto_Matar = [
     function(){start_act()},
-    function(){new_dialogue(Dialogo_Quarto_Matar)},
 	function(){oPrincesa.estado = "andando";move_to_speed(oPrincesa,oPrincipe.x,oPrincipe.y,global.vel_cutscene);},
-	function(){oPrincesa.estado = "parado";wait_in(1)},
-	function(){oPrincesa.scala_x_temp = -.05; oPrincesa.scala_y_temp = .25;},
+	function(){oPrincesa.estado = "parado" end_act()},
+	function(){oPrincesa.scala_x_temp = -.05; oPrincesa.scala_y_temp = .25; end_act()},
 	function(){particle_create(oPrincipe)},
 	function(){npc_despawn(oPrincipe)},
+	function(){new_dialogue(Dialogo_Quarto_Matar)},
     function(){end_cutscene()}
 ];
 
@@ -586,7 +586,7 @@ Cutscene_Quarto_Cama = [
 Cutscene_Quarto_Porta_So = [
     function(){start_act()},
     function(){new_dialogue(Dialogo_Quarto_Porta_So)},
-	function(){oPrincesa.estado = "andando";move_to_speed(oPrincesa,2470.1390,global.vel_cutscene);},
+	function(){oPrincesa.estado = "andando";move_to_speed(oPrincesa,2470,1390,global.vel_cutscene);},
     function(){oPrincesa.estado = "parado";new_dialogue(Dialogo_Quarto_Porta_So)},
     function(){end_cutscene()}
 ];
