@@ -472,9 +472,8 @@ Cutscene_Quarto_MgMal_Pr = [
     function(){start_act()},
 	function(){npc_spawn(oMagoMal,2656,1312,false)},
 	function(){wait_in(1)},
-	function(){npc_despawn(oPrincipe);},
-	function(){npc_despawn(oPrincesa);},
-	function(){npc_despawn(oMagoBom);},
+	function(){particle_create(oPrincipe);npc_despawn(oPrincipe);},
+	function(){particle_create(oPrincesa);npc_despawn(oPrincesa);},
     function(){new_dialogue(Dialogo_Quarto_MgMal_Pr)},
     function(){end_cutscene()}
 ];
@@ -556,7 +555,7 @@ Cutscene_Quarto_Janela_Morte = [
 // QUARTO_JANELA_LENCOL
 Cutscene_Quarto_Janela_Lencol = [
     function(){start_act()},
-	function(){npc_despawn(obj_cortina.image_index = 1)},
+	function(){obj_janela.sprite_index = spr_janela_aberta_princesa; npc_despawn(obj_cortina)},
 	function(){wait_in(.5)},
 	function(){npc_despawn(oPrincesa)},
 	function(){wait_in(1)},
