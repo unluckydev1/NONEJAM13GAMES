@@ -52,6 +52,8 @@ switch (title.states) {
             
             title.vspd = 0;
             title.states = "title";
+            
+            new_shake(10, .8)
         }        
     break;
 }

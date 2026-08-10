@@ -205,6 +205,30 @@ function sine_between(time, period, minimum, maximum) {
     return sine_wave(time, period, amplitude, midpoint);
 }
 
+function array_acha(_array, _val)
+{
+    var _resultado = -1;
+        
+    var _existe = false;
+    
+    for (var i = 0; i < array_length(_array); i++) {
+        for (var j = 0; j < array_length(_array[i]); j++) {
+            if (_array[i][j] == _val){
+                _existe = true;
+                
+                break;
+            }
+        }
+        
+        if (_existe){
+            _resultado = i;
+            
+            break;
+        }
+    }
+    
+    return _resultado;
+}
 
 #endregion
 

@@ -31,16 +31,10 @@ title = {
     
     alp_r : 0,
     
-    states : "title",
+    states : "grande",
     vspd   : 0,
     
     cooldown_passa : game_get_speed(gamespeed_fps)*1.5
-}
-
-if (global.fluxo_first_time){
-    title.states = "grande";
-    
-    global.fluxo_first_time = false;
 }
 
 upd_mousex = function() {return mouse_x / escala};
