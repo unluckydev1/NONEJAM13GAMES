@@ -576,7 +576,7 @@ Cutscene_Quarto_Janela_Morte = [
 // QUARTO_JANELA_LENCOL
 Cutscene_Quarto_Janela_Lencol = [
     function(){start_act()},
-	function(){obj_janela.sprite_index = spr_janela_aberta_princesa; npc_despawn(obj_cortina)},
+	function(){obj_janela.sprite_index = spr_janela_aberta_princesa; npc_despawn(obj_cortina) exclui_do_control(spr_cortina_princesa)},
 	function(){wait_in(.5)},
     function(){play_cutscene_sound(sfxJogaCorda, 0, 0, 1, 0)},
 	function(){npc_despawn(oPrincesa)},
@@ -629,7 +629,7 @@ Cutscene_Quarto_Porta_Trancada = [
 Cutscene_Quarto_Porta_Chave = [
     function(){start_act()},
     function(){play_cutscene_sound(sfxPortaMetal, 0, 0, 5, 0)},
-	function(){obj_porta.sprite_index = spr_porta_aberta_princesa end_act()},
+	function(){obj_porta.sprite_index = spr_porta_aberta_princesa exclui_do_control(spr_key) end_act()},
     function(){new_dialogue(Dialogo_Quarto_Porta_Chave)},
     function(){end_cutscene()}
 ];

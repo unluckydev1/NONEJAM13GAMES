@@ -33,3 +33,6 @@ in = false
 
 despawn = false
 
+clicado = false;
+
+last_spr = sprite_index;

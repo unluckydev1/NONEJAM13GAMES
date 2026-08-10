@@ -1,0 +1,1 @@
+last_spr = sprite_index;

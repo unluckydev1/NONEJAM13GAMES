@@ -34,7 +34,7 @@ function exclui_do_control(_val)
     }
 }
 
-function cria_item(_spr, _x, _y, _depth = -16000){
+function cria_item(_spr, _x, _y, _depth = -11){
     var _obj = instance_create_depth(_x, _y, _depth, obj_item);
     
     _obj.sprite_index = _spr;

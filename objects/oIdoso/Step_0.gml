@@ -7,13 +7,14 @@ if  !(start){
 	}
 	exit;
 }
-if (despawn){
-	scalax = elastic("scalax", scalax, 0, 1, .1);
-	if (alarm[0] <= 1)
-	{
-		instance_destroy()
-		
-	}
+if (despawn){ 
+    repeat (15) {
+    	instance_create_layer(x,y - 32, "Particulas", oParticle)
+    }
+    
+    new_shake(5, .8);
+    
+    instance_destroy();
 	exit;
 }
 switch(tipo){
