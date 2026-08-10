@@ -395,10 +395,13 @@ Cutscene_Casa_Mago = [
 Cutscene_Entrar_Casa = [
     function(){start_act()},
 	function(){obj_porta_casa.sprite_index = spr_casa_aberta; end_act()},
+    function(){play_cutscene_sound(sfxAbrePorta, 0, 0, 1, 0)},
 	function(){npc_despawn(oPrincipe)},
 	function(){wait_in(1)},
+    function(){play_cutscene_sound(sfxMagic, 0, 0, 1, 0, 1.2)},
 	function(){obj_porta_casa.scalax= 1.5;  particle_create(obj_porta_casa) new_shake(10,.95)},
 	function(){wait_in(1)},
+    function(){play_cutscene_sound(sfxMagoSapo, 0, 0, 1, 0)},
     function(){new_dialogue(Dialogo_Abrir)},
 	function(){room_change(rm_quarto_princesa)},
     function(){end_cutscene()}
@@ -409,9 +412,11 @@ Cutscene_Entrar_Casa = [
 Cutscene_Bater_Casa = [
     function(){start_act()},
     function(){new_dialogue(Dialogo_Bater)},
+    function(){play_cutscene_sound(sfxTocToc, 0, 0, 1, 0)},
 	function(){oPrincipe.estado = "andando";move_to_speed(oPrincipe,1120,700,global.vel_cutscene);},
 	function(){obj_porta_casa.sprite_index = spr_casa_aberta npc_spawn(oMagoBom,865,865,false)},
-	function(){wait_in(1)},
+	function(){play_cutscene_sound(sfxAbrePorta, 0, 0, 1, 0)},
+    function(){wait_in(1)},
 	function(){npc_despawn(oPrincipe)},
 	function(){room_change(rm_quarto_princesa)},
     function(){end_cutscene()}
@@ -432,7 +437,8 @@ Cutscene_Quarto_Princesa_ComPrincipe = [
 Cutscene_Quarto_Abracar = [
     function(){start_act()},
 	function(){oPrincesa.estado = "andando";move_to_speed(oPrincesa,oPrincipe.x,oPrincipe.y,global.vel_cutscene);},
-	function(){oPrincesa.estado = "parado";wait_in(1)},
+	function(){play_cutscene_sound(sfxBeso, 0, 0, 2, 0)},
+    function(){oPrincesa.estado = "parado";wait_in(1)},
     function(){new_dialogue(Dialogo_Quarto_Abracar)},
     function(){end_cutscene()}
 ];

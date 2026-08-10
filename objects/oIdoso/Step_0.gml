@@ -53,11 +53,11 @@ switch(tipo){
     #endregion
     case "item":
         destroi = true
-        var ang = sin(acres_ang) * 10
+        var ang = sin(acres_ang) * 2
         angle = lerp(angle, ang , .1)
-        acres_ang += .05               
-        scalay += (sin(acres_y) / 100) ;
-        acres_y += .12                  
+        acres_ang += .02              
+        scalay += (sin(acres_y) / 400) ;
+        acres_y += .05                  
         scalax = (lerp(scalax, 1, .1)) ;
     break;
     case "mapa":
