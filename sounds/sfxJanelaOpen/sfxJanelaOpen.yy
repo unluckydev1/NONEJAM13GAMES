@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"snd_gameplay",
+  "%Name":"sfxJanelaOpen",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,9 +10,9 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":67.18751,
+  "duration":0.45795918,
   "exportDir":"",
-  "name":"snd_gameplay",
+  "name":"sfxJanelaOpen",
   "parent":{
     "name":"Sons",
     "path":"folders/Sons.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_gameplay.ogg",
-  "volume":0.25,
+  "soundFile":"sfxJanelaOpen.mp3",
+  "volume":1.0,
 }
